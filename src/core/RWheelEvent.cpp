@@ -23,7 +23,7 @@ RWheelEvent::RWheelEvent(const RVector& position, int delta,
         Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers,
         Qt::Orientation orient, RGraphicsScene& s, RGraphicsView& v) :
 #if QT_VERSION >= 0x060000
-    QWheelEvent(QPointF(position.x, position.y), QPointF(position.x, position.y), QPoint(delta, delta), QPoint(0,0), buttons, modifiers, Qt::NoScrollPhase, false),
+    QWheelEvent(QPointF(position.x, position.y), QPointF(position.x, position.y), QPoint(delta, delta), QPoint(delta,delta), buttons, modifiers, Qt::NoScrollPhase, false),
 #else
     QWheelEvent(QPoint(position.x, position.y), delta, buttons, modifiers, orient),
 #endif
