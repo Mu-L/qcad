@@ -211,7 +211,6 @@ DefaultNavigation.prototype.wheelEvent = function(event) {
     //     qDebug("Qt.MouseEventSynthesizedBySystem");
     // }
 
-    // qDebug("pixelDelta NULL: " + event.pixelDelta.isNull());
     // qDebug("pixelDelta: X: " + event.pixelDelta.x());
     // qDebug("pixelDelta: Y: " + event.pixelDelta.y());
     // qDebug("angleDelta: X: " + event.angleDelta.x());
