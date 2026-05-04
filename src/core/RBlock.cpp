@@ -215,6 +215,7 @@ QPair<QVariant, RPropertyAttributes> RBlock::getProperty(RPropertyTypeId& proper
 
 void RBlock::setCustomProperty(const QString& title, const QString& key, const QVariant& value) {
     // set custom property PixelUnit as flag:
+    // this is needed for the paste operation:
     if (title=="QCAD" && key=="PixelUnit") {
         if (value.toString()=="1") {
             pixelUnit = true;
