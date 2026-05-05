@@ -224,9 +224,10 @@ DefaultNavigation.prototype.wheelEvent = function(event) {
     var wheelDeltaX = undefined;
     var wheelDeltaY = undefined;
 
+    // find out which values from the event to use:
     if (isFunction(event.delta)) {
         // Qt 5:
-        wheelDelta = event.delta() * DefaultNavigation.mouseWheelScrollFactor;
+        wheelDelta = event.delta();
     }
     else {
         // Qt 6 (scroll in both directions simultaniously):
@@ -234,10 +235,6 @@ DefaultNavigation.prototype.wheelEvent = function(event) {
             // high res device (e.g. tablet or magic mouse), use pixel delta:
             wheelDeltaX = event.pixelDelta.x();
             wheelDeltaY = event.pixelDelta.y();
-
-            // apply pan speed factor to wheel delta:
-            wheelDeltaX *= DefaultNavigation.panSpeed;
-            wheelDeltaY *= DefaultNavigation.panSpeed;
         }
 
         else {
@@ -245,8 +242,8 @@ DefaultNavigation.prototype.wheelEvent = function(event) {
             // qDebug("angleDelta: X: " + event.angleDelta.x());
             // qDebug("angleDelta: Y: " + event.angleDelta.y());
 
-            wheelDeltaX = event.angleDelta.x() * DefaultNavigation.mouseWheelScrollFactor;
-            wheelDeltaY = event.angleDelta.y() * DefaultNavigation.mouseWheelScrollFactor;
+            wheelDeltaX = event.angleDelta.x();
+            wheelDeltaY = event.angleDelta.y();
         }
 
         // wheelDelta is whichever delta has a value:
@@ -255,8 +252,8 @@ DefaultNavigation.prototype.wheelEvent = function(event) {
             // tablet with holding down command: delta in X:
             wheelDelta = wheelDeltaX;
         }
-
     }
+
 
     var performZoom = false;
     var horizontalScroll = 0.0;
@@ -304,7 +301,7 @@ DefaultNavigation.prototype.wheelEvent = function(event) {
             performZoom = true;
         }
 
-        // wheel behavior is "pan", also for swipe gesture:
+        // wheel behavior is "pan", mainly used for two finger swipe gesture:
         else {
             if (isNull(this.panOffset)) {
                 this.panOffset = new RVector(0,0);
@@ -322,16 +319,16 @@ DefaultNavigation.prototype.wheelEvent = function(event) {
                     }
                 }
 
-                this.panOffset = this.panOffset.operator_add(new RVector(wheelDeltaX, wheelDeltaY));
+                this.panOffset = this.panOffset.operator_add(new RVector(wheelDeltaX * DefaultNavigation.panSpeed, wheelDeltaY * DefaultNavigation.panSpeed));
             }
 
             // Qt 5:
             else {
                 if (event.orientation()===Qt.Vertical) {
-                    this.panOffset = this.panOffset.operator_add(new RVector(0, wheelDelta));
+                    this.panOffset = this.panOffset.operator_add(new RVector(0, wheelDelta * DefaultNavigation.panSpeed));
                 }
                 else {
-                    this.panOffset = this.panOffset.operator_add(new RVector(wheelDelta, 0));
+                    this.panOffset = this.panOffset.operator_add(new RVector(wheelDelta * DefaultNavigation.panSpeed, 0));
                 }
             }
 
@@ -343,15 +340,15 @@ DefaultNavigation.prototype.wheelEvent = function(event) {
 
 
     if (verticalScroll!=0 && horizontalScroll!=0) {
-        this.view.pan(new RVector(horizontalScroll, verticalScroll));
+        this.view.pan(new RVector(horizontalScroll * DefaultNavigation.mouseWheelScrollFactor, verticalScroll * DefaultNavigation.mouseWheelScrollFactor));
         this.view.simulateMouseMoveEvent();
     }
     else if (verticalScroll!=0) {
-        this.view.pan(new RVector(0, verticalScroll));
+        this.view.pan(new RVector(0, verticalScroll * DefaultNavigation.mouseWheelScrollFactor));
         this.view.simulateMouseMoveEvent();
     }
     else if (horizontalScroll!=0) {
-        this.view.pan(new RVector(horizontalScroll, 0));
+        this.view.pan(new RVector(horizontalScroll * DefaultNavigation.mouseWheelScrollFactor, 0));
         this.view.simulateMouseMoveEvent();
     }
     else if (performZoom) {
