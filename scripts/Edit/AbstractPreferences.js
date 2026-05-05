@@ -37,6 +37,9 @@ AbstractPreferences.prototype.beginEvent = function() {
     Edit.prototype.beginEvent.call(this);
     
     this.dialog = this.createDialog(AbstractPreferences.includeBasePath + "/AbstractPreferences.ui");
+
+    WidgetFactory.restoreSize(this.dialog);
+
     // TODO: Qt 5: add this flag (?)
     //var flags = new Qt.WindowFlags(Qt.WindowTitleHint);
     //this.dialog.setWindowFlags(flags);
@@ -80,6 +83,8 @@ AbstractPreferences.prototype.beginEvent = function() {
         this.applyPreferences();
     }
     this.uninit();
+
+    WidgetFactory.saveSize(this.dialog);
     destrDialog(this.dialog);
     EAction.activateMainWindow();
     this.terminate();
