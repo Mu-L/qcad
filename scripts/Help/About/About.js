@@ -67,7 +67,7 @@ About.prototype.beginEvent = function() {
 
     dialog.windowTitle = qsTr("About %1").arg(this.applicationName);
     if (!isNull(this.iconFile)) {
-        dialog.findChild("Icon").icon = new QIcon(this.iconFile);
+        dialog.findChild("Icon").icon = new QIcon(autoPath(this.iconFile));
     }
 
     // init about view:
