@@ -225,13 +225,13 @@ target_compile_definitions(qcadcore PRIVATE
 )
 
 if (CMAKE_BUILD_TYPE STREQUAL "Release")
-    set_target_properties(qcadcore PROPERTIES LIBRARY_OUTPUT_DIRECTORY ../../release)
-    set_target_properties(qcadcore PROPERTIES RUNTIME_OUTPUT_DIRECTORY ../../release)
-    set_target_properties(qcadcore PROPERTIES ARCHIVE_OUTPUT_DIRECTORY ../../release)
+    set_target_properties(qcadcore PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/../../release)
+    set_target_properties(qcadcore PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/../../release)
+    set_target_properties(qcadcore PROPERTIES ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/../../release)
 else()
-    set_target_properties(qcadcore PROPERTIES LIBRARY_OUTPUT_DIRECTORY ../../debug)
-    set_target_properties(qcadcore PROPERTIES RUNTIME_OUTPUT_DIRECTORY ../../debug)
-    set_target_properties(qcadcore PROPERTIES ARCHIVE_OUTPUT_DIRECTORY ../../debug)
+    set_target_properties(qcadcore PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/../../debug)
+    set_target_properties(qcadcore PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/../../debug)
+    set_target_properties(qcadcore PROPERTIES ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/../../debug)
 endif()
 
 

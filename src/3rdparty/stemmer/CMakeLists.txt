@@ -27,9 +27,9 @@ add_library(stemmer
 )
 
 if (CMAKE_BUILD_TYPE STREQUAL "Release")
-    set_target_properties(stemmer PROPERTIES ARCHIVE_OUTPUT_DIRECTORY ../../../release)
+    set_target_properties(stemmer PROPERTIES ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/../../../release)
 else()
-    set_target_properties(stemmer PROPERTIES ARCHIVE_OUTPUT_DIRECTORY ../../../debug)
+    set_target_properties(stemmer PROPERTIES ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/../../../debug)
 endif()
 
 target_compile_definitions(stemmer PRIVATE

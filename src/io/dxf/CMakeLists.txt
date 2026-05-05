@@ -40,9 +40,9 @@ target_compile_definitions(qcaddxf PRIVATE
     QCAD_DLL
 )
 
-set_target_properties(qcaddxf PROPERTIES LIBRARY_OUTPUT_DIRECTORY ../../../plugins)
-set_target_properties(qcaddxf PROPERTIES RUNTIME_OUTPUT_DIRECTORY ../../../plugins)
-set_target_properties(qcaddxf PROPERTIES ARCHIVE_OUTPUT_DIRECTORY ../../../plugins)
+set_target_properties(qcaddxf PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/../../../plugins)
+set_target_properties(qcaddxf PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/../../../plugins)
+set_target_properties(qcaddxf PROPERTIES ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/../../../plugins)
 
 target_link_libraries(qcaddxf PRIVATE
     Qt::Core

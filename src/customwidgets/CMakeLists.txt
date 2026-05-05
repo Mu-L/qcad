@@ -50,8 +50,8 @@ target_compile_definitions(qcadcustomwidgets PRIVATE
     QCAD_DLL
 )
 
-set_target_properties(qcadcustomwidgets PROPERTIES LIBRARY_OUTPUT_DIRECTORY ../../plugins/designer)
-set_target_properties(qcadcustomwidgets PROPERTIES RUNTIME_OUTPUT_DIRECTORY ../../plugins/designer)
+set_target_properties(qcadcustomwidgets PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/../../plugins/designer)
+set_target_properties(qcadcustomwidgets PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/../../plugins/designer)
 
 target_link_libraries(qcadcustomwidgets PRIVATE
     # Remove: L${CMAKE_CURRENT_SOURCE_DIR}/

@@ -423,6 +423,7 @@
     <file alias="scripts/Draw/Line/LineVertical/LineVertical-inverse.svg">../../scripts/Draw/Line/LineVertical/LineVertical-inverse.svg</file>
     <file alias="scripts/Draw/Line/LineVertical/LineVertical.js">../../scripts/Draw/Line/LineVertical/LineVertical.js</file>
     <file alias="scripts/Draw/Line/LineVertical/LineVertical.svg">../../scripts/Draw/Line/LineVertical/LineVertical.svg</file>
+    <file alias="scripts/Draw/Line/LineVertical/LineVertical.ui">../../scripts/Draw/Line/LineVertical/LineVertical.ui</file>
     <file alias="scripts/Draw/Line/LineVertical/LineVerticalInit.js">../../scripts/Draw/Line/LineVertical/LineVerticalInit.js</file>
     <file alias="scripts/Draw/Line/TypeAuto-inverse.svg">../../scripts/Draw/Line/TypeAuto-inverse.svg</file>
     <file alias="scripts/Draw/Line/TypeAuto.svg">../../scripts/Draw/Line/TypeAuto.svg</file>
