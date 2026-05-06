@@ -34,9 +34,6 @@ target_include_directories(${PROJECT_NAME} PRIVATE
     ${CMAKE_CURRENT_LIST_DIR}/../../src/io/dxf
     ${CMAKE_CURRENT_LIST_DIR}/../../src/operations
     ${CMAKE_CURRENT_LIST_DIR}/../../src/scripting
-    ${CMAKE_CURRENT_LIST_DIR}/../../src/scripting/ecmaapi
-    ${CMAKE_CURRENT_LIST_DIR}/../../src/scripting/ecmaapi/adapters
-    ${CMAKE_CURRENT_LIST_DIR}/../../src/scripting/ecmaapi/generated
     ${CMAKE_CURRENT_LIST_DIR}/../../src/snap
     ${CMAKE_CURRENT_LIST_DIR}/../../src/spatialindex
     ${CMAKE_CURRENT_LIST_DIR}/../../src/stemmer
@@ -79,10 +76,6 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
     spatialindexnavel
     stemmer
 )
-
-IF(NOT BUILD_QT6)
-    target_link_libraries(${PROJECT_NAME} PRIVATE qcadecmaapi)
-ENDIF()
 
 if(APPLE)
     target_sources(${PROJECT_NAME} PRIVATE
