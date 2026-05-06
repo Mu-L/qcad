@@ -218,7 +218,10 @@ DefaultNavigation.prototype.wheelEvent = function(event) {
 
     // high res device (e.g. tablet)
     // use pixel delta in X and Y for panning
-    var highRes = event.phase !== Qt.NoScrollPhase;
+    var highRes = false;
+    if (RSettings.getQtVersion()>=0x050700) {
+        highRes = event.phase !== Qt.NoScrollPhase;
+    }
 
     var wheelDelta = undefined;
     var wheelDeltaX = undefined;
