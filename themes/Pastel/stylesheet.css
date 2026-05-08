@@ -454,10 +454,12 @@ QTreeView, QListView {
 }
 
 
+/* this breaks the layer list in Qt 6.11, possibly other Qt 6.x versions:
 QTreeView::item:hover {
     background: #ACCFBF;
     color: #872b12;
 }
+*/
 
 
 /* border in Application Preferences>General>Tool Settings */
