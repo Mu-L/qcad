@@ -1787,6 +1787,7 @@ REntity::Id RDocument::queryClosestXY(
     double strictRange) {
 
     double minDist = RMAXDOUBLE;
+    int maxDrawOrder = RMININT;
     REntity::Id ret = REntity::INVALID_ID;
 
     QSet<REntity::Id>::iterator it;
@@ -1805,9 +1806,13 @@ REntity::Id RDocument::queryClosestXY(
             dist/=100.0;
         }
 
-        if (!RMath::isNaN(dist) && dist < minDist && dist < range+RS::PointTolerance) {
-            minDist = dist;
-            ret = *it;
+        if (!RMath::isNaN(dist) && dist < range+RS::PointTolerance) {
+            // if distance is smaller than current minimum, or distance is within tolerance and draw order is higher than current maximum:
+            if ((dist < minDist) || (dist <= minDist+RS::PointTolerance && e->getDrawOrder() > maxDrawOrder)) {
+                minDist = dist;
+                maxDrawOrder = e->getDrawOrder();
+                ret = *it;
+            }
         }
     }
 
