@@ -40,6 +40,7 @@
  *  - properties["initView"]: Callback to initialize view
  *  - properties["zoomAll"]: Auto zoom to all entities, including those on invisible layers
  *  - properties["metaData"]: Key / value pairs of meta data to write to image header
+ *  - properties["colorCorrection"]: explicitely enable / disable color correction
  *
  * \param view Optional graphics view to use.
  */

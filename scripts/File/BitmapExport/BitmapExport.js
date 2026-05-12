@@ -166,6 +166,7 @@ BitmapExport.prototype.getProperties = function() {
     var blackRadio = this.dialog.findChild("BlackBackground");
     var transparentRadio = this.dialog.findChild("TransparentBackground");
 
+    var colorCorrectionCheckbox = this.dialog.findChild("ColorCorrection");
     var monoRadio = this.dialog.findChild("ColorMonochrome");
     var grayRadio = this.dialog.findChild("ColorGrayscale");
     var colorRadio = this.dialog.findChild("ColorFull");
@@ -229,6 +230,8 @@ BitmapExport.prototype.getProperties = function() {
         var doc = this.getDocument();
         ret["entityIds"] = doc.querySelectedEntities();
     }
+
+    ret["colorCorrection"] = colorCorrectionCheckbox.checked;
 
     destrDialog(this.dialog);
     EAction.activateMainWindow();
