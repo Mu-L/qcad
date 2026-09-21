@@ -221,11 +221,19 @@ void RSolidEntity::exportEntity(RExporter& e, bool preview, bool forceSelected) 
     // stroked with the lineweight of the entity (round joins), bloating
     // and rounding the corners of small solids such as arrow heads and
     // showing the linetype pattern along the edges:
-    QPen pen = e.getPen();
+    QPen penBak = e.getPen();
+    QPen pen = penBak;
     pen.setStyle(Qt::NoPen);
     e.setPen(pen);
 
     e.exportPolyline(pl);
+
+    // restore the pen of the exporter: the pen is shared state of the
+    // entity currently being exported. A solid which is part of another
+    // entity (e.g. the arrow head block of a leader or dimension) must
+    // not switch off the outline of what that entity exports after it
+    // (the leader line, the dimension line):
+    e.setPen(penBak);
 }
 
 void RSolidEntity::print(QDebug dbg) const {
