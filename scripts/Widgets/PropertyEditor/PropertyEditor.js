@@ -351,6 +351,14 @@ function PropertyEditorImpl(basePath) {
 PropertyEditorImpl.prototype = new RPropertyEditor();
 
 /**
+ * \return True if the given custom property should not be shown in the custom properties group.
+ * Can be overridden by derived property editors to hide internal properties.
+ */
+PropertyEditorImpl.prototype.isCustomPropertyHidden = function(propertyTypeId) {
+    return false;
+};
+
+/**
  * Implementation from RPropertyEditor to update the property editor GUI.
  */
 PropertyEditorImpl.prototype.updateGui = function(onlyChanges) {
@@ -641,6 +649,11 @@ PropertyEditorImpl.prototype.updateGui = function(onlyChanges) {
                 var gridLayout = undefined;
                 var groupBox = undefined;
                 if (propertyTypeId.isCustom()) {
+                    // custom property hidden by derived property editor (e.g. internal properties):
+                    if (this.isCustomPropertyHidden(propertyTypeId)) {
+                        continue;
+                    }
+
                     // block reference attributes:
                     if (propertyTypeId.getCustomPropertyTitle()==="Attributes") {
                         gridLayout = gridLayoutChild;
