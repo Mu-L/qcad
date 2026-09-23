@@ -53,6 +53,13 @@ CoordinateDisplay.postInit = function(basePath) {
     CoordinateDisplay.lRelPol = CoordinateDisplay.widget.findChild("RelPol");
     CoordinateDisplay.lRelPol.font = RSettings.getStatusBarFont();
 
+    // screen readers: read the tool tip ("Absolute Cartesian Coordinate")
+    // together with the coordinate (RAccessibleValueLabel):
+    var labels = [CoordinateDisplay.lAbs, CoordinateDisplay.lRel, CoordinateDisplay.lAbsPol, CoordinateDisplay.lRelPol];
+    for (var i=0; i<labels.length; i++) {
+        labels[i].accessibleDescription = WidgetFactory.getPlainText(labels[i].toolTip);
+    }
+
     var cartCoordSep;
     var polCoordSep;
     var relCoordPre;

@@ -16,6 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with QCAD.
  */
+#include <QAccessible>
 #include <QElapsedTimer>
 #include <QComboBox>
 #include <QLineEdit>
@@ -42,6 +43,12 @@
 #include "RGraphicsViewQt.h"
 #include "RAccessibleToolTipFilter.h"
 #include "RAccessibleFlatTree.h"
+#include "RAccessibleContainers.h"
+#include "RAccessibleNameFilter.h"
+#include "RAccessibleValueLabel.h"
+#ifdef Q_OS_MACOS
+#include "RMacMenuAccessibility.h"
+#endif
 #include "RAccessibleToolButton.h"
 #include "RMainWindowQt.h"
 #include "RMdiArea.h"
@@ -91,6 +98,19 @@ RMainWindowQt::RMainWindowQt(QWidget* parent, bool hasMdiArea) :
     RAccessibleFlatTree::install();
     // tool buttons of tools are buttons, not check boxes (screen readers):
     RAccessibleToolButton::install();
+    // tool bars, dock widgets, status bar, MDI area, graphics views
+    // (screen readers):
+    RAccessibleContainers::install();
+    // labels showing a value with a description of that value
+    // (screen readers):
+    RAccessibleValueLabel::install();
+    // input widgets without accessible name are named after the label
+    // next to them (screen readers):
+    qApp->installEventFilter(new RAccessibleNameFilter(this));
+#ifdef Q_OS_MACOS
+    // spoken form of the native menu item titles (key codes, undo text):
+    RMacMenuAccessibility::install();
+#endif
 
     RSingleApplication* singleApp = dynamic_cast<RSingleApplication*> (qApp);
     if (singleApp!=NULL) {
@@ -611,6 +631,24 @@ void RMainWindowQt::setRightMouseTip(const QString& text) {
 
 void RMainWindowQt::setLeftMouseTip(const QString& text) {
     emit leftMouseTip(text);
+
+    // the left mouse tip is the prompt of the running tool ("Specify first
+    // point"): announce it to screen readers when it changes, so a user who
+    // cannot see the status bar knows what the tool expects. Polite: does
+    // not interrupt what is being read:
+    if (QAccessible::isActive()) {
+        static QString lastAnnouncedTip;
+        if (text != lastAnnouncedTip) {
+            lastAnnouncedTip = text;
+            if (!text.isEmpty()) {
+#if QT_VERSION >= QT_VERSION_CHECK(6, 8, 0)
+                QAccessibleAnnouncementEvent ev(this, text);
+                ev.setPoliteness(QAccessible::AnnouncementPoliteness::Polite);
+                QAccessible::updateAccessibility(&ev);
+#endif
+            }
+        }
+    }
 }
 
 void RMainWindowQt::escapeEvent() {

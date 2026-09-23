@@ -32,6 +32,12 @@ MouseDisplay.postInit = function(basePath) {
     var left = widget.findChild("Left");
     left.font = RSettings.getStatusBarFont();
 
+    // screen readers: the labels show what the mouse buttons do, the left
+    // one being the prompt of the running tool. the description is read
+    // together with the text (RAccessibleValueLabel):
+    left.accessibleDescription = qsTr("Left mouse button");
+    right.accessibleDescription = qsTr("Right mouse button");
+
     var appWin = EAction.getMainWindow();
     appWin.rightMouseTip.connect(function(message) {
         right.text = message;

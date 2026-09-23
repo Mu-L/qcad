@@ -43,6 +43,13 @@
  * default action of the button: the button appears checked, but the tool
  * is never started.
  *
+ * The factory claims every QToolButton (not only those with a default
+ * action): Qt creates and caches the accessible interface of a tool bar
+ * button during construction, before its default action is set, so the
+ * decision has to be made on demand in the interface (role()). Tool
+ * buttons without an RGuiAction behave like Qt's own implementation. The
+ * overflow button of a tool bar (QToolBarExtension) gets a name.
+ *
  * Tool buttons with a default action are therefore exposed as:
  *
  * - QAccessible::Button (not CheckBox), since starting a tool is a

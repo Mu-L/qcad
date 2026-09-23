@@ -148,6 +148,20 @@ ViewportWidget.initMdiChild = function(mdiChild, uiFileName) {
 };
 
 
+/**
+ * Sets the accessible name and description of the given graphics view
+ * widget. Screen readers present the view as a graphic (see
+ * RAccessibleContainers), the description tells the user how to work
+ * without seeing the drawing.
+ */
+ViewportWidget.initAccessibleView = function(view) {
+    if (isNull(view)) {
+        return;
+    }
+    view.accessibleName = qsTr("Drawing Area");
+    view.accessibleDescription = qsTr("Use the command line to enter commands and coordinates");
+};
+
 ViewportWidget.prototype.initEventHandler = function() {
     var self = this;
 
@@ -236,6 +250,7 @@ ViewportWidget.prototype.init = function(uiFile, graphicsSceneClass) {
     this.vpWidget.styleSheet = "";
 
     this.graphicsView = this.vpWidget.findChild("GraphicsView");
+    ViewportWidget.initAccessibleView(this.graphicsView);
 
     if (isNull(this.graphicsView)) {
         qWarning("graphics view not found");
@@ -402,6 +417,7 @@ ViewportWidget.prototype.initRhiGraphicsView = function(vpw) {
     this.rhiViewport.objectName = "RhiViewport";
     this.rhiView = this.rhiViewport.getGraphicsView();
     this.rhiView.objectName = "GraphicsView";
+    ViewportWidget.initAccessibleView(this.rhiView);
     layout.addWidget(this.rhiViewport, 1, 1);
 
     var view = this.rhiView.getRGraphicsView();

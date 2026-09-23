@@ -527,3 +527,14 @@ void RAccessibleFlatTree::install() {
     // before the default implementation of Qt:
     QAccessible::installFactory(raccessibleFlatTreeFactory);
 }
+
+void RAccessibleFlatTree::invalidate(QObject* tree) {
+    if (tree == NULL || qobject_cast<QTreeWidget*>(tree) == NULL) {
+        return;
+    }
+    QAccessibleInterface* iface = QAccessible::queryAccessibleInterface(tree);
+    if (iface == NULL) {
+        return;
+    }
+    QAccessible::deleteAccessibleInterface(QAccessible::uniqueId(iface));
+}

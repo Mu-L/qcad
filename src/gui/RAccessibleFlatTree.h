@@ -85,6 +85,19 @@ public:
     static void install();
 
     /**
+     * Drops the cached accessible interface of the given tree widget, so
+     * the next query creates it anew through the factory.
+     *
+     * Qt creates and caches the interface of a tree widget as soon as it
+     * is constructed while a screen reader is active (the model reset in
+     * the constructor sends an accessibility event). A tree that opts in
+     * afterwards (script constructor, UI file properties) would keep the
+     * table implementation of Qt. Called by RAccessibleNameFilter when
+     * the opt in properties change.
+     */
+    static void invalidate(QObject* tree);
+
+    /**
      * \return Name of the widget property a tree widget sets to true to
      * be exposed as a flat list.
      */

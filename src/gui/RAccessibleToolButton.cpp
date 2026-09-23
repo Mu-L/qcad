@@ -20,6 +20,7 @@
 #include "RAccessibleToolButton.h"
 
 #include <QAccessible>
+#include <QCoreApplication>
 #include <QAccessibleWidget>
 #include <QAction>
 #include <QMenu>
@@ -82,12 +83,20 @@ public:
             return QAccessible::Button;
         }
         RGuiAction* action = dynamic_cast<RGuiAction*>(getDefaultAction());
-        if (action != NULL && action->isToggleable()) {
-            // action really switches something on and off:
-            return QAccessible::CheckBox;
+        if (action != NULL) {
+            if (action->isToggleable()) {
+                // action really switches something on and off:
+                return QAccessible::CheckBox;
+            }
+            // every RGuiAction is checkable (a tool button stays checked while
+            // its tool is running), but starting a tool is a command:
+            return QAccessible::Button;
         }
-        // every RGuiAction is checkable (a tool button stays checked while
-        // its tool is running), but starting a tool is a command:
+        // tool button without RGuiAction (no action yet or a plain button):
+        // same as QAccessibleButton::role():
+        if (button->isCheckable()) {
+            return button->autoExclusive() ? QAccessible::RadioButton : QAccessible::CheckBox;
+        }
         return QAccessible::Button;
     }
 
@@ -108,6 +117,15 @@ public:
                 if (action != NULL) {
                     str = action->text();
                 }
+            }
+            if (str.isEmpty() && button->inherits("QLineEditIconButton")) {
+                // clear button of a line edit (QLineEdit::setClearButtonEnabled):
+                str = QCoreApplication::translate("RAccessibleToolButton", "Clear Text");
+            }
+            if (str.isEmpty() && button->inherits("QToolBarExtension")) {
+                // button Qt shows at the end of a tool bar that does not
+                // fit on screen (opens a menu with the remaining items):
+                str = QCoreApplication::translate("RAccessibleToolButton", "More Tool Bar Items");
             }
             if (!str.isEmpty()) {
                 return stripAmp(str);
@@ -201,15 +219,16 @@ QAccessibleInterface* raccessibleToolButtonFactory(const QString& classname, QOb
     if (button == NULL) {
         return NULL;
     }
-    if (button->defaultAction() == NULL) {
-        // plain tool button, not backed by an action:
-        return NULL;
-    }
-    if (!button->isCheckable() || button->autoExclusive()) {
-        // Qt does not report these as check boxes, the default
-        // implementation works:
-        return NULL;
-    }
+    // Every tool button gets this interface, whether or not it has a
+    // default action at this point: Qt creates and caches the accessible
+    // interface of a widget as soon as the first accessibility event is
+    // sent for it (QAccessible::updateAccessibility resolves the interface
+    // even without an active screen reader), which for tool bar buttons
+    // happens during construction, before QToolButton::setDefaultAction()
+    // is called. Deciding on the default action here would therefore
+    // permanently leave the buttons of all tool bars with the check box
+    // implementation of Qt. The role is computed on demand instead (see
+    // RAccessibleToolButtonInterface::role()).
     return new RAccessibleToolButtonInterface(button);
 }
 
