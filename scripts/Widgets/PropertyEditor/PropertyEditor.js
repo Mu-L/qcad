@@ -346,6 +346,10 @@ function PropertyEditorImpl(basePath) {
     this.childGroup = undefined;
     this.customGroup = undefined;
     this.onlyChangesOverride = undefined;
+    // signature of the property structure currently shown (see getStructureKey):
+    this.structureKey = undefined;
+    // onlyChanges value used by the last call to updateGui:
+    this.effectiveOnlyChanges = undefined;
 }
 
 PropertyEditorImpl.prototype = new RPropertyEditor();
@@ -361,37 +365,297 @@ PropertyEditorImpl.prototype.isCustomPropertyHidden = function(propertyTypeId) {
 /**
  * Implementation from RPropertyEditor to update the property editor GUI.
  */
+/**
+ * Adds the given widget to the given grid layout and shows it immediately.
+ *
+ * Qt shows widgets that are added to an already visible parent delayed
+ * (through a queued event). If the property editor is repainted before
+ * that event is processed, the new widgets are missing from that frame
+ * which appears as flickering. Showing the widget right away avoids this.
+ *
+ * \internal
+ */
+PropertyEditorImpl.addToGrid = function(gridLayout, widget, row, col, rowSpan, colSpan) {
+    if (isNull(gridLayout) || isNull(widget)) {
+        return;
+    }
+
+    if (isNull(rowSpan) || isNull(colSpan)) {
+        gridLayout.addWidget(widget, row, col);
+    }
+    else {
+        gridLayout.addWidget(widget, row, col, rowSpan, colSpan);
+    }
+    widget.show();
+};
+
+/**
+ * Destroys all child widgets of the given group box but keeps its layout.
+ * \internal
+ */
+PropertyEditorImpl.clearGroup = function(groupBox) {
+    if (isNull(groupBox)) {
+        return;
+    }
+
+    var children = groupBox.children();
+    for (var i=0; i<children.length; i++) {
+        var child = children[i];
+        if (isNull(child)) {
+            // don't destroy wrapper attached to the group box (QGroupBox_Wrapper):
+            continue;
+        }
+        if (isOfType(child, QGridLayout)) {
+            // don't destroy layout:
+            continue;
+        }
+
+        destr(child);
+    }
+};
+
+/**
+ * Sets the given combo box items (texts and data) if they differ from
+ * the items currently shown. Avoids clearing and refilling the combo box
+ * on every update.
+ * \internal
+ */
+PropertyEditorImpl.setComboItems = function(combo, texts, datas) {
+    var i;
+    var same = (combo.count===texts.length);
+    for (i=0; same && i<texts.length; i++) {
+        if (combo.itemText(i)!==texts[i]) {
+            same = false;
+            break;
+        }
+        var d = combo.itemData(i);
+        if (isNull(datas[i])) {
+            if (!isNull(d)) {
+                same = false;
+            }
+        }
+        else if (isNull(d) || d!==datas[i]) {
+            same = false;
+        }
+    }
+
+    if (same) {
+        return;
+    }
+
+    combo.clear();
+    for (i=0; i<texts.length; i++) {
+        if (isNull(datas[i])) {
+            combo.addItem(texts[i]);
+        }
+        else {
+            combo.addItem(texts[i], datas[i]);
+        }
+    }
+};
+
+/**
+ * \return Signature of the structure of the properties currently held by this
+ * property editor (entity types, groups, property titles, list lengths,
+ * attributes that affect which controls are created) but not the property values.
+ *
+ * If the structure has not changed since the property editor was last built,
+ * the existing controls are updated in place instead of rebuilding
+ * the property editor (which resets focus, scroll position and may flicker).
+ *
+ * Custom properties are not part of the signature since their controls are
+ * always rebuilt.
+ */
+PropertyEditorImpl.prototype.getStructureKey = function(groups) {
+    var key = [];
+
+    var types = this.getTypes().slice();
+    types.sort(function(a,b) { return a-b; });
+    key.push("types:" + types.join(","));
+    key.push("z:" + RSettings.getBoolValue("PropertyEditor/ShowZCoordinates", false));
+    key.push("xdata:" + RSettings.isXDataEnabled());
+    key.push("addcustom:" + RSettings.getBoolValue("PropertyEditor/AddCustomProperties", true));
+
+    for (var gi=0; gi<groups.length; gi++) {
+        var group = groups[gi];
+        key.push("g:" + group);
+
+        var titles = this.getPropertyTitles(group);
+        for (var pi=0; pi<titles.length; pi++) {
+            var title = titles[pi];
+            var propertyTypeId = RPropertyTypeId.getPropertyTypeId(group, title);
+            if (propertyTypeId.getId()===-1) {
+                // custom property: always rebuilt:
+                continue;
+            }
+
+            var value = this.getPropertyValue(group, title);
+            var attributes = this.getPropertyAttributes(group, title);
+
+            var k = "p:" + title;
+            if (isNull(value)) {
+                k += ":null";
+            }
+            else if (isArray(value)) {
+                k += ":list" + value.length;
+            }
+            else {
+                k += ":" + typeof(value);
+            }
+            if (attributes.isList()) {
+                k += ":L";
+            }
+            if (attributes.isInvisible()) {
+                k += ":I";
+            }
+            if (attributes.isOnRequest()) {
+                k += ":R";
+            }
+            if (attributes.isDimensionLabel()) {
+                k += ":D";
+            }
+            k += ":" + attributes.getLabel();
+            key.push(k);
+        }
+    }
+
+    return key.join("\n");
+};
+
+/**
+ * Activates the layout of the property editor and processes pending layout
+ * requests, so that the geometry of all controls is final before the widget
+ * is repainted.
+ * \internal
+ */
+PropertyEditorImpl.prototype.activateLayout = function() {
+    var scrollArea = this.widget.findChild("ScrollArea");
+    if (!isNull(scrollArea)) {
+        var layout = scrollArea.layout();
+        if (!isNull(layout)) {
+            layout.activate();
+        }
+    }
+
+    if (typeof(QCoreApplication)!=="undefined" && isFunction(QCoreApplication.sendPostedEvents)) {
+        // process pending layout requests (scroll area contents, group boxes):
+        QCoreApplication.sendPostedEvents(undefined, QEvent.LayoutRequest.valueOf());
+        // the scroll area shows / hides its scroll bars through a queued
+        // connection (QAbstractScrollArea::_q_showOrHideScrollBars):
+        // process that now, so the viewport has its final size:
+        QCoreApplication.sendPostedEvents(this.widget, QEvent.MetaCall.valueOf());
+        QCoreApplication.sendPostedEvents(undefined, QEvent.LayoutRequest.valueOf());
+    }
+};
+
+/**
+ * Implementation from RPropertyEditor to update the property editor GUI.
+ *
+ * \param onlyChanges True to update the values of the existing controls only.
+ * Note that a full update (onlyChanges = false) is automatically turned into an
+ * update of the existing controls if the structure of the properties has not
+ * changed (see getStructureKey). Derived classes that extend the GUI after
+ * calling this function can find the effective value in this.effectiveOnlyChanges.
+ */
 PropertyEditorImpl.prototype.updateGui = function(onlyChanges) {
-    var row;
-    
-//    if (!isNull(entityTypeFilter)) {
-//        this.entityTypeFilter=entityTypeFilter;
-//    }
-
-//    if (isNull(this.entityTypeFilter)) {
-//        debugger;
-//    }
-
     if (!isNull(this.onlyChangesOverride)) {
         onlyChanges = this.onlyChangesOverride;
         this.onlyChangesOverride = undefined;
     }
 
-    this.widget.updatesEnabled = false;
-    if (!onlyChanges) {
-        if (!isNull(this.geometryGroup)) {
-            destr(this.geometryGroup);
-            this.geometryGroup = undefined;
+    var groups = this.getGroupTitles();
+
+    var structureKey = undefined;
+    if (groups.length!==0) {
+        if (!onlyChanges) {
+            structureKey = this.getStructureKey(groups);
+            if (!isNull(this.geometryGroup) && !isNull(this.structureKey) && this.structureKey===structureKey) {
+                // same entity types and properties as currently shown:
+                // update existing controls in place instead of rebuilding
+                // (keeps focus, scroll position and does not flicker):
+                onlyChanges = true;
+            }
         }
-        if (!isNull(this.childGroup)) {
-            destr(this.childGroup);
-            this.childGroup = undefined;
-        }
-        if (!isNull(this.customGroup)) {
-            destr(this.customGroup);
-            this.customGroup = undefined;
+        else if (isNull(this.geometryGroup) || isNull(this.structureKey)) {
+            // nothing to update, build from scratch:
+            onlyChanges = false;
+            structureKey = this.getStructureKey(groups);
         }
     }
+
+    this.effectiveOnlyChanges = onlyChanges;
+
+    // no repaints until the GUI is completely updated:
+    this.widget.updatesEnabled = false;
+    try {
+        this.updateGuiControls(onlyChanges, groups, structureKey);
+        // derived property editors add their own controls here,
+        // while repaints are still disabled:
+        this.updateGuiExtension(onlyChanges);
+        this.showPendingWidgets();
+    }
+    finally {
+        // make sure that the geometry of all controls is final before repainting:
+        this.activateLayout();
+        this.widget.updatesEnabled = true;
+    }
+};
+
+/**
+ * Hook for derived property editors to add or update their own controls.
+ * Called by updateGui after the standard controls have been updated and
+ * while repaints are disabled. Widgets added to the group boxes are shown
+ * and laid out together with the standard controls (no flicker).
+ *
+ * \param onlyChanges True if only the values of existing controls
+ * were updated (property structure unchanged), false if the group boxes
+ * were rebuilt and controls need to be created.
+ */
+PropertyEditorImpl.prototype.updateGuiExtension = function(onlyChanges) {
+    // nothing to do in the base class
+};
+
+/**
+ * Shows all widgets in the property groups that have not been shown yet.
+ *
+ * Qt shows widgets added to a visible parent delayed (queued event).
+ * Until then, the layout ignores them and they are painted at their default
+ * position and size as soon as they appear. Showing them right away makes
+ * sure the layout is final before the property editor is repainted.
+ * \internal
+ */
+PropertyEditorImpl.prototype.showPendingWidgets = function() {
+    var groups = [this.geometryGroup, this.childGroup, this.customGroup];
+    for (var gi=0; gi<groups.length; gi++) {
+        var groupBox = groups[gi];
+        if (isNull(groupBox)) {
+            continue;
+        }
+        var children = groupBox.children();
+        for (var i=0; i<children.length; i++) {
+            var child = children[i];
+            if (isNull(child) || !isFunction(child.isHidden) || !isFunction(child.show)) {
+                continue;
+            }
+            if (child.isHidden()) {
+                child.show();
+            }
+        }
+    }
+};
+
+/**
+ * Updates or rebuilds the controls of the property editor.
+ * Called by updateGui with repaints disabled.
+ *
+ * \param onlyChanges True to update values of existing controls only.
+ * \param groups Property groups as returned by getGroupTitles().
+ * \param structureKey Signature of the property structure (see getStructureKey) or undefined.
+ * \internal
+ */
+PropertyEditorImpl.prototype.updateGuiControls = function(onlyChanges, groups, structureKey) {
+    var row;
+    var i;
 
     var selectionCombo = this.widget.findChild("Selection");
 
@@ -418,18 +682,12 @@ PropertyEditorImpl.prototype.updateGui = function(onlyChanges) {
     var scrollArea = this.widget.findChild("ScrollArea");
     var layout = scrollArea.layout();
 
-    //if (!onlyChanges) {
-        selectionCombo.clear();
-        // TODO: add 'no selection' item to choose current pen:
-        //selectionCombo.addItem(qsTr("No Selection"), -2);
-    //}
-
-    var groups = this.getGroupTitles();
-
     // no properties to show or 'No Selection' chosen:
     if (groups.length===0 /*|| selectionCombo.currentIndex===0*/) {
-        selectionCombo.clear();
-        selectionCombo.insertItem(0, qsTr("No Selection"));
+        this.destroyGroups();
+        this.structureKey = undefined;
+
+        PropertyEditorImpl.setComboItems(selectionCombo, [qsTr("No Selection")], [undefined]);
         layerCombo.clear();
         colorCombo.currentIndex = 0;
         lineweightCombo.currentIndex = 0;
@@ -439,7 +697,6 @@ PropertyEditorImpl.prototype.updateGui = function(onlyChanges) {
         handleEdit.text = "";
         protectedCombo.clear();
         generalGroup.enabled = false;
-        this.widget.updatesEnabled = true;
         return;
     }
 
@@ -448,6 +705,8 @@ PropertyEditorImpl.prototype.updateGui = function(onlyChanges) {
     var gridLayoutCustom = undefined;
 
     if (!onlyChanges) {
+        this.destroyGroups();
+
         // create geometry group box with grid layout:
         this.geometryGroup = new QGroupBox(qsTr("Specific Properties"), this.widget);
         this.geometryGroup.objectName = "GeometryGroup";
@@ -465,6 +724,8 @@ PropertyEditorImpl.prototype.updateGui = function(onlyChanges) {
         // control or additional controls (e.g. clear button for dimension label):
         gridLayoutGeometry.setColumnStretch(2,1);
         this.geometryGroup.setLayout(gridLayoutGeometry);
+        // show now (Qt would show the group box delayed, causing a flicker):
+        this.geometryGroup.show();
 
         // child properties
         // (block attributes shown when block reference is selected):
@@ -482,6 +743,7 @@ PropertyEditorImpl.prototype.updateGui = function(onlyChanges) {
         gridLayoutChild.setColumnStretch(2,0);
         gridLayoutChild.setColumnStretch(3,0);
         this.childGroup.setLayout(gridLayoutChild);
+        // only shown if there are dependent entities (see below):
         this.childGroup.visible = false;
 
         // custom properties:
@@ -500,6 +762,7 @@ PropertyEditorImpl.prototype.updateGui = function(onlyChanges) {
             gridLayoutCustom.setColumnStretch(2,0);
             gridLayoutCustom.setColumnStretch(3,0);
             this.customGroup.setLayout(gridLayoutCustom);
+            this.customGroup.show();
         }
     }
     else {
@@ -516,31 +779,14 @@ PropertyEditorImpl.prototype.updateGui = function(onlyChanges) {
 
     // clear custom property group and child (block attributes) groups:
     // these are always rebuilt:
-    var groupsToClear = [this.customGroup, this.childGroup];
-    for (var gtci=0; gtci<groupsToClear.length; gtci++) {
-        var groupToClear = groupsToClear[gtci];
-        if (!isNull(groupToClear)) {
-            var children = groupToClear.children();
-            for (var i=0; i<children.length; i++) {
-                var child = children[i];
-                if (isNull(child)) {
-                    // don't destroy wrapper attached to the group box (QGroupBox_Wrapper):
-                    continue;
-                }
-                if (isOfType(child, QGridLayout)) {
-                    // don't destroy layout:
-                    continue;
-                }
-
-                destr(child);
-            }
-        }
-    }
+    PropertyEditorImpl.clearGroup(this.customGroup);
+    PropertyEditorImpl.clearGroup(this.childGroup);
 
     var firstEntry = true;
     var gotLayerProperty = false;
     var gotLinetypeScaleProperty = false;
     var gotDrawOrderProperty = false;
+    var gotChildProperty = false;
 
     // for all property groups:
     for (var gi=0; gi<groups.length; ++gi) {
@@ -581,15 +827,6 @@ PropertyEditorImpl.prototype.updateGui = function(onlyChanges) {
 
 //            qDebug("\tproperty: ", title, ": ", value);
 //            qDebug("\tproperty type id: ", propertyTypeId);
-
-//            if (attributes.hasEnumChoices()) {
-//                var ec = attributes.getEnumChoices();
-//                qDebug("enumChoices: ", ec.length);
-//                qDebug("enumChoices: ", ec[0]);
-//                qDebug("enumChoices: ", ec[1]);
-//                qDebug("enumChoices: ", ec[2]);
-//                debugger;
-//            }
 
             // ignore entity type:
             if (propertyTypeId.getId()===REntity.PropertyType.getId()) {
@@ -659,9 +896,7 @@ PropertyEditorImpl.prototype.updateGui = function(onlyChanges) {
                         gridLayout = gridLayoutChild;
                         groupBox = this.childGroup;
                         // only show group with dependent entities if needed:
-                        if (!isNull(this.childGroup)) {
-                            this.childGroup.visible = true;
-                        }
+                        gotChildProperty = true;
                     }
                     // custom properties:
                     else {
@@ -690,7 +925,7 @@ PropertyEditorImpl.prototype.updateGui = function(onlyChanges) {
                             groupLabel.styleSheet += "margin-top:0px;";
                             firstEntry = false;
                         }
-                        gridLayout.addWidget(groupLabel, gridLayout.rowCount(),0, 1,3);
+                        PropertyEditorImpl.addToGrid(gridLayout, groupLabel, gridLayout.rowCount(),0, 1,3);
                     }
 
                     // if property is a list, add list index control:
@@ -698,14 +933,14 @@ PropertyEditorImpl.prototype.updateGui = function(onlyChanges) {
                         row = gridLayout.rowCount();
                         var indexLabel = new QLabel(qsTr("Index"), groupBox);
                         indexLabel.alignment = Qt.AlignRight | Qt.AlignVCenter;
-                        gridLayout.addWidget(indexLabel, row,0);
+                        PropertyEditorImpl.addToGrid(gridLayout, indexLabel, row,0);
                         var indexControl = new QSpinBox(groupBox);
                         indexControl.setRange(0, value.length-1);
                         indexControl.objectName = PropertyEditorImpl.getIndexControlObjectName(group);
                         //gridLayout.addWidget(indexControl, row,1, 1,2);
-                        gridLayout.addWidget(indexControl, row,1);
+                        PropertyEditorImpl.addToGrid(gridLayout, indexControl, row,1);
                         var totalLabel = new QLabel("(%1)".arg(value.length), groupBox);
-                        gridLayout.addWidget(totalLabel, row,2);
+                        PropertyEditorImpl.addToGrid(gridLayout, totalLabel, row,2);
                     }
                 }
 
@@ -756,13 +991,13 @@ PropertyEditorImpl.prototype.updateGui = function(onlyChanges) {
                         label.textInteractionFlags = Qt.TextSelectableByMouse;
                         label.alignment = Qt.AlignRight | Qt.AlignVCenter;
 
-                        gridLayout.addWidget(label, row,0);
+                        PropertyEditorImpl.addToGrid(gridLayout, label, row,0);
                         if (controls.length===1) {
-                            gridLayout.addWidget(controls[0], row,1, 1,2);
+                            PropertyEditorImpl.addToGrid(gridLayout, controls[0], row,1, 1,2);
                         }
                         else if (controls.length===2) {
-                            gridLayout.addWidget(controls[0], row,1);
-                            gridLayout.addWidget(controls[1], row,2);
+                            PropertyEditorImpl.addToGrid(gridLayout, controls[0], row,1);
+                            PropertyEditorImpl.addToGrid(gridLayout, controls[1], row,2);
                         }
 
                         // 'remove custom property' button:
@@ -776,10 +1011,9 @@ PropertyEditorImpl.prototype.updateGui = function(onlyChanges) {
                             var name = propertyTypeId.getCustomPropertyName();
                             removeCustomPropertyButton.objectName = "DeleteCustomProperty" + name;
                             //qDebug("adding button to remove custom property named: ", name);
-                            var propertyEditor = this;
                             var pw = new PropertyWatcher(this, removeCustomPropertyButton, propertyTypeId);
                             removeCustomPropertyButton.clicked.connect(pw, pw.propertyRemoved);
-                            gridLayoutCustom.addWidget(removeCustomPropertyButton, row,3);
+                            PropertyEditorImpl.addToGrid(gridLayoutCustom, removeCustomPropertyButton, row,3);
                         }
 
                         firstEntry = false;
@@ -787,6 +1021,11 @@ PropertyEditorImpl.prototype.updateGui = function(onlyChanges) {
                 }
             }
         }
+    }
+
+    // only show group with dependent entities if needed:
+    if (!isNull(this.childGroup) && this.childGroup.visible!==gotChildProperty) {
+        this.childGroup.visible = gotChildProperty;
     }
 
     // enable / disable used / unused fixed controls
@@ -826,37 +1065,41 @@ PropertyEditorImpl.prototype.updateGui = function(onlyChanges) {
         w.text = "";
     }
 
-    // update selection combo box at the top for entity filters:
-    //if (!onlyChanges) {
-        var types = this.getTypes();
-        var totalCount = 0;
-        for (var ti=0; ti<types.length; ti++) {
-            var type = types[ti];
-            var typeCount = this.getTypeCount(type);
-            totalCount += typeCount;
+    // update selection combo box at the top for entity filters
+    // (only refilled if the entries have changed):
+    var types = this.getTypes();
+    var totalCount = 0;
+    var comboTexts = [];
+    var comboDatas = [];
+    for (var ti=0; ti<types.length; ti++) {
+        var type = types[ti];
+        var typeCount = this.getTypeCount(type);
+        totalCount += typeCount;
 
-            //qDebug("type: ", type, " / count: ", typeCount);
-            selectionCombo.addItem(entityTypeToString(type) + " [" + typeCount + "]", type);
-        }
-        if (types.length!==1) {
-            // TODO: add at 0 if 'no selection' item present at 0:
-            selectionCombo.insertItem(0, qsTr("All") + " (" + totalCount + ")", RS.EntityAll);
-        }
+        //qDebug("type: ", type, " / count: ", typeCount);
+        comboTexts.push(entityTypeToString(type) + " [" + typeCount + "]");
+        comboDatas.push(type);
+    }
+    if (types.length!==1) {
+        // TODO: add at 0 if 'no selection' item present at 0:
+        comboTexts.unshift(qsTr("All") + " (" + totalCount + ")");
+        comboDatas.unshift(RS.EntityAll);
+    }
+    PropertyEditorImpl.setComboItems(selectionCombo, comboTexts, comboDatas);
 
-        var index = selectionCombo.findData(this.getEntityTypeFilter());
-        if (index===-1) {
-            // TODO: change to 1 if 'no selection' item present at 0:
-            selectionCombo.currentIndex = 0;
-        }
-        else {
-            selectionCombo.currentIndex = index;
-        }
+    var index = selectionCombo.findData(this.getEntityTypeFilter());
+    if (index===-1) {
+        // TODO: change to 1 if 'no selection' item present at 0:
+        selectionCombo.currentIndex = 0;
+    }
+    else {
+        selectionCombo.currentIndex = index;
+    }
 
-        generalGroup.enabled = true;
-        if (!isNull(this.geometryGroup)) {
-            this.geometryGroup.enabled = true;
-        }
-    //}
+    generalGroup.enabled = true;
+    if (!isNull(this.geometryGroup)) {
+        this.geometryGroup.enabled = true;
+    }
 
     // add custom property button:
     if (!isNull(gridLayoutCustom)) {
@@ -867,11 +1110,32 @@ PropertyEditorImpl.prototype.updateGui = function(onlyChanges) {
             addCustomPropertyButton.toolTip = qsTr("Add custom property to selected objects");
             addCustomPropertyButton.objectName = "AddCustomProperty";
             addCustomPropertyButton.clicked.connect(this, this.addCustomProperty);
-            gridLayoutCustom.addWidget(addCustomPropertyButton, gridLayoutCustom.rowCount(),3, 1,1);
+            PropertyEditorImpl.addToGrid(gridLayoutCustom, addCustomPropertyButton, gridLayoutCustom.rowCount(),3, 1,1);
         }
     }
 
-    this.widget.updatesEnabled = true;
+    if (!onlyChanges) {
+        this.structureKey = structureKey;
+    }
+};
+
+/**
+ * Destroys the group boxes for specific, dependent and custom properties.
+ * \internal
+ */
+PropertyEditorImpl.prototype.destroyGroups = function() {
+    if (!isNull(this.geometryGroup)) {
+        destr(this.geometryGroup);
+        this.geometryGroup = undefined;
+    }
+    if (!isNull(this.childGroup)) {
+        destr(this.childGroup);
+        this.childGroup = undefined;
+    }
+    if (!isNull(this.customGroup)) {
+        destr(this.customGroup);
+        this.customGroup = undefined;
+    }
 };
 
 /**
@@ -1324,7 +1588,7 @@ PropertyEditorImpl.prototype.initBooleanControls = function(objectName, property
     }
 
     if (attributes.isMixed()) {
-        if (!onlyChanges) {
+        if (control.findText(PropertyEditor.varies)===-1) {
             control.insertItem(0, PropertyEditor.varies, PropertyEditor.varies);
         }
         control.currentIndex = 0;
