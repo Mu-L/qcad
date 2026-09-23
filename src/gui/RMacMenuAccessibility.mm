@@ -20,6 +20,7 @@
 #include "RMacMenuAccessibility.h"
 
 #import <AppKit/AppKit.h>
+#import <objc/runtime.h>
 
 #include <QRegularExpression>
 
@@ -64,22 +65,39 @@ QString RMacMenuAccessibility::getSpokenTitle(const QString& title) {
 
 namespace {
 
+// key of the associated object that remembers the label we set on an item:
+char spokenLabelKey;
+
 void updateMenuItem(NSMenuItem* item) {
     if (item == nil || item.isSeparatorItem) {
         return;
     }
     QString title = QString::fromNSString(item.title);
     QString spoken = RMacMenuAccessibility::getSpokenTitle(title);
-    NSString* label = item.accessibilityLabel;
+
+    // Never read item.accessibilityLabel here: the getter runs
+    // -[NSMenu(Accessibility) _openForInspection:], which simulates opening
+    // the menu and sends the menu opening notification. Qt's menu delegate
+    // then emits QMenu::aboutToShow synchronously, from inside
+    // -[NSMenu insertItem:atIndex:] (QWidget::addAction). Scripts that
+    // rebuild a menu in aboutToShow (e.g. layer states) re-enter their own
+    // rebuild and delete the action that is being added: crash
+    // (RGuiAction::addToWidget) or "Cannot call method 'connect' of
+    // undefined". The label we set last is remembered in an associated
+    // object instead:
+    NSString* previous = objc_getAssociatedObject(item, &spokenLabelKey);
     if (spoken == title) {
         // nothing to translate: default (title):
-        if (label != nil) {
+        if (previous != nil) {
             item.accessibilityLabel = nil;
+            objc_setAssociatedObject(item, &spokenLabelKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         }
         return;
     }
-    if (label == nil || spoken != QString::fromNSString(label)) {
-        item.accessibilityLabel = spoken.toNSString();
+    if (previous == nil || spoken != QString::fromNSString(previous)) {
+        NSString* label = spoken.toNSString();
+        item.accessibilityLabel = label;
+        objc_setAssociatedObject(item, &spokenLabelKey, label, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
 }
 
