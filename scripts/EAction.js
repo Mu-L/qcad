@@ -741,30 +741,73 @@ EAction.prototype.keyReleaseEvent = function(event) {
 };
 
 /**
+ * Creates a mouse cursor from the given cursor image files.
+ *
+ * The cursor image is a black / white PNG (black: black pixels, white: white
+ * pixels), the mask image a black / white PNG of the same size (black: opaque,
+ * white: transparent), i.e. the same convention as
+ * QCursor(QBitmap, QBitmap, hotX, hotY). If no mask image exists, the alpha
+ * channel of the cursor image is used.
+ *
+ * On high resolution screens (device pixel ratio > 1), the '@2x' variants of
+ * the files are used if available (e.g. "CrosshairCursor@2x.png" and
+ * "CrosshairCursorMask@2x.png") for a high resolution (e.g. retina) cursor.
+ * The cursor is created from a QPixmap with the according device pixel ratio
+ * rather than from QBitmaps: bitmap cursors lose the device pixel ratio
+ * (e.g. on macOS) and are shown pixelated.
+ *
+ * \param baseName Path and base name of the cursor files without extension,
+ *      e.g. includeBasePath + "/CrosshairCursor".
+ * \param hotX Hot spot X in device independent pixels (coordinates of the 1x image).
+ * \param hotY Hot spot Y in device independent pixels (coordinates of the 1x image).
+ * \param systemCursorShape Qt.CursorShape used instead if the preference
+ *      "GraphicsView/SystemCursors" is set (e.g. Qt.CrossCursor).
+ * \return QCursor
+ */
+EAction.createCursor = function(baseName, hotX, hotY, systemCursorShape) {
+    if (RSettings.getBoolValue("GraphicsView/SystemCursors", false)===true) {
+        return new QCursor(systemCursorShape);
+    }
+
+    var fileName = baseName + ".png";
+    var maskFileName = baseName + "Mask.png";
+    var dpr = 1;
+    if (RSettings.getDevicePixelRatio()>1) {
+        var fileName2x = baseName + "@2x.png";
+        if (new QFileInfo(fileName2x).exists()) {
+            fileName = fileName2x;
+            maskFileName = baseName + "Mask@2x.png";
+            dpr = 2;
+        }
+    }
+
+    var pixmap = new QPixmap(fileName, "PNG");
+    if (pixmap.isNull()) {
+        qWarning("EAction.createCursor: cannot load cursor image: ", fileName);
+        return new QCursor(systemCursorShape);
+    }
+    if (new QFileInfo(maskFileName).exists()) {
+        pixmap.setMask(new QBitmap(maskFileName, "PNG"));
+    }
+    pixmap.setDevicePixelRatio(dpr);
+
+    // X11 (xcb) creates the cursor from the pixmap in device pixels and
+    // expects the hot spot in device pixels as well:
+    if (QGuiApplication.platformName()==="xcb") {
+        hotX *= dpr;
+        hotY *= dpr;
+    }
+
+    return new QCursor(pixmap, hotX, hotY);
+};
+
+/**
  * Sets the current cursor of the current document interface (all views attached
  * to it) to crosshair cursor.
  */
 EAction.prototype.setCrosshairCursor = function() {
     if (isNull(EAction.crossCursor)) {
-
-        if (RSettings.getBoolValue("GraphicsView/SystemCursors", false)===true) {
-            EAction.crossCursor = new QCursor(Qt.CrossCursor);
-        }
-        else {
-            var bitmap, mask;
-            if (RSettings.getDevicePixelRatio()===2 && RS.getSystemId()!=="osx") {
-                bitmap = new QBitmap(EAction.includeBasePath + "/CrosshairCursor@2x.png", "PNG");
-                mask = new QBitmap(EAction.includeBasePath + "/CrosshairCursorMask@2x.png", "PNG");
-                //bitmap.setDevicePixelRatio(2);
-                //mask.setDevicePixelRatio(2);
-                EAction.crossCursor = new QCursor(bitmap, mask, 30, 30);
-            }
-            else {
-                bitmap = new QBitmap(EAction.includeBasePath + "/CrosshairCursor.png", "PNG");
-                mask = new QBitmap(EAction.includeBasePath + "/CrosshairCursorMask.png", "PNG");
-                EAction.crossCursor = new QCursor(bitmap, mask, 15, 15);
-            }
-        }
+        EAction.crossCursor = EAction.createCursor(EAction.includeBasePath + "/CrosshairCursor", 15, 15, Qt.CrossCursor);
     }
 
     this.setCursor(EAction.crossCursor, "CrossCursor");
