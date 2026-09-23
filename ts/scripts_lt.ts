@@ -9426,6 +9426,14 @@ jau yra sąraše.</translation>
         <source>Illustration of the mouse buttons</source>
         <translation>Pelės mygtukų iliustracija</translation>
     </message>
+    <message>
+        <source>Left mouse button</source>
+        <translation>Kairysis pelės mygtukas</translation>
+    </message>
+    <message>
+        <source>Right mouse button</source>
+        <translation>Dešinysis pelės mygtukas</translation>
+    </message>
 </context>
 <context>
     <name>MyPositionDialog</name>
@@ -13947,6 +13955,14 @@ jau yra sąraše.</translation>
         <location line="+17"/>
         <source>Importing URL: </source>
         <translation>URL importavimas:</translation>
+    </message>
+    <message>
+        <source>Drawing Area</source>
+        <translation>Brėžinio sritis</translation>
+    </message>
+    <message>
+        <source>Use the command line to enter commands and coordinates</source>
+        <translation>Komandas ir koordinates įveskite komandinėje eilutėje</translation>
     </message>
 </context>
 <context>

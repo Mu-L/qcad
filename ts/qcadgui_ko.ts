@@ -95,4 +95,15 @@
         <translation>유효하지 않음</translation>
     </message>
 </context>
+<context>
+    <name>RAccessibleToolButton</name>
+    <message>
+        <source>More Tool Bar Items</source>
+        <translation>도구 모음의 추가 항목</translation>
+    </message>
+    <message>
+        <source>Clear Text</source>
+        <translation>텍스트 지우기</translation>
+    </message>
+</context>
 </TS>

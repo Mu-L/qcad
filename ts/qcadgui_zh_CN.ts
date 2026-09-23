@@ -95,4 +95,15 @@
         <translation>无效</translation>
     </message>
 </context>
+<context>
+    <name>RAccessibleToolButton</name>
+    <message>
+        <source>More Tool Bar Items</source>
+        <translation>更多工具栏项</translation>
+    </message>
+    <message>
+        <source>Clear Text</source>
+        <translation>清除文本</translation>
+    </message>
+</context>
 </TS>

@@ -95,4 +95,15 @@
         <translation>無効</translation>
     </message>
 </context>
+<context>
+    <name>RAccessibleToolButton</name>
+    <message>
+        <source>More Tool Bar Items</source>
+        <translation>ツールバーのその他の項目</translation>
+    </message>
+    <message>
+        <source>Clear Text</source>
+        <translation>テキストを消去</translation>
+    </message>
+</context>
 </TS>

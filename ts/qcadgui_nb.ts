@@ -95,4 +95,15 @@
         <translation>Ugyldig</translation>
     </message>
 </context>
+<context>
+    <name>RAccessibleToolButton</name>
+    <message>
+        <source>More Tool Bar Items</source>
+        <translation>Flere verktøylinjeelementer</translation>
+    </message>
+    <message>
+        <source>Clear Text</source>
+        <translation>Tøm tekst</translation>
+    </message>
+</context>
 </TS>

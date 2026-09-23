@@ -9421,6 +9421,14 @@ on juba loendis.</translation>
         <source>Illustration of the mouse buttons</source>
         <translation>Hiirenuppude illustratsioon</translation>
     </message>
+    <message>
+        <source>Left mouse button</source>
+        <translation>Vasak hiirenupp</translation>
+    </message>
+    <message>
+        <source>Right mouse button</source>
+        <translation>Parem hiirenupp</translation>
+    </message>
 </context>
 <context>
     <name>MyPositionDialog</name>
@@ -13937,6 +13945,14 @@ on juba loendis.</translation>
         <location line="+17"/>
         <source>Importing URL: </source>
         <translation>URL-i importimine:</translation>
+    </message>
+    <message>
+        <source>Drawing Area</source>
+        <translation>Joonestusala</translation>
+    </message>
+    <message>
+        <source>Use the command line to enter commands and coordinates</source>
+        <translation>Käskude ja koordinaatide sisestamiseks kasutage käsurida</translation>
     </message>
 </context>
 <context>

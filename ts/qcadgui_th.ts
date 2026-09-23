@@ -95,4 +95,15 @@
         <translation>ไม่ถูกต้อง</translation>
     </message>
 </context>
+<context>
+    <name>RAccessibleToolButton</name>
+    <message>
+        <source>More Tool Bar Items</source>
+        <translation>รายการแถบเครื่องมือเพิ่มเติม</translation>
+    </message>
+    <message>
+        <source>Clear Text</source>
+        <translation>ล้างข้อความ</translation>
+    </message>
+</context>
 </TS>

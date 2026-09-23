@@ -95,4 +95,15 @@
         <translation>Nederīgs</translation>
     </message>
 </context>
+<context>
+    <name>RAccessibleToolButton</name>
+    <message>
+        <source>More Tool Bar Items</source>
+        <translation>Vairāk rīkjoslas vienumu</translation>
+    </message>
+    <message>
+        <source>Clear Text</source>
+        <translation>Notīrīt tekstu</translation>
+    </message>
+</context>
 </TS>

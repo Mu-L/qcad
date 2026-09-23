@@ -95,4 +95,15 @@
         <translation>Inválido</translation>
     </message>
 </context>
+<context>
+    <name>RAccessibleToolButton</name>
+    <message>
+        <source>More Tool Bar Items</source>
+        <translation>Mais itens da barra de ferramentas</translation>
+    </message>
+    <message>
+        <source>Clear Text</source>
+        <translation>Limpar texto</translation>
+    </message>
+</context>
 </TS>

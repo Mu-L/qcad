@@ -95,4 +95,15 @@
         <translation>Negaliojantis</translation>
     </message>
 </context>
+<context>
+    <name>RAccessibleToolButton</name>
+    <message>
+        <source>More Tool Bar Items</source>
+        <translation>Daugiau įrankių juostos elementų</translation>
+    </message>
+    <message>
+        <source>Clear Text</source>
+        <translation>Išvalyti tekstą</translation>
+    </message>
+</context>
 </TS>

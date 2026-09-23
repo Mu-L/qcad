@@ -95,4 +95,15 @@
         <translation>Неверный</translation>
     </message>
 </context>
+<context>
+    <name>RAccessibleToolButton</name>
+    <message>
+        <source>More Tool Bar Items</source>
+        <translation>Другие элементы панели инструментов</translation>
+    </message>
+    <message>
+        <source>Clear Text</source>
+        <translation>Очистить текст</translation>
+    </message>
+</context>
 </TS>

@@ -9421,6 +9421,14 @@ er allerede på listen.</translation>
         <source>Illustration of the mouse buttons</source>
         <translation>Illustration af museknapperne</translation>
     </message>
+    <message>
+        <source>Left mouse button</source>
+        <translation>Venstre museknap</translation>
+    </message>
+    <message>
+        <source>Right mouse button</source>
+        <translation>Højre museknap</translation>
+    </message>
 </context>
 <context>
     <name>MyPositionDialog</name>
@@ -13937,6 +13945,14 @@ er allerede på listen.</translation>
         <location line="+17"/>
         <source>Importing URL: </source>
         <translation>Import af URL: </translation>
+    </message>
+    <message>
+        <source>Drawing Area</source>
+        <translation>Tegneområde</translation>
+    </message>
+    <message>
+        <source>Use the command line to enter commands and coordinates</source>
+        <translation>Brug kommandolinjen til at indtaste kommandoer og koordinater</translation>
     </message>
 </context>
 <context>

@@ -95,4 +95,15 @@
         <translation>Geçersiz</translation>
     </message>
 </context>
+<context>
+    <name>RAccessibleToolButton</name>
+    <message>
+        <source>More Tool Bar Items</source>
+        <translation>Diğer araç çubuğu öğeleri</translation>
+    </message>
+    <message>
+        <source>Clear Text</source>
+        <translation>Metni temizle</translation>
+    </message>
+</context>
 </TS>

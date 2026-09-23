@@ -9421,6 +9421,14 @@ ya está en la lista.</translation>
         <source>Illustration of the mouse buttons</source>
         <translation>Ilustración de los botones del ratón</translation>
     </message>
+    <message>
+        <source>Left mouse button</source>
+        <translation>Botón izquierdo del ratón</translation>
+    </message>
+    <message>
+        <source>Right mouse button</source>
+        <translation>Botón derecho del ratón</translation>
+    </message>
 </context>
 <context>
     <name>MyPositionDialog</name>
@@ -13937,6 +13945,14 @@ ya está en la lista.</translation>
         <location line="+17"/>
         <source>Importing URL: </source>
         <translation>Importación de URL: </translation>
+    </message>
+    <message>
+        <source>Drawing Area</source>
+        <translation>Área de dibujo</translation>
+    </message>
+    <message>
+        <source>Use the command line to enter commands and coordinates</source>
+        <translation>Utilice la línea de comandos para introducir comandos y coordenadas</translation>
     </message>
 </context>
 <context>

@@ -9427,6 +9427,14 @@ je že na seznamu.</translation>
         <source>Illustration of the mouse buttons</source>
         <translation>Ilustracija miškinih gumbov</translation>
     </message>
+    <message>
+        <source>Left mouse button</source>
+        <translation>Levi gumb miške</translation>
+    </message>
+    <message>
+        <source>Right mouse button</source>
+        <translation>Desni gumb miške</translation>
+    </message>
 </context>
 <context>
     <name>MyPositionDialog</name>
@@ -13953,6 +13961,14 @@ je že na seznamu.</translation>
         <location line="+17"/>
         <source>Importing URL: </source>
         <translation>Uvažam URL: </translation>
+    </message>
+    <message>
+        <source>Drawing Area</source>
+        <translation>Risalna površina</translation>
+    </message>
+    <message>
+        <source>Use the command line to enter commands and coordinates</source>
+        <translation>Ukaze in koordinate vnašajte v ukazno vrstico</translation>
     </message>
 </context>
 <context>

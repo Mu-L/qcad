@@ -9421,6 +9421,14 @@ is already in the list.</source>
         <source>Illustration of the mouse buttons</source>
         <translation>Илюстрация на бутоните на мишката</translation>
     </message>
+    <message>
+        <source>Left mouse button</source>
+        <translation>Ляв бутон на мишката</translation>
+    </message>
+    <message>
+        <source>Right mouse button</source>
+        <translation>Десен бутон на мишката</translation>
+    </message>
 </context>
 <context>
     <name>MyPositionDialog</name>
@@ -13937,6 +13945,14 @@ is already in the list.</source>
         <location line="+17"/>
         <source>Importing URL: </source>
         <translation>Импортиране на URL:</translation>
+    </message>
+    <message>
+        <source>Drawing Area</source>
+        <translation>Област за чертане</translation>
+    </message>
+    <message>
+        <source>Use the command line to enter commands and coordinates</source>
+        <translation>Използвайте командния ред за въвеждане на команди и координати</translation>
     </message>
 </context>
 <context>

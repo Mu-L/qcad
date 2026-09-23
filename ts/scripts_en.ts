@@ -9421,6 +9421,14 @@ is already in the list.</translation>
         <source>Illustration of the mouse buttons</source>
         <translation>Illustration of the mouse buttons</translation>
     </message>
+    <message>
+        <source>Left mouse button</source>
+        <translation>Left mouse button</translation>
+    </message>
+    <message>
+        <source>Right mouse button</source>
+        <translation>Right mouse button</translation>
+    </message>
 </context>
 <context>
     <name>MyPositionDialog</name>
@@ -13937,6 +13945,14 @@ is already in the list.</translation>
         <location line="+17"/>
         <source>Importing URL: </source>
         <translation>Importing URL: </translation>
+    </message>
+    <message>
+        <source>Drawing Area</source>
+        <translation>Drawing Area</translation>
+    </message>
+    <message>
+        <source>Use the command line to enter commands and coordinates</source>
+        <translation>Use the command line to enter commands and coordinates</translation>
     </message>
 </context>
 <context>

@@ -9421,6 +9421,14 @@ is al in de lijst.</translation>
         <source>Illustration of the mouse buttons</source>
         <translation>Illustratie van de muisknoppen</translation>
     </message>
+    <message>
+        <source>Left mouse button</source>
+        <translation>Linkermuisknop</translation>
+    </message>
+    <message>
+        <source>Right mouse button</source>
+        <translation>Rechtermuisknop</translation>
+    </message>
 </context>
 <context>
     <name>MyPositionDialog</name>
@@ -13937,6 +13945,14 @@ is al in de lijst.</translation>
         <location line="+17"/>
         <source>Importing URL: </source>
         <translation>Importeren URL: </translation>
+    </message>
+    <message>
+        <source>Drawing Area</source>
+        <translation>Tekengebied</translation>
+    </message>
+    <message>
+        <source>Use the command line to enter commands and coordinates</source>
+        <translation>Gebruik de opdrachtregel om opdrachten en coördinaten in te voeren</translation>
     </message>
 </context>
 <context>

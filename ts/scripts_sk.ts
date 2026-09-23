@@ -9426,6 +9426,14 @@ už existuje v zozname.</translation>
         <source>Illustration of the mouse buttons</source>
         <translation>Ilustrácia tlačidiel myši</translation>
     </message>
+    <message>
+        <source>Left mouse button</source>
+        <translation>Ľavé tlačidlo myši</translation>
+    </message>
+    <message>
+        <source>Right mouse button</source>
+        <translation>Pravé tlačidlo myši</translation>
+    </message>
 </context>
 <context>
     <name>MyPositionDialog</name>
@@ -13947,6 +13955,14 @@ už existuje v zozname.</translation>
         <location line="+17"/>
         <source>Importing URL: </source>
         <translation>Importuje sa URL: </translation>
+    </message>
+    <message>
+        <source>Drawing Area</source>
+        <translation>Kresliaca plocha</translation>
+    </message>
+    <message>
+        <source>Use the command line to enter commands and coordinates</source>
+        <translation>Príkazy a súradnice zadávajte v príkazovom riadku</translation>
     </message>
 </context>
 <context>

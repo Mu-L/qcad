@@ -95,4 +95,15 @@
         <translation>Neveljavno</translation>
     </message>
 </context>
+<context>
+    <name>RAccessibleToolButton</name>
+    <message>
+        <source>More Tool Bar Items</source>
+        <translation>Več elementov orodne vrstice</translation>
+    </message>
+    <message>
+        <source>Clear Text</source>
+        <translation>Počisti besedilo</translation>
+    </message>
+</context>
 </TS>

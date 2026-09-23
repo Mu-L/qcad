@@ -95,4 +95,15 @@
         <translation>Nieprawidłowy</translation>
     </message>
 </context>
+<context>
+    <name>RAccessibleToolButton</name>
+    <message>
+        <source>More Tool Bar Items</source>
+        <translation>Więcej elementów paska narzędzi</translation>
+    </message>
+    <message>
+        <source>Clear Text</source>
+        <translation>Wyczyść tekst</translation>
+    </message>
+</context>
 </TS>

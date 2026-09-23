@@ -9426,6 +9426,14 @@ este deja în listă.</translation>
         <source>Illustration of the mouse buttons</source>
         <translation>Ilustrația butoanelor mouse-ului</translation>
     </message>
+    <message>
+        <source>Left mouse button</source>
+        <translation>Butonul stâng al mouse-ului</translation>
+    </message>
+    <message>
+        <source>Right mouse button</source>
+        <translation>Butonul drept al mouse-ului</translation>
+    </message>
 </context>
 <context>
     <name>MyPositionDialog</name>
@@ -13947,6 +13955,14 @@ este deja în listă.</translation>
         <location line="+17"/>
         <source>Importing URL: </source>
         <translation>Importarea URL-ului:</translation>
+    </message>
+    <message>
+        <source>Drawing Area</source>
+        <translation>Zonă de desenare</translation>
+    </message>
+    <message>
+        <source>Use the command line to enter commands and coordinates</source>
+        <translation>Utilizați linia de comandă pentru a introduce comenzi și coordonate</translation>
     </message>
 </context>
 <context>

@@ -9416,6 +9416,14 @@ sudah ada dalam daftar.</translation>
         <source>Illustration of the mouse buttons</source>
         <translation>Ilustrasi tombol tetikus</translation>
     </message>
+    <message>
+        <source>Left mouse button</source>
+        <translation>Tombol kiri mouse</translation>
+    </message>
+    <message>
+        <source>Right mouse button</source>
+        <translation>Tombol kanan mouse</translation>
+    </message>
 </context>
 <context>
     <name>MyPositionDialog</name>
@@ -13927,6 +13935,14 @@ sudah ada dalam daftar.</translation>
         <location line="+17"/>
         <source>Importing URL: </source>
         <translation>Mengimpor URL:</translation>
+    </message>
+    <message>
+        <source>Drawing Area</source>
+        <translation>Area gambar</translation>
+    </message>
+    <message>
+        <source>Use the command line to enter commands and coordinates</source>
+        <translation>Gunakan baris perintah untuk memasukkan perintah dan koordinat</translation>
     </message>
 </context>
 <context>

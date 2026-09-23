@@ -95,4 +95,15 @@
         <translation>Virheellinen</translation>
     </message>
 </context>
+<context>
+    <name>RAccessibleToolButton</name>
+    <message>
+        <source>More Tool Bar Items</source>
+        <translation>Lisää työkalurivin kohteita</translation>
+    </message>
+    <message>
+        <source>Clear Text</source>
+        <translation>Tyhjennä teksti</translation>
+    </message>
+</context>
 </TS>

@@ -9427,6 +9427,14 @@ večpostoji na popisu.</translation>
         <source>Illustration of the mouse buttons</source>
         <translation>Ilustracija tipki miša</translation>
     </message>
+    <message>
+        <source>Left mouse button</source>
+        <translation>Lijeva tipka miša</translation>
+    </message>
+    <message>
+        <source>Right mouse button</source>
+        <translation>Desna tipka miša</translation>
+    </message>
 </context>
 <context>
     <name>MyPositionDialog</name>
@@ -13948,6 +13956,14 @@ večpostoji na popisu.</translation>
         <location line="+17"/>
         <source>Importing URL: </source>
         <translation>Uvoz URL-a: </translation>
+    </message>
+    <message>
+        <source>Drawing Area</source>
+        <translation>Područje crtanja</translation>
+    </message>
+    <message>
+        <source>Use the command line to enter commands and coordinates</source>
+        <translation>Naredbe i koordinate unosite u naredbenoj liniji</translation>
     </message>
 </context>
 <context>

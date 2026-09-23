@@ -95,4 +95,15 @@
         <translation>Neplatné</translation>
     </message>
 </context>
+<context>
+    <name>RAccessibleToolButton</name>
+    <message>
+        <source>More Tool Bar Items</source>
+        <translation>Ďalšie položky panela nástrojov</translation>
+    </message>
+    <message>
+        <source>Clear Text</source>
+        <translation>Vymazať text</translation>
+    </message>
+</context>
 </TS>

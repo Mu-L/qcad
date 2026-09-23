@@ -9421,6 +9421,14 @@ on jo luettelossa.</translation>
         <source>Illustration of the mouse buttons</source>
         <translation>Kuva hiiren painikkeista</translation>
     </message>
+    <message>
+        <source>Left mouse button</source>
+        <translation>Hiiren vasen painike</translation>
+    </message>
+    <message>
+        <source>Right mouse button</source>
+        <translation>Hiiren oikea painike</translation>
+    </message>
 </context>
 <context>
     <name>MyPositionDialog</name>
@@ -13937,6 +13945,14 @@ on jo luettelossa.</translation>
         <location line="+17"/>
         <source>Importing URL: </source>
         <translation>Tuodaan URL: </translation>
+    </message>
+    <message>
+        <source>Drawing Area</source>
+        <translation>Piirtoalue</translation>
+    </message>
+    <message>
+        <source>Use the command line to enter commands and coordinates</source>
+        <translation>Syötä komennot ja koordinaatit komentorivillä</translation>
     </message>
 </context>
 <context>

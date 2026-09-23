@@ -95,4 +95,15 @@
         <translation>Érvénytelen</translation>
     </message>
 </context>
+<context>
+    <name>RAccessibleToolButton</name>
+    <message>
+        <source>More Tool Bar Items</source>
+        <translation>További eszköztárelemek</translation>
+    </message>
+    <message>
+        <source>Clear Text</source>
+        <translation>Szöveg törlése</translation>
+    </message>
+</context>
 </TS>

@@ -9416,6 +9416,14 @@ is already in the list.</translation>
         <source>Illustration of the mouse buttons</source>
         <translation>ภาพประกอบปุ่มเมาส์</translation>
     </message>
+    <message>
+        <source>Left mouse button</source>
+        <translation>ปุ่มซ้ายของเมาส์</translation>
+    </message>
+    <message>
+        <source>Right mouse button</source>
+        <translation>ปุ่มขวาของเมาส์</translation>
+    </message>
 </context>
 <context>
     <name>MyPositionDialog</name>
@@ -13927,6 +13935,14 @@ is already in the list.</translation>
         <location line="+17"/>
         <source>Importing URL: </source>
         <translation>Importing URL: </translation>
+    </message>
+    <message>
+        <source>Drawing Area</source>
+        <translation>พื้นที่วาดภาพ</translation>
+    </message>
+    <message>
+        <source>Use the command line to enter commands and coordinates</source>
+        <translation>ใช้บรรทัดคำสั่งเพื่อป้อนคำสั่งและพิกัด</translation>
     </message>
 </context>
 <context>

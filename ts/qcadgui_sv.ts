@@ -95,4 +95,15 @@
         <translation>Ogiltig</translation>
     </message>
 </context>
+<context>
+    <name>RAccessibleToolButton</name>
+    <message>
+        <source>More Tool Bar Items</source>
+        <translation>Fler verktygsfältsobjekt</translation>
+    </message>
+    <message>
+        <source>Clear Text</source>
+        <translation>Rensa text</translation>
+    </message>
+</context>
 </TS>

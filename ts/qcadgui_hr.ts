@@ -95,4 +95,15 @@
         <translation>Nevažeći</translation>
     </message>
 </context>
+<context>
+    <name>RAccessibleToolButton</name>
+    <message>
+        <source>More Tool Bar Items</source>
+        <translation>Više stavki alatne trake</translation>
+    </message>
+    <message>
+        <source>Clear Text</source>
+        <translation>Obriši tekst</translation>
+    </message>
+</context>
 </TS>

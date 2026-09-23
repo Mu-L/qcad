@@ -95,4 +95,15 @@
         <translation>Tidak valid</translation>
     </message>
 </context>
+<context>
+    <name>RAccessibleToolButton</name>
+    <message>
+        <source>More Tool Bar Items</source>
+        <translation>Item bilah alat lainnya</translation>
+    </message>
+    <message>
+        <source>Clear Text</source>
+        <translation>Hapus teks</translation>
+    </message>
+</context>
 </TS>

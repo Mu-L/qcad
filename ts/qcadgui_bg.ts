@@ -95,4 +95,15 @@
         <translation>Невалиден</translation>
     </message>
 </context>
+<context>
+    <name>RAccessibleToolButton</name>
+    <message>
+        <source>More Tool Bar Items</source>
+        <translation>Още елементи на лентата с инструменти</translation>
+    </message>
+    <message>
+        <source>Clear Text</source>
+        <translation>Изчистване на текста</translation>
+    </message>
+</context>
 </TS>

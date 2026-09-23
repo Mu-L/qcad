@@ -9416,6 +9416,14 @@ is already in the list.</source>
         <source>Illustration of the mouse buttons</source>
         <translation>마우스 버튼 그림</translation>
     </message>
+    <message>
+        <source>Left mouse button</source>
+        <translation>마우스 왼쪽 버튼</translation>
+    </message>
+    <message>
+        <source>Right mouse button</source>
+        <translation>마우스 오른쪽 버튼</translation>
+    </message>
 </context>
 <context>
     <name>MyPositionDialog</name>
@@ -13927,6 +13935,14 @@ is already in the list.</source>
         <location line="+17"/>
         <source>Importing URL: </source>
         <translation>URL 가져오기:</translation>
+    </message>
+    <message>
+        <source>Drawing Area</source>
+        <translation>도면 영역</translation>
+    </message>
+    <message>
+        <source>Use the command line to enter commands and coordinates</source>
+        <translation>명령과 좌표는 명령줄에서 입력하십시오</translation>
     </message>
 </context>
 <context>

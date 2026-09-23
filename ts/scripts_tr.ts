@@ -9416,6 +9416,14 @@ zaten listede.</translation>
         <source>Illustration of the mouse buttons</source>
         <translation>Fare düğmelerinin gösterimi</translation>
     </message>
+    <message>
+        <source>Left mouse button</source>
+        <translation>Sol fare düğmesi</translation>
+    </message>
+    <message>
+        <source>Right mouse button</source>
+        <translation>Sağ fare düğmesi</translation>
+    </message>
 </context>
 <context>
     <name>MyPositionDialog</name>
@@ -13927,6 +13935,14 @@ zaten listede.</translation>
         <location line="+17"/>
         <source>Importing URL: </source>
         <translation>URL içe aktarılıyor:</translation>
+    </message>
+    <message>
+        <source>Drawing Area</source>
+        <translation>Çizim alanı</translation>
+    </message>
+    <message>
+        <source>Use the command line to enter commands and coordinates</source>
+        <translation>Komut ve koordinatları girmek için komut satırını kullanın</translation>
     </message>
 </context>
 <context>

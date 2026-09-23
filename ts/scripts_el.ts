@@ -9421,6 +9421,14 @@ is already in the list.</source>
         <source>Illustration of the mouse buttons</source>
         <translation>Απεικόνιση των πλήκτρων του ποντικιού</translation>
     </message>
+    <message>
+        <source>Left mouse button</source>
+        <translation>Αριστερό πλήκτρο ποντικιού</translation>
+    </message>
+    <message>
+        <source>Right mouse button</source>
+        <translation>Δεξί πλήκτρο ποντικιού</translation>
+    </message>
 </context>
 <context>
     <name>MyPositionDialog</name>
@@ -13937,6 +13945,14 @@ is already in the list.</source>
         <location line="+17"/>
         <source>Importing URL: </source>
         <translation>Εισαγωγή URL:</translation>
+    </message>
+    <message>
+        <source>Drawing Area</source>
+        <translation>Περιοχή σχεδίασης</translation>
+    </message>
+    <message>
+        <source>Use the command line to enter commands and coordinates</source>
+        <translation>Χρησιμοποιήστε τη γραμμή εντολών για την εισαγωγή εντολών και συντεταγμένων</translation>
     </message>
 </context>
 <context>

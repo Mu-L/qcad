@@ -95,4 +95,15 @@
         <translation>Kehtetu</translation>
     </message>
 </context>
+<context>
+    <name>RAccessibleToolButton</name>
+    <message>
+        <source>More Tool Bar Items</source>
+        <translation>Rohkem tööriistariba elemente</translation>
+    </message>
+    <message>
+        <source>Clear Text</source>
+        <translation>Tühjenda tekst</translation>
+    </message>
+</context>
 </TS>

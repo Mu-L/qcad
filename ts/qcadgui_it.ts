@@ -95,4 +95,15 @@
         <translation>Non valido</translation>
     </message>
 </context>
+<context>
+    <name>RAccessibleToolButton</name>
+    <message>
+        <source>More Tool Bar Items</source>
+        <translation>Altri elementi della barra degli strumenti</translation>
+    </message>
+    <message>
+        <source>Clear Text</source>
+        <translation>Cancella testo</translation>
+    </message>
+</context>
 </TS>

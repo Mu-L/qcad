@@ -95,4 +95,15 @@
         <translation>Không hợp lệ</translation>
     </message>
 </context>
+<context>
+    <name>RAccessibleToolButton</name>
+    <message>
+        <source>More Tool Bar Items</source>
+        <translation>Thêm mục thanh công cụ</translation>
+    </message>
+    <message>
+        <source>Clear Text</source>
+        <translation>Xóa văn bản</translation>
+    </message>
+</context>
 </TS>

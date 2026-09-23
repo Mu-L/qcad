@@ -9419,6 +9419,14 @@ finns redan i listan.</translation>
         <source>Illustration of the mouse buttons</source>
         <translation>Illustration av musknapparna</translation>
     </message>
+    <message>
+        <source>Left mouse button</source>
+        <translation>Vänster musknapp</translation>
+    </message>
+    <message>
+        <source>Right mouse button</source>
+        <translation>Höger musknapp</translation>
+    </message>
 </context>
 <context>
     <name>MyPositionDialog</name>
@@ -13935,6 +13943,14 @@ finns redan i listan.</translation>
         <location line="+17"/>
         <source>Importing URL: </source>
         <translation>Importera URL:</translation>
+    </message>
+    <message>
+        <source>Drawing Area</source>
+        <translation>Ritområde</translation>
+    </message>
+    <message>
+        <source>Use the command line to enter commands and coordinates</source>
+        <translation>Använd kommandoraden för att ange kommandon och koordinater</translation>
     </message>
 </context>
 <context>

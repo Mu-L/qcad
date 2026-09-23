@@ -9424,6 +9424,14 @@ již v seznamu je.</translation>
         <source>Illustration of the mouse buttons</source>
         <translation>Ilustrace tlačítek myši</translation>
     </message>
+    <message>
+        <source>Left mouse button</source>
+        <translation>Levé tlačítko myši</translation>
+    </message>
+    <message>
+        <source>Right mouse button</source>
+        <translation>Pravé tlačítko myši</translation>
+    </message>
 </context>
 <context>
     <name>MyPositionDialog</name>
@@ -13945,6 +13953,14 @@ již v seznamu je.</translation>
         <location line="+17"/>
         <source>Importing URL: </source>
         <translation>Import URL:</translation>
+    </message>
+    <message>
+        <source>Drawing Area</source>
+        <translation>Kreslicí plocha</translation>
+    </message>
+    <message>
+        <source>Use the command line to enter commands and coordinates</source>
+        <translation>Příkazy a souřadnice zadávejte na příkazovém řádku</translation>
     </message>
 </context>
 <context>

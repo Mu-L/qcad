@@ -9417,6 +9417,14 @@ már szerepel a listában.</translation>
         <source>Illustration of the mouse buttons</source>
         <translation>Az egérgombok illusztrációja</translation>
     </message>
+    <message>
+        <source>Left mouse button</source>
+        <translation>Bal egérgomb</translation>
+    </message>
+    <message>
+        <source>Right mouse button</source>
+        <translation>Jobb egérgomb</translation>
+    </message>
 </context>
 <context>
     <name>MyPositionDialog</name>
@@ -13929,6 +13937,14 @@ már szerepel a listában.</translation>
         <location line="+17"/>
         <source>Importing URL: </source>
         <translation>URL importálása: </translation>
+    </message>
+    <message>
+        <source>Drawing Area</source>
+        <translation>Rajzterület</translation>
+    </message>
+    <message>
+        <source>Use the command line to enter commands and coordinates</source>
+        <translation>Parancsok és koordináták megadásához használja a parancssort</translation>
     </message>
 </context>
 <context>

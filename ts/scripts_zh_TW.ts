@@ -9416,6 +9416,14 @@ is already in the list.</source>
         <source>Illustration of the mouse buttons</source>
         <translation>滑鼠按鍵圖解</translation>
     </message>
+    <message>
+        <source>Left mouse button</source>
+        <translation>滑鼠左鍵</translation>
+    </message>
+    <message>
+        <source>Right mouse button</source>
+        <translation>滑鼠右鍵</translation>
+    </message>
 </context>
 <context>
     <name>MyPositionDialog</name>
@@ -13927,6 +13935,14 @@ is already in the list.</source>
         <location line="+17"/>
         <source>Importing URL: </source>
         <translation>匯入URL：</translation>
+    </message>
+    <message>
+        <source>Drawing Area</source>
+        <translation>繪圖區域</translation>
+    </message>
+    <message>
+        <source>Use the command line to enter commands and coordinates</source>
+        <translation>請在命令列中輸入命令和座標</translation>
     </message>
 </context>
 <context>

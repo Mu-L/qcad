@@ -95,4 +95,15 @@
         <translation>Ongeldig</translation>
     </message>
 </context>
+<context>
+    <name>RAccessibleToolButton</name>
+    <message>
+        <source>More Tool Bar Items</source>
+        <translation>Meer werkbalkitems</translation>
+    </message>
+    <message>
+        <source>Clear Text</source>
+        <translation>Tekst wissen</translation>
+    </message>
+</context>
 </TS>

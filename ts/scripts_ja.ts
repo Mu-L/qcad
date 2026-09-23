@@ -9416,6 +9416,14 @@ is already in the list.</source>
         <source>Illustration of the mouse buttons</source>
         <translation>マウスボタンの図解</translation>
     </message>
+    <message>
+        <source>Left mouse button</source>
+        <translation>マウスの左ボタン</translation>
+    </message>
+    <message>
+        <source>Right mouse button</source>
+        <translation>マウスの右ボタン</translation>
+    </message>
 </context>
 <context>
     <name>MyPositionDialog</name>
@@ -13927,6 +13935,14 @@ is already in the list.</source>
         <location line="+17"/>
         <source>Importing URL: </source>
         <translation>インポートURL:</translation>
+    </message>
+    <message>
+        <source>Drawing Area</source>
+        <translation>作図領域</translation>
+    </message>
+    <message>
+        <source>Use the command line to enter commands and coordinates</source>
+        <translation>コマンドと座標はコマンドラインで入力します</translation>
     </message>
 </context>
 <context>

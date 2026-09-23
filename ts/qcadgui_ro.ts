@@ -95,4 +95,15 @@
         <translation>Invalid</translation>
     </message>
 </context>
+<context>
+    <name>RAccessibleToolButton</name>
+    <message>
+        <source>More Tool Bar Items</source>
+        <translation>Mai multe elemente ale barei de instrumente</translation>
+    </message>
+    <message>
+        <source>Clear Text</source>
+        <translation>Șterge textul</translation>
+    </message>
+</context>
 </TS>

@@ -9426,6 +9426,14 @@ jau ir sarakstā.</translation>
         <source>Illustration of the mouse buttons</source>
         <translation>Peles pogu ilustrācija</translation>
     </message>
+    <message>
+        <source>Left mouse button</source>
+        <translation>Peles kreisā poga</translation>
+    </message>
+    <message>
+        <source>Right mouse button</source>
+        <translation>Peles labā poga</translation>
+    </message>
 </context>
 <context>
     <name>MyPositionDialog</name>
@@ -13947,6 +13955,14 @@ jau ir sarakstā.</translation>
         <location line="+17"/>
         <source>Importing URL: </source>
         <translation>URL importēšana:</translation>
+    </message>
+    <message>
+        <source>Drawing Area</source>
+        <translation>Zīmēšanas apgabals</translation>
+    </message>
+    <message>
+        <source>Use the command line to enter commands and coordinates</source>
+        <translation>Komandas un koordinātas ievadiet komandrindā</translation>
     </message>
 </context>
 <context>

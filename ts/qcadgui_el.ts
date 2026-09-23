@@ -95,4 +95,15 @@
         <translation>Μη έγκυρο</translation>
     </message>
 </context>
+<context>
+    <name>RAccessibleToolButton</name>
+    <message>
+        <source>More Tool Bar Items</source>
+        <translation>Περισσότερα στοιχεία γραμμής εργαλείων</translation>
+    </message>
+    <message>
+        <source>Clear Text</source>
+        <translation>Καθαρισμός κειμένου</translation>
+    </message>
+</context>
 </TS>
