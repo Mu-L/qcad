@@ -17,6 +17,9 @@ SOURCES += \
     RAccessibleToolTipFilter.cpp \
     RAccessibleFlatTree.cpp \
     RAccessibleToolButton.cpp \
+    RAccessibleContainers.cpp \
+    RAccessibleNameFilter.cpp \
+    RAccessibleValueLabel.cpp \
     REventHandler.cpp \
     RFileSystemModel.cpp \
     RFlowLayout.cpp \
@@ -60,6 +63,9 @@ HEADERS += \
     RAccessibleToolTipFilter.h \
     RAccessibleFlatTree.h \
     RAccessibleToolButton.h \
+    RAccessibleContainers.h \
+    RAccessibleNameFilter.h \
+    RAccessibleValueLabel.h \
     REventHandler.h \
     RFileSystemModel.h \
     RFlowLayout.h \
@@ -111,3 +117,8 @@ TARGET = $${NAME}
 OTHER_FILES += gui.dox
 DEFINES += QCADGUI_LIBRARY
 RC_FILE = gui.rc
+
+macx {
+    OBJECTIVE_SOURCES += $$PWD/RMacMenuAccessibility.mm
+    OBJECTIVE_HEADERS += $$PWD/RMacMenuAccessibility.h
+}
