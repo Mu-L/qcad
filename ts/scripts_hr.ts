@@ -290,7 +290,7 @@
         <translation>Postavke crteža</translation>
     </message>
     <message>
-        <location line="+328"/>
+        <location line="+373"/>
         <source>Apply preferences</source>
         <translation>Primijeni postavke</translation>
     </message>
@@ -307,7 +307,7 @@ the preference changes to take effect.</source>
 primjenjivanje promijenjenih postavki.</translation>
     </message>
     <message>
-        <location line="+115"/>
+        <location line="+163"/>
         <source>Defaults for</source>
         <translation>Zadane postavke za</translation>
     </message>
@@ -427,7 +427,7 @@ primjenjivanje promijenjenih postavki.</translation>
 <context>
     <name>Apollonius</name>
     <message>
-        <location filename="../scripts/Apollonius.js" line="+2623"/>
+        <location filename="../scripts/Apollonius.js" line="+2618"/>
         <source>Invalid radius</source>
         <translation>Neispravan polumjer</translation>
     </message>
@@ -1271,7 +1271,7 @@ Do you wish to recover it?</source>
 <context>
     <name>BitmapExportWorker</name>
     <message>
-        <location filename="../scripts/File/BitmapExport/BitmapExportWorker.js" line="+61"/>
+        <location filename="../scripts/File/BitmapExport/BitmapExportWorker.js" line="+63"/>
         <source>Invalid image size (width x height must be less than %1)</source>
         <translation>Nevažeća veličina slike (širina x visina mora biti manja od %1)</translation>
     </message>
@@ -1373,12 +1373,13 @@ Do you wish to recover it?</source>
 <context>
     <name>BlockList</name>
     <message>
-        <location filename="../scripts/Widgets/BlockList/BlockList.js" line="+693"/>
+        <location filename="../scripts/Widgets/BlockList/BlockList.js" line="+786"/>
         <source>Widgets</source>
         <translation>Dodatci</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="-730"/>
+        <location line="+730"/>
         <location line="+83"/>
         <location line="+43"/>
         <source>Block List</source>
@@ -1395,6 +1396,7 @@ Do you wish to recover it?</source>
         <translation>Omogući naizmjenične boje redaka</translation>
     </message>
     <message>
+        <location filename="../scripts/Widgets/BlockList/BlockList.js" line="-415"/>
         <source>Current block</source>
         <translation>Trenutni blok</translation>
     </message>
@@ -2608,7 +2610,7 @@ Do you wish to recover it?</source>
         <translation>Premjesti entitet na željenu lokaciju</translation>
     </message>
     <message>
-        <location line="+409"/>
+        <location line="+416"/>
         <source>Move Reference Point</source>
         <translation>Premjesti referentnu točku</translation>
     </message>
@@ -4283,17 +4285,17 @@ večpostoji na popisu.</translation>
     </message>
     <message>
         <location line="+1"/>
-        <location line="+2167"/>
+        <location line="+2209"/>
         <source>Cancel</source>
         <translation>Odustani</translation>
     </message>
     <message>
-        <location line="-2166"/>
+        <location line="-2208"/>
         <source>Done</source>
         <translation>Završeno</translation>
     </message>
     <message>
-        <location line="+287"/>
+        <location line="+286"/>
         <location line="+143"/>
         <source>Active Tool:</source>
         <translation>Aktivni alat:</translation>
@@ -4304,7 +4306,7 @@ večpostoji na popisu.</translation>
         <translation>Ništa</translation>
     </message>
     <message>
-        <location line="+668"/>
+        <location line="+711"/>
         <source>Options</source>
         <translation>Opcije</translation>
     </message>
@@ -9428,10 +9430,12 @@ večpostoji na popisu.</translation>
         <translation>Ilustracija tipki miša</translation>
     </message>
     <message>
+        <location filename="../scripts/Widgets/MouseDisplay/MouseDisplay.js" line="+38"/>
         <source>Left mouse button</source>
         <translation>Lijeva tipka miša</translation>
     </message>
     <message>
+        <location line="+1"/>
         <source>Right mouse button</source>
         <translation>Desna tipka miša</translation>
     </message>
@@ -10245,13 +10249,13 @@ večpostoji na popisu.</translation>
     <name>PreferencesDialog</name>
     <message>
         <location filename="../scripts/Edit/AbstractPreferences.ui" line="+14"/>
-        <location line="+86"/>
+        <location line="+89"/>
         <location line="+20"/>
         <source>Preferences</source>
         <translation>Postavke</translation>
     </message>
     <message>
-        <location line="-79"/>
+        <location line="-82"/>
         <source>Filter</source>
         <translation>Filtar</translation>
     </message>
@@ -10266,7 +10270,7 @@ večpostoji na popisu.</translation>
         <translation>Sažmi stablo</translation>
     </message>
     <message>
-        <location line="+72"/>
+        <location line="+75"/>
         <source>Restore to Default Values</source>
         <translation>Vrati na zadane vrijednosti</translation>
     </message>
@@ -10336,7 +10340,7 @@ večpostoji na popisu.</translation>
         <translation>Automatski prilagoditi crtež papiru?</translation>
     </message>
     <message>
-        <location line="+213"/>
+        <location line="+206"/>
         <source>Drag to move paper</source>
         <translation>Povuci za pomicanje papira</translation>
     </message>
@@ -10498,47 +10502,47 @@ večpostoji na popisu.</translation>
         <translation>:</translation>
     </message>
     <message>
-        <location line="+189"/>
+        <location line="+455"/>
         <source>No Selection</source>
         <translation>Nema odabira</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+21"/>
         <source>Specific Properties</source>
         <translation>Specifična svojstva</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+22"/>
         <source>Dependent Entities</source>
         <translation>Ovisni entiteti</translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="+19"/>
         <source>Custom</source>
         <translation>Prilagođeno</translation>
     </message>
     <message>
-        <location line="+204"/>
+        <location line="+182"/>
         <source>Index</source>
         <translation>Indeks</translation>
     </message>
     <message>
-        <location line="+79"/>
+        <location line="+76"/>
         <source>Remove this property from selected objects</source>
         <translation>Ukloni ovo svojstvo s odabranih objekata</translation>
     </message>
     <message>
-        <location line="+68"/>
+        <location line="+75"/>
         <source>All</source>
         <translation>Sve</translation>
     </message>
     <message>
-        <location line="+24"/>
+        <location line="+25"/>
         <source>Add custom property to selected objects</source>
         <translation>Dodaj prilagođeno svojstvo odabranim objektima</translation>
     </message>
     <message>
-        <location line="+45"/>
+        <location line="+66"/>
         <source>Show</source>
         <translation>Prikaži</translation>
     </message>
@@ -10568,7 +10572,7 @@ večpostoji na popisu.</translation>
         <translation>Ne</translation>
     </message>
     <message>
-        <location line="+430"/>
+        <location line="+429"/>
         <source>*VARIES*</source>
         <translation>*VARIJABLE*</translation>
     </message>
@@ -12545,11 +12549,12 @@ večpostoji na popisu.</translation>
     </message>
     <message>
         <location line="+0"/>
+        <location line="+18"/>
         <source>Status Bar</source>
         <translation>Statusna traka</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="-12"/>
         <source>&amp;Status Bar</source>
         <translation>&amp;Statusna traka</translation>
     </message>
@@ -13938,7 +13943,7 @@ večpostoji na popisu.</translation>
 <context>
     <name>ViewportWidget</name>
     <message>
-        <location filename="../scripts/Widgets/ViewportWidget/ViewportWidget.js" line="+471"/>
+        <location filename="../scripts/Widgets/ViewportWidget/ViewportWidget.js" line="+512"/>
         <source>Dropped data not supported</source>
         <translation>Ispušteni podaci nisu podržani</translation>
     </message>
@@ -13958,10 +13963,12 @@ večpostoji na popisu.</translation>
         <translation>Uvoz URL-a: </translation>
     </message>
     <message>
+        <location line="-401"/>
         <source>Drawing Area</source>
         <translation>Područje crtanja</translation>
     </message>
     <message>
+        <location line="+1"/>
         <source>Use the command line to enter commands and coordinates</source>
         <translation>Naredbe i koordinate unosite u naredbenoj liniji</translation>
     </message>
@@ -14439,7 +14446,7 @@ večpostoji na popisu.</translation>
 <context>
     <name>library</name>
     <message>
-        <location filename="../scripts/library.js" line="+1304"/>
+        <location filename="../scripts/library.js" line="+1302"/>
         <source>Objects</source>
         <translation>Objekti</translation>
     </message>

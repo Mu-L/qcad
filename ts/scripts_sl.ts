@@ -290,7 +290,7 @@
         <translation>Nastavitve risbe</translation>
     </message>
     <message>
-        <location line="+328"/>
+        <location line="+373"/>
         <source>Apply preferences</source>
         <translation>Uveljavi nastavitve</translation>
     </message>
@@ -307,7 +307,7 @@ the preference changes to take effect.</source>
 da bodo spremembe začele delovat.</translation>
     </message>
     <message>
-        <location line="+115"/>
+        <location line="+163"/>
         <source>Defaults for</source>
         <translation>Privzeto za</translation>
     </message>
@@ -427,7 +427,7 @@ da bodo spremembe začele delovat.</translation>
 <context>
     <name>Apollonius</name>
     <message>
-        <location filename="../scripts/Apollonius.js" line="+2623"/>
+        <location filename="../scripts/Apollonius.js" line="+2618"/>
         <source>Invalid radius</source>
         <translation>Neveljavni polmer</translation>
     </message>
@@ -1269,7 +1269,7 @@ Ali jo želite obnoviti?</translation>
 <context>
     <name>BitmapExportWorker</name>
     <message>
-        <location filename="../scripts/File/BitmapExport/BitmapExportWorker.js" line="+61"/>
+        <location filename="../scripts/File/BitmapExport/BitmapExportWorker.js" line="+63"/>
         <source>Invalid image size (width x height must be less than %1)</source>
         <translation>Neveljavna velikost slike (širina * višina mora biti manj kot %1)</translation>
     </message>
@@ -1370,7 +1370,8 @@ Ali jo želite obnoviti?</translation>
 <context>
     <name>BlockList</name>
     <message>
-        <location filename="../scripts/Widgets/BlockList/BlockList.js" line="+693"/>
+        <location filename="../scripts/Widgets/BlockList/BlockList.js" line="+56"/>
+        <location line="+730"/>
         <location line="+83"/>
         <location line="+43"/>
         <source>Block List</source>
@@ -1392,6 +1393,7 @@ Ali jo želite obnoviti?</translation>
         <translation>Omogoči alternirane barve vrstic</translation>
     </message>
     <message>
+        <location filename="../scripts/Widgets/BlockList/BlockList.js" line="-289"/>
         <source>Current block</source>
         <translation>Trenutni zbir</translation>
     </message>
@@ -2605,7 +2607,7 @@ Ali jo želite obnoviti?</translation>
         <translation>Premakni entiteto na željeno lokacijo</translation>
     </message>
     <message>
-        <location line="+409"/>
+        <location line="+416"/>
         <source>Move Reference Point</source>
         <translation>Premakni referenčno točko</translation>
     </message>
@@ -4282,17 +4284,17 @@ je že na seznamu.</translation>
     </message>
     <message>
         <location line="+1"/>
-        <location line="+2167"/>
+        <location line="+2209"/>
         <source>Cancel</source>
         <translation>Prekliči</translation>
     </message>
     <message>
-        <location line="-2166"/>
+        <location line="-2208"/>
         <source>Done</source>
         <translation>Končano</translation>
     </message>
     <message>
-        <location line="+287"/>
+        <location line="+286"/>
         <location line="+143"/>
         <source>Active Tool:</source>
         <translation>Aktivno orodje:</translation>
@@ -4303,7 +4305,7 @@ je že na seznamu.</translation>
         <translation>Brez</translation>
     </message>
     <message>
-        <location line="+668"/>
+        <location line="+711"/>
         <source>Options</source>
         <translation>Nastavitve</translation>
     </message>
@@ -9428,10 +9430,12 @@ je že na seznamu.</translation>
         <translation>Ilustracija miškinih gumbov</translation>
     </message>
     <message>
+        <location filename="../scripts/Widgets/MouseDisplay/MouseDisplay.js" line="+38"/>
         <source>Left mouse button</source>
         <translation>Levi gumb miške</translation>
     </message>
     <message>
+        <location line="+1"/>
         <source>Right mouse button</source>
         <translation>Desni gumb miške</translation>
     </message>
@@ -10247,13 +10251,13 @@ je že na seznamu.</translation>
     <name>PreferencesDialog</name>
     <message>
         <location filename="../scripts/Edit/AbstractPreferences.ui" line="+14"/>
-        <location line="+86"/>
+        <location line="+89"/>
         <location line="+20"/>
         <source>Preferences</source>
         <translation>Nastavitve</translation>
     </message>
     <message>
-        <location line="-79"/>
+        <location line="-82"/>
         <source>Filter</source>
         <translation>Filter</translation>
     </message>
@@ -10268,7 +10272,7 @@ je že na seznamu.</translation>
         <translation>Združi drevo</translation>
     </message>
     <message>
-        <location line="+72"/>
+        <location line="+75"/>
         <source>Restore to Default Values</source>
         <translation>Obnovi na privzete vrednosti</translation>
     </message>
@@ -10338,7 +10342,7 @@ je že na seznamu.</translation>
         <translation>Samodejno prileganje risbe na papir?</translation>
     </message>
     <message>
-        <location line="+213"/>
+        <location line="+206"/>
         <source>Drag to move paper</source>
         <translation>Povleci za premik papirja</translation>
     </message>
@@ -10495,57 +10499,57 @@ je že na seznamu.</translation>
 <context>
     <name>PropertyEditor</name>
     <message>
-        <location filename="../scripts/Widgets/PropertyEditor/PropertyEditor.js" line="+1743"/>
+        <location filename="../scripts/Widgets/PropertyEditor/PropertyEditor.js" line="+2016"/>
         <source>*VARIES*</source>
         <translation>*RAZLIČNO*</translation>
     </message>
     <message>
-        <location line="-1508"/>
+        <location line="-1781"/>
         <source>:</source>
         <translation>:</translation>
     </message>
     <message>
-        <location line="+189"/>
+        <location line="+455"/>
         <source>No Selection</source>
         <translation>Ni izbrano</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+21"/>
         <source>Specific Properties</source>
         <translation>Specifične lastnosti</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+22"/>
         <source>Dependent Entities</source>
         <translation>Odvisne entitete</translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="+19"/>
         <source>Custom</source>
         <translation>Dodatno</translation>
     </message>
     <message>
-        <location line="+204"/>
+        <location line="+182"/>
         <source>Index</source>
         <translation>Indeks</translation>
     </message>
     <message>
-        <location line="+79"/>
+        <location line="+76"/>
         <source>Remove this property from selected objects</source>
         <translation>Odstrani to lastnost iz izbranih objektov</translation>
     </message>
     <message>
-        <location line="+68"/>
+        <location line="+75"/>
         <source>All</source>
         <translation>Vse</translation>
     </message>
     <message>
-        <location line="+24"/>
+        <location line="+25"/>
         <source>Add custom property to selected objects</source>
         <translation>Izbranim objektom dodaj dodatno lastnost</translation>
     </message>
     <message>
-        <location line="+45"/>
+        <location line="+66"/>
         <source>Show</source>
         <translation>Prikaži</translation>
     </message>
@@ -10555,12 +10559,12 @@ je že na seznamu.</translation>
         <translation>Prikaži vse lasnosti</translation>
     </message>
     <message>
-        <location line="+843"/>
+        <location line="+842"/>
         <source>Widgets</source>
         <translation>Gradniki</translation>
     </message>
     <message>
-        <location line="-682"/>
+        <location line="-681"/>
         <source>Auto</source>
         <translation>Samodejno</translation>
     </message>
@@ -10580,7 +10584,7 @@ je že na seznamu.</translation>
         <translation>Ne</translation>
     </message>
     <message>
-        <location line="+433"/>
+        <location line="+432"/>
         <location line="+98"/>
         <location line="+10"/>
         <source>Property Editor</source>
@@ -12585,11 +12589,12 @@ je že na seznamu.</translation>
     </message>
     <message>
         <location line="+0"/>
+        <location line="+18"/>
         <source>Status Bar</source>
         <translation>Statusna vrstica</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="-12"/>
         <source>&amp;Status Bar</source>
         <translation>&amp;Statusna vrstica</translation>
     </message>
@@ -13943,7 +13948,7 @@ je že na seznamu.</translation>
 <context>
     <name>ViewportWidget</name>
     <message>
-        <location filename="../scripts/Widgets/ViewportWidget/ViewportWidget.js" line="+471"/>
+        <location filename="../scripts/Widgets/ViewportWidget/ViewportWidget.js" line="+512"/>
         <source>Dropped data not supported</source>
         <translation>Odvrženi podatki niso podprti</translation>
     </message>
@@ -13963,10 +13968,12 @@ je že na seznamu.</translation>
         <translation>Uvažam URL: </translation>
     </message>
     <message>
+        <location line="-401"/>
         <source>Drawing Area</source>
         <translation>Risalna površina</translation>
     </message>
     <message>
+        <location line="+1"/>
         <source>Use the command line to enter commands and coordinates</source>
         <translation>Ukaze in koordinate vnašajte v ukazno vrstico</translation>
     </message>
@@ -14444,7 +14451,7 @@ je že na seznamu.</translation>
 <context>
     <name>library</name>
     <message>
-        <location filename="../scripts/library.js" line="+1304"/>
+        <location filename="../scripts/library.js" line="+1302"/>
         <source>Objects</source>
         <translation>Objekti</translation>
     </message>

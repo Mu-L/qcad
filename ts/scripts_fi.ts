@@ -290,7 +290,7 @@
         <translation>Piirroksen asetukset</translation>
     </message>
     <message>
-        <location line="+328"/>
+        <location line="+373"/>
         <source>Apply preferences</source>
         <translation>Käytä asetuksia</translation>
     </message>
@@ -307,7 +307,7 @@ the preference changes to take effect.</source>
 asetuksien muutokset astuvat voimaan.</translation>
     </message>
     <message>
-        <location line="+115"/>
+        <location line="+163"/>
         <source>Defaults for</source>
         <translation>Oletusarvot</translation>
     </message>
@@ -427,7 +427,7 @@ asetuksien muutokset astuvat voimaan.</translation>
 <context>
     <name>Apollonius</name>
     <message>
-        <location filename="../scripts/Apollonius.js" line="+2623"/>
+        <location filename="../scripts/Apollonius.js" line="+2618"/>
         <source>Invalid radius</source>
         <translation>Virheellinen säde</translation>
     </message>
@@ -1269,7 +1269,7 @@ Haluatko palauttaa sen?</translation>
 <context>
     <name>BitmapExportWorker</name>
     <message>
-        <location filename="../scripts/File/BitmapExport/BitmapExportWorker.js" line="+61"/>
+        <location filename="../scripts/File/BitmapExport/BitmapExportWorker.js" line="+63"/>
         <source>Invalid image size (width x height must be less than %1)</source>
         <translation>Väärä kuvan koko (leveys x korkeus on oltava pienempi kuin %1)</translation>
     </message>
@@ -1370,12 +1370,13 @@ Haluatko palauttaa sen?</translation>
 <context>
     <name>BlockList</name>
     <message>
-        <location filename="../scripts/Widgets/BlockList/BlockList.js" line="+693"/>
+        <location filename="../scripts/Widgets/BlockList/BlockList.js" line="+786"/>
         <source>Widgets</source>
         <translation>Pienoisohjelmat</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="-730"/>
+        <location line="+730"/>
         <location line="+83"/>
         <location line="+43"/>
         <source>Block List</source>
@@ -1392,6 +1393,7 @@ Haluatko palauttaa sen?</translation>
         <translation>Salli vaihtelevat rivien värit</translation>
     </message>
     <message>
+        <location filename="../scripts/Widgets/BlockList/BlockList.js" line="-415"/>
         <source>Current block</source>
         <translation>Nykyinen lohko</translation>
     </message>
@@ -2605,7 +2607,7 @@ Haluatko palauttaa sen?</translation>
         <translation>Siirrä kokonaisuus haluttuun sijaintiin</translation>
     </message>
     <message>
-        <location line="+409"/>
+        <location line="+416"/>
         <source>Move Reference Point</source>
         <translation>Siirrä viitepiste</translation>
     </message>
@@ -4278,17 +4280,17 @@ on jo luettelossa.</translation>
     </message>
     <message>
         <location line="+1"/>
-        <location line="+2167"/>
+        <location line="+2209"/>
         <source>Cancel</source>
         <translation>Peruuta</translation>
     </message>
     <message>
-        <location line="-2166"/>
+        <location line="-2208"/>
         <source>Done</source>
         <translation>Valmis</translation>
     </message>
     <message>
-        <location line="+287"/>
+        <location line="+286"/>
         <location line="+143"/>
         <source>Active Tool:</source>
         <translation>Aktiivinen työkalu:</translation>
@@ -4299,7 +4301,7 @@ on jo luettelossa.</translation>
         <translation>Ei mitään</translation>
     </message>
     <message>
-        <location line="+668"/>
+        <location line="+711"/>
         <source>Options</source>
         <translation>Asetukset</translation>
     </message>
@@ -9422,10 +9424,12 @@ on jo luettelossa.</translation>
         <translation>Kuva hiiren painikkeista</translation>
     </message>
     <message>
+        <location filename="../scripts/Widgets/MouseDisplay/MouseDisplay.js" line="+38"/>
         <source>Left mouse button</source>
         <translation>Hiiren vasen painike</translation>
     </message>
     <message>
+        <location line="+1"/>
         <source>Right mouse button</source>
         <translation>Hiiren oikea painike</translation>
     </message>
@@ -10237,13 +10241,13 @@ on jo luettelossa.</translation>
     <name>PreferencesDialog</name>
     <message>
         <location filename="../scripts/Edit/AbstractPreferences.ui" line="+14"/>
-        <location line="+86"/>
+        <location line="+89"/>
         <location line="+20"/>
         <source>Preferences</source>
         <translation>Asetukset</translation>
     </message>
     <message>
-        <location line="-79"/>
+        <location line="-82"/>
         <source>Filter</source>
         <translation>Suodatin</translation>
     </message>
@@ -10258,7 +10262,7 @@ on jo luettelossa.</translation>
         <translation>Supista puu</translation>
     </message>
     <message>
-        <location line="+72"/>
+        <location line="+75"/>
         <source>Restore to Default Values</source>
         <translation>Palauta oletusarvoihin</translation>
     </message>
@@ -10328,7 +10332,7 @@ on jo luettelossa.</translation>
         <translation>Sovita piirustus automaattisesti paperille?</translation>
     </message>
     <message>
-        <location line="+213"/>
+        <location line="+206"/>
         <source>Drag to move paper</source>
         <translation>Siirrä paperia vetämällä</translation>
     </message>
@@ -10535,57 +10539,57 @@ on jo luettelossa.</translation>
         <translation>Näytä laajennetun ulottuvuuden tyylin ohitukset</translation>
     </message>
     <message>
-        <location filename="../scripts/Widgets/PropertyEditor/PropertyEditor.js" line="+1743"/>
+        <location filename="../scripts/Widgets/PropertyEditor/PropertyEditor.js" line="+2016"/>
         <source>*VARIES*</source>
         <translation>*VAIHTELEVA*</translation>
     </message>
     <message>
-        <location line="-1508"/>
+        <location line="-1781"/>
         <source>:</source>
         <translation>:</translation>
     </message>
     <message>
-        <location line="+189"/>
+        <location line="+455"/>
         <source>No Selection</source>
         <translation>Ei valintaa</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+21"/>
         <source>Specific Properties</source>
         <translation>Erikoisominaisuudet</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+22"/>
         <source>Dependent Entities</source>
         <translation>Riippuvaiset kohteet</translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="+19"/>
         <source>Custom</source>
         <translation>Muokattu</translation>
     </message>
     <message>
-        <location line="+204"/>
+        <location line="+182"/>
         <source>Index</source>
         <translation>Hakemisto</translation>
     </message>
     <message>
-        <location line="+79"/>
+        <location line="+76"/>
         <source>Remove this property from selected objects</source>
         <translation>Poista tämä ominaisuus valituilta kohteilta</translation>
     </message>
     <message>
-        <location line="+68"/>
+        <location line="+75"/>
         <source>All</source>
         <translation>Kaikki</translation>
     </message>
     <message>
-        <location line="+24"/>
+        <location line="+25"/>
         <source>Add custom property to selected objects</source>
         <translation>Lisää säädetty ominaisuus valittuihin kohteisiin</translation>
     </message>
     <message>
-        <location line="+45"/>
+        <location line="+66"/>
         <source>Show</source>
         <translation>Näytä</translation>
     </message>
@@ -10615,7 +10619,7 @@ on jo luettelossa.</translation>
         <translation>Ei</translation>
     </message>
     <message>
-        <location line="+433"/>
+        <location line="+432"/>
         <source>Widgets</source>
         <translation>Pienoisohjelmat</translation>
     </message>
@@ -12569,11 +12573,12 @@ on jo luettelossa.</translation>
     </message>
     <message>
         <location line="+0"/>
+        <location line="+18"/>
         <source>Status Bar</source>
         <translation>Tilarivi</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="-12"/>
         <source>&amp;Status Bar</source>
         <translation>&amp;Tilarivi</translation>
     </message>
@@ -13927,7 +13932,7 @@ on jo luettelossa.</translation>
 <context>
     <name>ViewportWidget</name>
     <message>
-        <location filename="../scripts/Widgets/ViewportWidget/ViewportWidget.js" line="+471"/>
+        <location filename="../scripts/Widgets/ViewportWidget/ViewportWidget.js" line="+512"/>
         <source>Dropped data not supported</source>
         <translation>Poistettuja tietoja ei tueta</translation>
     </message>
@@ -13947,10 +13952,12 @@ on jo luettelossa.</translation>
         <translation>Tuodaan URL: </translation>
     </message>
     <message>
+        <location line="-401"/>
         <source>Drawing Area</source>
         <translation>Piirtoalue</translation>
     </message>
     <message>
+        <location line="+1"/>
         <source>Use the command line to enter commands and coordinates</source>
         <translation>Syötä komennot ja koordinaatit komentorivillä</translation>
     </message>
@@ -14428,7 +14435,7 @@ on jo luettelossa.</translation>
 <context>
     <name>library</name>
     <message>
-        <location filename="../scripts/library.js" line="+1304"/>
+        <location filename="../scripts/library.js" line="+1302"/>
         <source>Objects</source>
         <translation>Esineet</translation>
     </message>

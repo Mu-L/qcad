@@ -290,7 +290,7 @@
         <translation>Предпочтения чертежа</translation>
     </message>
     <message>
-        <location line="+328"/>
+        <location line="+373"/>
         <source>Apply preferences</source>
         <translation>Применить предпочтения</translation>
     </message>
@@ -307,7 +307,7 @@ the preference changes to take effect.</source>
 чтобы изменения вступили в силу.</translation>
     </message>
     <message>
-        <location line="+115"/>
+        <location line="+163"/>
         <source>Defaults for</source>
         <translation>Значения по умолчанию для</translation>
     </message>
@@ -427,7 +427,7 @@ the preference changes to take effect.</source>
 <context>
     <name>Apollonius</name>
     <message>
-        <location filename="../scripts/Apollonius.js" line="+2623"/>
+        <location filename="../scripts/Apollonius.js" line="+2618"/>
         <source>Invalid radius</source>
         <translation>Недопустимый радиус</translation>
     </message>
@@ -1271,7 +1271,7 @@ Do you wish to recover it?</source>
 <context>
     <name>BitmapExportWorker</name>
     <message>
-        <location filename="../scripts/File/BitmapExport/BitmapExportWorker.js" line="+61"/>
+        <location filename="../scripts/File/BitmapExport/BitmapExportWorker.js" line="+63"/>
         <source>Invalid image size (width x height must be less than %1)</source>
         <translation>Неверный размер изображения (ширина х высота должно быть меньше, чем %1)</translation>
     </message>
@@ -1372,7 +1372,8 @@ Do you wish to recover it?</source>
 <context>
     <name>BlockList</name>
     <message>
-        <location filename="../scripts/Widgets/BlockList/BlockList.js" line="+693"/>
+        <location filename="../scripts/Widgets/BlockList/BlockList.js" line="+56"/>
+        <location line="+730"/>
         <location line="+83"/>
         <location line="+43"/>
         <source>Block List</source>
@@ -1394,6 +1395,7 @@ Do you wish to recover it?</source>
         <translation>Включить цвета чередующихся строк</translation>
     </message>
     <message>
+        <location filename="../scripts/Widgets/BlockList/BlockList.js" line="-289"/>
         <source>Current block</source>
         <translation>Текущий блок</translation>
     </message>
@@ -2607,7 +2609,7 @@ Do you wish to recover it?</source>
         <translation>Переместить объект в нужное место</translation>
     </message>
     <message>
-        <location line="+409"/>
+        <location line="+416"/>
         <source>Move Reference Point</source>
         <translation>Переместить точку привязки</translation>
     </message>
@@ -4282,17 +4284,17 @@ is already in the list.</source>
     </message>
     <message>
         <location line="+1"/>
-        <location line="+2167"/>
+        <location line="+2209"/>
         <source>Cancel</source>
         <translation>Отменить</translation>
     </message>
     <message>
-        <location line="-2166"/>
+        <location line="-2208"/>
         <source>Done</source>
         <translation>Готово</translation>
     </message>
     <message>
-        <location line="+287"/>
+        <location line="+286"/>
         <location line="+143"/>
         <source>Active Tool:</source>
         <translation>Активный инструмент:</translation>
@@ -4303,7 +4305,7 @@ is already in the list.</source>
         <translation>Нет</translation>
     </message>
     <message>
-        <location line="+668"/>
+        <location line="+711"/>
         <source>Options</source>
         <translation>Параметры</translation>
     </message>
@@ -9427,10 +9429,12 @@ is already in the list.</source>
         <translation>Иллюстрация кнопок мыши</translation>
     </message>
     <message>
+        <location filename="../scripts/Widgets/MouseDisplay/MouseDisplay.js" line="+38"/>
         <source>Left mouse button</source>
         <translation>Левая кнопка мыши</translation>
     </message>
     <message>
+        <location line="+1"/>
         <source>Right mouse button</source>
         <translation>Правая кнопка мыши</translation>
     </message>
@@ -10244,13 +10248,13 @@ is already in the list.</source>
     <name>PreferencesDialog</name>
     <message>
         <location filename="../scripts/Edit/AbstractPreferences.ui" line="+14"/>
-        <location line="+86"/>
+        <location line="+89"/>
         <location line="+20"/>
         <source>Preferences</source>
         <translation>Предпочтения</translation>
     </message>
     <message>
-        <location line="-79"/>
+        <location line="-82"/>
         <source>Filter</source>
         <translation>Фильтр</translation>
     </message>
@@ -10265,7 +10269,7 @@ is already in the list.</source>
         <translation>Свернуть дерево</translation>
     </message>
     <message>
-        <location line="+72"/>
+        <location line="+75"/>
         <source>Restore to Default Values</source>
         <translation>Сбросить в значения по умолчанию</translation>
     </message>
@@ -10335,7 +10339,7 @@ is already in the list.</source>
         <translation>Автоматически подогнать чертёж под бумагу?</translation>
     </message>
     <message>
-        <location line="+213"/>
+        <location line="+206"/>
         <source>Drag to move paper</source>
         <translation>Для перемещения бумаги перетащите её</translation>
     </message>
@@ -10492,57 +10496,57 @@ is already in the list.</source>
 <context>
     <name>PropertyEditor</name>
     <message>
-        <location filename="../scripts/Widgets/PropertyEditor/PropertyEditor.js" line="+1743"/>
+        <location filename="../scripts/Widgets/PropertyEditor/PropertyEditor.js" line="+2016"/>
         <source>*VARIES*</source>
         <translation>*ВАРЬИРОВАНИЕ*</translation>
     </message>
     <message>
-        <location line="-1508"/>
+        <location line="-1781"/>
         <source>:</source>
         <translation>:</translation>
     </message>
     <message>
-        <location line="+189"/>
+        <location line="+455"/>
         <source>No Selection</source>
         <translation>Ничего не выделено</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+21"/>
         <source>Specific Properties</source>
         <translation>Специфичные свойства</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+22"/>
         <source>Dependent Entities</source>
         <translation>Зависимые объекты</translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="+19"/>
         <source>Custom</source>
         <translation>Пользовательский</translation>
     </message>
     <message>
-        <location line="+204"/>
+        <location line="+182"/>
         <source>Index</source>
         <translation>Индекс</translation>
     </message>
     <message>
-        <location line="+79"/>
+        <location line="+76"/>
         <source>Remove this property from selected objects</source>
         <translation>Удалить это свойство из выделенных объектов</translation>
     </message>
     <message>
-        <location line="+68"/>
+        <location line="+75"/>
         <source>All</source>
         <translation>Все</translation>
     </message>
     <message>
-        <location line="+24"/>
+        <location line="+25"/>
         <source>Add custom property to selected objects</source>
         <translation>Добавить пользовательское свойство к выделенным объектам</translation>
     </message>
     <message>
-        <location line="+45"/>
+        <location line="+66"/>
         <source>Show</source>
         <translation>Показать</translation>
     </message>
@@ -10572,7 +10576,7 @@ is already in the list.</source>
         <translation>Нет</translation>
     </message>
     <message>
-        <location line="+433"/>
+        <location line="+432"/>
         <location line="+98"/>
         <location line="+10"/>
         <source>Property Editor</source>
@@ -12579,11 +12583,12 @@ is already in the list.</source>
     </message>
     <message>
         <location line="+0"/>
+        <location line="+18"/>
         <source>Status Bar</source>
         <translation>Панель состояния</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="-12"/>
         <source>&amp;Status Bar</source>
         <translation>&amp;Панель состояния</translation>
     </message>
@@ -13937,7 +13942,7 @@ is already in the list.</source>
 <context>
     <name>ViewportWidget</name>
     <message>
-        <location filename="../scripts/Widgets/ViewportWidget/ViewportWidget.js" line="+471"/>
+        <location filename="../scripts/Widgets/ViewportWidget/ViewportWidget.js" line="+512"/>
         <source>Dropped data not supported</source>
         <translation>Удалённые данные не поддерживаются</translation>
     </message>
@@ -13957,10 +13962,12 @@ is already in the list.</source>
         <translation>URL для импорта: </translation>
     </message>
     <message>
+        <location line="-401"/>
         <source>Drawing Area</source>
         <translation>Область черчения</translation>
     </message>
     <message>
+        <location line="+1"/>
         <source>Use the command line to enter commands and coordinates</source>
         <translation>Команды и координаты вводятся в командной строке</translation>
     </message>
@@ -14438,7 +14445,7 @@ is already in the list.</source>
 <context>
     <name>library</name>
     <message>
-        <location filename="../scripts/library.js" line="+1304"/>
+        <location filename="../scripts/library.js" line="+1302"/>
         <source>Objects</source>
         <translation>Объекты</translation>
     </message>

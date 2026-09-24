@@ -2,6 +2,19 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="it_IT">
 <context>
+    <name>RAccessibleToolButton</name>
+    <message>
+        <location filename="../src/gui/RAccessibleToolButton.cpp" line="+128"/>
+        <source>More Tool Bar Items</source>
+        <translation>Altri elementi della barra degli strumenti</translation>
+    </message>
+    <message>
+        <location line="-5"/>
+        <source>Clear Text</source>
+        <translation>Cancella testo</translation>
+    </message>
+</context>
+<context>
     <name>RCadToolBar</name>
     <message>
         <location filename="../src/gui/RCadToolBar.cpp" line="+139"/>
@@ -90,20 +103,9 @@
 <context>
     <name>RMathLineEdit</name>
     <message>
-        <location filename="../src/gui/RMathLineEdit.cpp" line="+193"/>
+        <location filename="../src/gui/RMathLineEdit.cpp" line="+201"/>
         <source>Invalid</source>
         <translation>Non valido</translation>
-    </message>
-</context>
-<context>
-    <name>RAccessibleToolButton</name>
-    <message>
-        <source>More Tool Bar Items</source>
-        <translation>Altri elementi della barra degli strumenti</translation>
-    </message>
-    <message>
-        <source>Clear Text</source>
-        <translation>Cancella testo</translation>
     </message>
 </context>
 </TS>

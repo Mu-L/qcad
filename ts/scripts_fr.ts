@@ -290,7 +290,7 @@
         <translation>Préférences de dessin</translation>
     </message>
     <message>
-        <location line="+328"/>
+        <location line="+373"/>
         <source>Apply preferences</source>
         <translation>Appliquer préférences</translation>
     </message>
@@ -307,7 +307,7 @@ the preference changes to take effect.</source>
 pour appliquer les modifications.</translation>
     </message>
     <message>
-        <location line="+115"/>
+        <location line="+163"/>
         <source>Defaults for</source>
         <translation>Valeurs par défaut pour</translation>
     </message>
@@ -427,7 +427,7 @@ pour appliquer les modifications.</translation>
 <context>
     <name>Apollonius</name>
     <message>
-        <location filename="../scripts/Apollonius.js" line="+2623"/>
+        <location filename="../scripts/Apollonius.js" line="+2618"/>
         <source>Invalid radius</source>
         <translation>Rayon invalide</translation>
     </message>
@@ -1269,7 +1269,7 @@ Voulez-vous le récupérer ?</translation>
 <context>
     <name>BitmapExportWorker</name>
     <message>
-        <location filename="../scripts/File/BitmapExport/BitmapExportWorker.js" line="+61"/>
+        <location filename="../scripts/File/BitmapExport/BitmapExportWorker.js" line="+63"/>
         <source>Invalid image size (width x height must be less than %1)</source>
         <translation>Taille d&apos;image non valide (largeur x hauteur doit être inférieure à %1)</translation>
     </message>
@@ -1370,7 +1370,8 @@ Voulez-vous le récupérer ?</translation>
 <context>
     <name>BlockList</name>
     <message>
-        <location filename="../scripts/Widgets/BlockList/BlockList.js" line="+693"/>
+        <location filename="../scripts/Widgets/BlockList/BlockList.js" line="+56"/>
+        <location line="+730"/>
         <location line="+83"/>
         <location line="+43"/>
         <source>Block List</source>
@@ -1392,6 +1393,7 @@ Voulez-vous le récupérer ?</translation>
         <translation>Activer alternant couleurs des lignes</translation>
     </message>
     <message>
+        <location filename="../scripts/Widgets/BlockList/BlockList.js" line="-289"/>
         <source>Current block</source>
         <translation>Bloc courant</translation>
     </message>
@@ -2605,7 +2607,7 @@ Voulez-vous le récupérer ?</translation>
         <translation>Déplacer entité</translation>
     </message>
     <message>
-        <location line="+409"/>
+        <location line="+416"/>
         <source>Move Reference Point</source>
         <translation>Déplacer référence</translation>
     </message>
@@ -4278,17 +4280,17 @@ est déjà dans la liste.</translation>
     </message>
     <message>
         <location line="+1"/>
-        <location line="+2167"/>
+        <location line="+2209"/>
         <source>Cancel</source>
         <translation>Annuler</translation>
     </message>
     <message>
-        <location line="-2166"/>
+        <location line="-2208"/>
         <source>Done</source>
         <translation>Terminer</translation>
     </message>
     <message>
-        <location line="+287"/>
+        <location line="+286"/>
         <location line="+143"/>
         <source>Active Tool:</source>
         <translation>Outil actif:</translation>
@@ -4299,7 +4301,7 @@ est déjà dans la liste.</translation>
         <translation>Aucun</translation>
     </message>
     <message>
-        <location line="+668"/>
+        <location line="+711"/>
         <source>Options</source>
         <translation>Options</translation>
     </message>
@@ -9422,10 +9424,12 @@ est déjà dans la liste.</translation>
         <translation>Illustration des boutons de la souris</translation>
     </message>
     <message>
+        <location filename="../scripts/Widgets/MouseDisplay/MouseDisplay.js" line="+38"/>
         <source>Left mouse button</source>
         <translation>Bouton gauche de la souris</translation>
     </message>
     <message>
+        <location line="+1"/>
         <source>Right mouse button</source>
         <translation>Bouton droit de la souris</translation>
     </message>
@@ -10237,13 +10241,13 @@ est déjà dans la liste.</translation>
     <name>PreferencesDialog</name>
     <message>
         <location filename="../scripts/Edit/AbstractPreferences.ui" line="+14"/>
-        <location line="+86"/>
+        <location line="+89"/>
         <location line="+20"/>
         <source>Preferences</source>
         <translation>Préférences</translation>
     </message>
     <message>
-        <location line="-79"/>
+        <location line="-82"/>
         <source>Filter</source>
         <translation>Filtre</translation>
     </message>
@@ -10258,7 +10262,7 @@ est déjà dans la liste.</translation>
         <translation>Réduire la navigation</translation>
     </message>
     <message>
-        <location line="+72"/>
+        <location line="+75"/>
         <source>Restore to Default Values</source>
         <translation>Restaurer les valeurs par défaut</translation>
     </message>
@@ -10328,7 +10332,7 @@ est déjà dans la liste.</translation>
         <translation>Adapter automatiquement le dessin au papier ?</translation>
     </message>
     <message>
-        <location line="+213"/>
+        <location line="+206"/>
         <source>Drag to move paper</source>
         <translation>Faites glisser pour déplacer le papier</translation>
     </message>
@@ -10485,27 +10489,27 @@ est déjà dans la liste.</translation>
 <context>
     <name>PropertyEditor</name>
     <message>
-        <location filename="../scripts/Widgets/PropertyEditor/PropertyEditor.js" line="+482"/>
+        <location filename="../scripts/Widgets/PropertyEditor/PropertyEditor.js" line="+752"/>
         <source>Custom</source>
         <translation>Personnalisé</translation>
     </message>
     <message>
-        <location line="+204"/>
+        <location line="+182"/>
         <source>Index</source>
         <translation>Index</translation>
     </message>
     <message>
-        <location line="+79"/>
+        <location line="+76"/>
         <source>Remove this property from selected objects</source>
         <translation>Retirer ce propriété à partir des objets sélectionnés</translation>
     </message>
     <message>
-        <location line="+92"/>
+        <location line="+100"/>
         <source>Add custom property to selected objects</source>
         <translation>Ajouter une propriété personnalisée pour les objets sélectionnés</translation>
     </message>
     <message>
-        <location line="+45"/>
+        <location line="+66"/>
         <source>Show</source>
         <translation>Afficher</translation>
     </message>
@@ -10515,7 +10519,7 @@ est déjà dans la liste.</translation>
         <translation>Afficher toutes les propriétés</translation>
     </message>
     <message>
-        <location line="+843"/>
+        <location line="+842"/>
         <source>Widgets</source>
         <translation>Widgets</translation>
     </message>
@@ -10525,32 +10529,32 @@ est déjà dans la liste.</translation>
         <translation>*VARIABLE*</translation>
     </message>
     <message>
-        <location line="-1508"/>
+        <location line="-1781"/>
         <source>:</source>
         <translation> :</translation>
     </message>
     <message>
-        <location line="+189"/>
+        <location line="+455"/>
         <source>No Selection</source>
         <translation>Pas de sélection</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+21"/>
         <source>Specific Properties</source>
         <translation>Propriétés spécifiques</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+22"/>
         <source>Dependent Entities</source>
         <translation>Entités dépendantes</translation>
     </message>
     <message>
-        <location line="+369"/>
+        <location line="+352"/>
         <source>All</source>
         <translation>Tous</translation>
     </message>
     <message>
-        <location line="+231"/>
+        <location line="+253"/>
         <source>Auto</source>
         <translation>Auto</translation>
     </message>
@@ -10570,7 +10574,7 @@ est déjà dans la liste.</translation>
         <translation>Non</translation>
     </message>
     <message>
-        <location line="+433"/>
+        <location line="+432"/>
         <location line="+98"/>
         <location line="+10"/>
         <source>Property Editor</source>
@@ -12569,11 +12573,12 @@ est déjà dans la liste.</translation>
     </message>
     <message>
         <location line="+0"/>
+        <location line="+18"/>
         <source>Status Bar</source>
         <translation>Barre d&apos;état</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="-12"/>
         <source>&amp;Status Bar</source>
         <translation>&amp;Barre d&apos;état</translation>
     </message>
@@ -13927,7 +13932,7 @@ est déjà dans la liste.</translation>
 <context>
     <name>ViewportWidget</name>
     <message>
-        <location filename="../scripts/Widgets/ViewportWidget/ViewportWidget.js" line="+471"/>
+        <location filename="../scripts/Widgets/ViewportWidget/ViewportWidget.js" line="+512"/>
         <source>Dropped data not supported</source>
         <translation>Données insérées pas pris en charge</translation>
     </message>
@@ -13947,10 +13952,12 @@ est déjà dans la liste.</translation>
         <translation>Importation URL: </translation>
     </message>
     <message>
+        <location line="-401"/>
         <source>Drawing Area</source>
         <translation>Zone de dessin</translation>
     </message>
     <message>
+        <location line="+1"/>
         <source>Use the command line to enter commands and coordinates</source>
         <translation>Utilisez la ligne de commande pour saisir des commandes et des coordonnées</translation>
     </message>
@@ -14428,7 +14435,7 @@ est déjà dans la liste.</translation>
 <context>
     <name>library</name>
     <message>
-        <location filename="../scripts/library.js" line="+1304"/>
+        <location filename="../scripts/library.js" line="+1302"/>
         <source>Objects</source>
         <translation>Objets</translation>
     </message>
