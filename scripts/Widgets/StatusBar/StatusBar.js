@@ -46,6 +46,8 @@ StatusBar.init = function(basePath) {
 
     var statusBar = appWin.statusBar();
     statusBar.objectName = "StatusBarWidget";
+    // name of the group a screen reader presents the status bar as:
+    statusBar.accessibleName = qsTr("Status Bar");
     var splitter = new QSplitter(statusBar);
     splitter.setSizePolicy(QSizePolicy.MinimumExpanding, QSizePolicy.Fixed);
     splitter.setFixedHeight(40);

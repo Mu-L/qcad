@@ -290,7 +290,7 @@
         <translation>Tùy chọn bản vẽ</translation>
     </message>
     <message>
-        <location line="+328"/>
+        <location line="+373"/>
         <source>Apply preferences</source>
         <translation>Áp dụng tùy chọn</translation>
     </message>
@@ -307,7 +307,7 @@ the preference changes to take effect.</source>
 các thay đổi tùy chọn có hiệu lực.</translation>
     </message>
     <message>
-        <location line="+115"/>
+        <location line="+163"/>
         <source>Defaults for</source>
         <translation>Mặc định cho</translation>
     </message>
@@ -427,7 +427,7 @@ các thay đổi tùy chọn có hiệu lực.</translation>
 <context>
     <name>Apollonius</name>
     <message>
-        <location filename="../scripts/Apollonius.js" line="+2623"/>
+        <location filename="../scripts/Apollonius.js" line="+2618"/>
         <source>Invalid radius</source>
         <translation>Bán kính không hợp lệ</translation>
     </message>
@@ -1267,7 +1267,7 @@ Bạn có muốn khôi phục không?</translation>
 <context>
     <name>BitmapExportWorker</name>
     <message>
-        <location filename="../scripts/File/BitmapExport/BitmapExportWorker.js" line="+61"/>
+        <location filename="../scripts/File/BitmapExport/BitmapExportWorker.js" line="+63"/>
         <source>Invalid image size (width x height must be less than %1)</source>
         <translation>Cỡ ảnh không hợp lệ (rộng x cao phải nhỏ hơn %1)</translation>
     </message>
@@ -1368,12 +1368,13 @@ Bạn có muốn khôi phục không?</translation>
 <context>
     <name>BlockList</name>
     <message>
-        <location filename="../scripts/Widgets/BlockList/BlockList.js" line="+693"/>
+        <location filename="../scripts/Widgets/BlockList/BlockList.js" line="+786"/>
         <source>Widgets</source>
         <translation>Widget</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="-730"/>
+        <location line="+730"/>
         <location line="+83"/>
         <location line="+43"/>
         <source>Block List</source>
@@ -1388,6 +1389,11 @@ Bạn có muốn khôi phục không?</translation>
         <location line="+10"/>
         <source>Enable alternating row colors</source>
         <translation>Bật màu hàng xen kẽ</translation>
+    </message>
+    <message>
+        <location filename="../scripts/Widgets/BlockList/BlockList.js" line="-415"/>
+        <source>Current block</source>
+        <translation>Khối hiện hành</translation>
     </message>
 </context>
 <context>
@@ -2599,7 +2605,7 @@ Bạn có muốn khôi phục không?</translation>
         <translation>Di chuyển đối tượng đến vị trí mong muốn</translation>
     </message>
     <message>
-        <location line="+409"/>
+        <location line="+416"/>
         <source>Move Reference Point</source>
         <translation>Di chuyển điểm tham chiếu</translation>
     </message>
@@ -4270,17 +4276,17 @@ is already in the list.</source>
     </message>
     <message>
         <location line="+1"/>
-        <location line="+2167"/>
+        <location line="+2209"/>
         <source>Cancel</source>
         <translation>Hủy</translation>
     </message>
     <message>
-        <location line="-2166"/>
+        <location line="-2208"/>
         <source>Done</source>
         <translation>Xong</translation>
     </message>
     <message>
-        <location line="+287"/>
+        <location line="+286"/>
         <location line="+143"/>
         <source>Active Tool:</source>
         <translation>Công cụ đang dùng:</translation>
@@ -4291,7 +4297,7 @@ is already in the list.</source>
         <translation>Không</translation>
     </message>
     <message>
-        <location line="+668"/>
+        <location line="+711"/>
         <source>Options</source>
         <translation>Tùy chọn</translation>
     </message>
@@ -9298,7 +9304,32 @@ is already in the list.</source>
 <context>
     <name>Modify</name>
     <message>
-        <location filename="../scripts/Modify/Modify.js" line="+99"/>
+        <location filename="../scripts/Modify/Modify.js" line="+97"/>
+        <source>&amp;Transform</source>
+        <translation>&amp;Biến đổi</translation>
+    </message>
+    <message>
+        <location line="+14"/>
+        <source>&amp;Offset</source>
+        <translation>&amp;Offset</translation>
+    </message>
+    <message>
+        <location line="+15"/>
+        <source>Trim and Di&amp;vide</source>
+        <translation>&amp;Cắt xén và chia</translation>
+    </message>
+    <message>
+        <location line="+15"/>
+        <source>&amp;Corners</source>
+        <translation>&amp;Góc</translation>
+    </message>
+    <message>
+        <location line="+15"/>
+        <source>Entit&amp;ies</source>
+        <translation>&amp;Đối tượng</translation>
+    </message>
+    <message>
+        <location line="+17"/>
         <source>Modification Tools</source>
         <translation>Công cụ hiệu chỉnh</translation>
     </message>
@@ -9386,6 +9417,16 @@ is already in the list.</source>
         <location line="+42"/>
         <source>Illustration of the mouse buttons</source>
         <translation>Minh họa các nút chuột</translation>
+    </message>
+    <message>
+        <location filename="../scripts/Widgets/MouseDisplay/MouseDisplay.js" line="+38"/>
+        <source>Left mouse button</source>
+        <translation>Nút chuột trái</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Right mouse button</source>
+        <translation>Nút chuột phải</translation>
     </message>
 </context>
 <context>
@@ -10193,13 +10234,13 @@ is already in the list.</source>
     <name>PreferencesDialog</name>
     <message>
         <location filename="../scripts/Edit/AbstractPreferences.ui" line="+14"/>
-        <location line="+86"/>
+        <location line="+89"/>
         <location line="+20"/>
         <source>Preferences</source>
         <translation>Tùy chọn</translation>
     </message>
     <message>
-        <location line="-79"/>
+        <location line="-82"/>
         <source>Filter</source>
         <translation>Bộ lọc</translation>
     </message>
@@ -10214,7 +10255,7 @@ is already in the list.</source>
         <translation>Thu gọn cây</translation>
     </message>
     <message>
-        <location line="+72"/>
+        <location line="+75"/>
         <source>Restore to Default Values</source>
         <translation>Khôi phục về giá trị mặc định</translation>
     </message>
@@ -10284,7 +10325,7 @@ is already in the list.</source>
         <translation>Tự động khít bản vẽ vào giấy?</translation>
     </message>
     <message>
-        <location line="+213"/>
+        <location line="+206"/>
         <source>Drag to move paper</source>
         <translation>Kéo để di chuyển giấy</translation>
     </message>
@@ -10496,47 +10537,47 @@ is already in the list.</source>
         <translation>:</translation>
     </message>
     <message>
-        <location line="+189"/>
+        <location line="+455"/>
         <source>No Selection</source>
         <translation>Không có vùng chọn</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+21"/>
         <source>Specific Properties</source>
         <translation>Thuộc tính riêng</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+22"/>
         <source>Dependent Entities</source>
         <translation>Đối tượng phụ thuộc</translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="+19"/>
         <source>Custom</source>
         <translation>Tùy chỉnh</translation>
     </message>
     <message>
-        <location line="+204"/>
+        <location line="+182"/>
         <source>Index</source>
         <translation>Chỉ mục</translation>
     </message>
     <message>
-        <location line="+79"/>
+        <location line="+76"/>
         <source>Remove this property from selected objects</source>
         <translation>Gỡ thuộc tính này khỏi các đối tượng đã chọn</translation>
     </message>
     <message>
-        <location line="+68"/>
+        <location line="+75"/>
         <source>All</source>
         <translation>Tất cả</translation>
     </message>
     <message>
-        <location line="+24"/>
+        <location line="+25"/>
         <source>Add custom property to selected objects</source>
         <translation>Thêm thuộc tính tùy chỉnh cho các đối tượng đã chọn</translation>
     </message>
     <message>
-        <location line="+45"/>
+        <location line="+66"/>
         <source>Show</source>
         <translation>Hiện</translation>
     </message>
@@ -10566,7 +10607,7 @@ is already in the list.</source>
         <translation>Không</translation>
     </message>
     <message>
-        <location line="+430"/>
+        <location line="+429"/>
         <source>*VARIES*</source>
         <translation>*KHÁC NHAU*</translation>
     </message>
@@ -12522,11 +12563,12 @@ is already in the list.</source>
     </message>
     <message>
         <location line="+0"/>
+        <location line="+18"/>
         <source>Status Bar</source>
         <translation>Thanh trạng thái</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="-12"/>
         <source>&amp;Status Bar</source>
         <translation>&amp;Thanh trạng thái</translation>
     </message>
@@ -13880,7 +13922,7 @@ is already in the list.</source>
 <context>
     <name>ViewportWidget</name>
     <message>
-        <location filename="../scripts/Widgets/ViewportWidget/ViewportWidget.js" line="+471"/>
+        <location filename="../scripts/Widgets/ViewportWidget/ViewportWidget.js" line="+512"/>
         <source>Dropped data not supported</source>
         <translation>Dữ liệu được thả không được hỗ trợ</translation>
     </message>
@@ -13898,6 +13940,16 @@ is already in the list.</source>
         <location line="+17"/>
         <source>Importing URL: </source>
         <translation>Đang nhập URL: </translation>
+    </message>
+    <message>
+        <location line="-401"/>
+        <source>Drawing Area</source>
+        <translation>Vùng vẽ</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Use the command line to enter commands and coordinates</source>
+        <translation>Sử dụng dòng lệnh để nhập lệnh và tọa độ</translation>
     </message>
 </context>
 <context>
@@ -14373,7 +14425,7 @@ is already in the list.</source>
 <context>
     <name>library</name>
     <message>
-        <location filename="../scripts/library.js" line="+1304"/>
+        <location filename="../scripts/library.js" line="+1302"/>
         <source>Objects</source>
         <translation>Đối tượng</translation>
     </message>

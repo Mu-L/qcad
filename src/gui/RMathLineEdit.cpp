@@ -22,6 +22,7 @@
 #include <QKeyEvent>
 #include <QLabel>
 #include <QPalette>
+#include <QTextDocumentFragment>
 #include <QToolTip>
 
 #include "RDocument.h"
@@ -64,6 +65,13 @@ void RMathLineEdit::slotTextChanged(const QString& text) {
         originalToolTip = toolTip();
         if (originalToolTip.isNull()) {
             originalToolTip = "";
+        }
+        // screen readers: describe the field by its original tool tip
+        // (the tool tip itself is replaced by the result of the entered
+        // formula, which would otherwise be read as description, see
+        // RAccessibleToolTipFilter):
+        if (!originalToolTip.isEmpty() && accessibleDescription().isEmpty()) {
+            setAccessibleDescription(QTextDocumentFragment::fromHtml(originalToolTip).toPlainText().simplified());
         }
     }
 

@@ -1311,7 +1311,9 @@
     <file alias="scripts/File/PrintPreview/PrintPreview.ui">../../scripts/File/PrintPreview/PrintPreview.ui</file>
     <file alias="scripts/File/PrintPreview/PrintPreviewInit.js">../../scripts/File/PrintPreview/PrintPreviewInit.js</file>
     <file alias="scripts/File/PrintPreview/PrintPreviewOffsetCursor.png">../../scripts/File/PrintPreview/PrintPreviewOffsetCursor.png</file>
+    <file alias="scripts/File/PrintPreview/PrintPreviewOffsetCursor@2x.png">../../scripts/File/PrintPreview/PrintPreviewOffsetCursor@2x.png</file>
     <file alias="scripts/File/PrintPreview/PrintPreviewOffsetCursorMask.png">../../scripts/File/PrintPreview/PrintPreviewOffsetCursorMask.png</file>
+    <file alias="scripts/File/PrintPreview/PrintPreviewOffsetCursorMask@2x.png">../../scripts/File/PrintPreview/PrintPreviewOffsetCursorMask@2x.png</file>
     <file alias="scripts/File/PrintPreview/ShowPaperBorders.svg">../../scripts/File/PrintPreview/ShowPaperBorders.svg</file>
     <file alias="scripts/File/Quit/Quit.js">../../scripts/File/Quit/Quit.js</file>
     <file alias="scripts/File/Quit/QuitInit.js">../../scripts/File/Quit/QuitInit.js</file>

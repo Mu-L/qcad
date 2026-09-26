@@ -290,7 +290,7 @@
         <translation>Tekeningsvoorkeuren</translation>
     </message>
     <message>
-        <location line="+328"/>
+        <location line="+373"/>
         <source>Apply preferences</source>
         <translation>Voorkeuren toepassen</translation>
     </message>
@@ -307,7 +307,7 @@ the preference changes to take effect.</source>
 de wijzigingen door te voeren.</translation>
     </message>
     <message>
-        <location line="+115"/>
+        <location line="+163"/>
         <source>Defaults for</source>
         <translation>Standaardinstellingen voor</translation>
     </message>
@@ -427,7 +427,7 @@ de wijzigingen door te voeren.</translation>
 <context>
     <name>Apollonius</name>
     <message>
-        <location filename="../scripts/Apollonius.js" line="+2623"/>
+        <location filename="../scripts/Apollonius.js" line="+2618"/>
         <source>Invalid radius</source>
         <translation>Ongeldige straal</translation>
     </message>
@@ -1269,7 +1269,7 @@ Wilt u deze herstellen?</translation>
 <context>
     <name>BitmapExportWorker</name>
     <message>
-        <location filename="../scripts/File/BitmapExport/BitmapExportWorker.js" line="+61"/>
+        <location filename="../scripts/File/BitmapExport/BitmapExportWorker.js" line="+63"/>
         <source>Invalid image size (width x height must be less than %1)</source>
         <translation>Ongeldige beeldformaat (breedte x hoogte moet kleiner zijn dan %1)</translation>
     </message>
@@ -1370,7 +1370,8 @@ Wilt u deze herstellen?</translation>
 <context>
     <name>BlockList</name>
     <message>
-        <location filename="../scripts/Widgets/BlockList/BlockList.js" line="+693"/>
+        <location filename="../scripts/Widgets/BlockList/BlockList.js" line="+56"/>
+        <location line="+730"/>
         <location line="+83"/>
         <location line="+43"/>
         <source>Block List</source>
@@ -1390,6 +1391,11 @@ Wilt u deze herstellen?</translation>
         <location line="+10"/>
         <source>Enable alternating row colors</source>
         <translation>Afwisselende rij kleuren inschakelen</translation>
+    </message>
+    <message>
+        <location filename="../scripts/Widgets/BlockList/BlockList.js" line="-289"/>
+        <source>Current block</source>
+        <translation>Huidig blok</translation>
     </message>
 </context>
 <context>
@@ -2601,7 +2607,7 @@ Wilt u deze herstellen?</translation>
         <translation>Object verplaatsen</translation>
     </message>
     <message>
-        <location line="+409"/>
+        <location line="+416"/>
         <source>Move Reference Point</source>
         <translation>Referentiepunt verplaatsen</translation>
     </message>
@@ -4274,17 +4280,17 @@ is al in de lijst.</translation>
     </message>
     <message>
         <location line="+1"/>
-        <location line="+2167"/>
+        <location line="+2209"/>
         <source>Cancel</source>
         <translation>Annuleer</translation>
     </message>
     <message>
-        <location line="-2166"/>
+        <location line="-2208"/>
         <source>Done</source>
         <translation>Klaar</translation>
     </message>
     <message>
-        <location line="+287"/>
+        <location line="+286"/>
         <location line="+143"/>
         <source>Active Tool:</source>
         <translation>Actief gereedschap:</translation>
@@ -4295,7 +4301,7 @@ is al in de lijst.</translation>
         <translation>Geen</translation>
     </message>
     <message>
-        <location line="+668"/>
+        <location line="+711"/>
         <source>Options</source>
         <translation>Opties</translation>
     </message>
@@ -9303,7 +9309,32 @@ is al in de lijst.</translation>
 <context>
     <name>Modify</name>
     <message>
-        <location filename="../scripts/Modify/Modify.js" line="+99"/>
+        <location filename="../scripts/Modify/Modify.js" line="+97"/>
+        <source>&amp;Transform</source>
+        <translation>&amp;Transformeren</translation>
+    </message>
+    <message>
+        <location line="+14"/>
+        <source>&amp;Offset</source>
+        <translation>&amp;Afzet</translation>
+    </message>
+    <message>
+        <location line="+15"/>
+        <source>Trim and Di&amp;vide</source>
+        <translation>&amp;Trimmen en splitsen</translation>
+    </message>
+    <message>
+        <location line="+15"/>
+        <source>&amp;Corners</source>
+        <translation>&amp;Hoeken</translation>
+    </message>
+    <message>
+        <location line="+15"/>
+        <source>Entit&amp;ies</source>
+        <translation>&amp;Objecten</translation>
+    </message>
+    <message>
+        <location line="+17"/>
         <source>Modification Tools</source>
         <translation>Modificatiegereedschappen</translation>
     </message>
@@ -9391,6 +9422,16 @@ is al in de lijst.</translation>
         <location line="+42"/>
         <source>Illustration of the mouse buttons</source>
         <translation>Illustratie van de muisknoppen</translation>
+    </message>
+    <message>
+        <location filename="../scripts/Widgets/MouseDisplay/MouseDisplay.js" line="+38"/>
+        <source>Left mouse button</source>
+        <translation>Linkermuisknop</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Right mouse button</source>
+        <translation>Rechtermuisknop</translation>
     </message>
 </context>
 <context>
@@ -10200,13 +10241,13 @@ is al in de lijst.</translation>
     <name>PreferencesDialog</name>
     <message>
         <location filename="../scripts/Edit/AbstractPreferences.ui" line="+14"/>
-        <location line="+86"/>
+        <location line="+89"/>
         <location line="+20"/>
         <source>Preferences</source>
         <translation>Voorkeuren</translation>
     </message>
     <message>
-        <location line="-79"/>
+        <location line="-82"/>
         <source>Filter</source>
         <translation>Filter</translation>
     </message>
@@ -10221,7 +10262,7 @@ is al in de lijst.</translation>
         <translation>Navigatiestructuur invouwen</translation>
     </message>
     <message>
-        <location line="+72"/>
+        <location line="+75"/>
         <source>Restore to Default Values</source>
         <translation>Herstellen naar de standaardwaarden</translation>
     </message>
@@ -10291,7 +10332,7 @@ is al in de lijst.</translation>
         <translation>Automatisch tekening op papier passen?</translation>
     </message>
     <message>
-        <location line="+213"/>
+        <location line="+206"/>
         <source>Drag to move paper</source>
         <translation>Slepen om papier te verplaatsen</translation>
     </message>
@@ -10448,57 +10489,57 @@ is al in de lijst.</translation>
 <context>
     <name>PropertyEditor</name>
     <message>
-        <location filename="../scripts/Widgets/PropertyEditor/PropertyEditor.js" line="+1743"/>
+        <location filename="../scripts/Widgets/PropertyEditor/PropertyEditor.js" line="+2016"/>
         <source>*VARIES*</source>
         <translation>*VARIEERT*</translation>
     </message>
     <message>
-        <location line="-1508"/>
+        <location line="-1781"/>
         <source>:</source>
         <translation>:</translation>
     </message>
     <message>
-        <location line="+189"/>
+        <location line="+455"/>
         <source>No Selection</source>
         <translation>Geen selectie</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+21"/>
         <source>Specific Properties</source>
         <translation>Specifieke eigenschappen</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+22"/>
         <source>Dependent Entities</source>
         <translation>Afhankelijke objecten</translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="+19"/>
         <source>Custom</source>
         <translation>Gebruiker gedefinieerd</translation>
     </message>
     <message>
-        <location line="+204"/>
+        <location line="+182"/>
         <source>Index</source>
         <translation>Index</translation>
     </message>
     <message>
-        <location line="+79"/>
+        <location line="+76"/>
         <source>Remove this property from selected objects</source>
         <translation>Eigenschap van geselecteerde objecten verwijderen</translation>
     </message>
     <message>
-        <location line="+68"/>
+        <location line="+75"/>
         <source>All</source>
         <translation>Alle</translation>
     </message>
     <message>
-        <location line="+24"/>
+        <location line="+25"/>
         <source>Add custom property to selected objects</source>
         <translation>Gebruiker gedefinieerde eigenschap aan geselecteerde objecten toevoegen</translation>
     </message>
     <message>
-        <location line="+45"/>
+        <location line="+66"/>
         <source>Show</source>
         <translation>Tonen</translation>
     </message>
@@ -10528,7 +10569,7 @@ is al in de lijst.</translation>
         <translation>Nee</translation>
     </message>
     <message>
-        <location line="+433"/>
+        <location line="+432"/>
         <location line="+98"/>
         <location line="+10"/>
         <source>Property Editor</source>
@@ -12532,11 +12573,12 @@ is al in de lijst.</translation>
     </message>
     <message>
         <location line="+0"/>
+        <location line="+18"/>
         <source>Status Bar</source>
         <translation>Statusbalk</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="-12"/>
         <source>&amp;Status Bar</source>
         <translation>&amp;Statusbalk</translation>
     </message>
@@ -13890,7 +13932,7 @@ is al in de lijst.</translation>
 <context>
     <name>ViewportWidget</name>
     <message>
-        <location filename="../scripts/Widgets/ViewportWidget/ViewportWidget.js" line="+471"/>
+        <location filename="../scripts/Widgets/ViewportWidget/ViewportWidget.js" line="+512"/>
         <source>Dropped data not supported</source>
         <translation>Ingevoegd bestand niet ondersteund</translation>
     </message>
@@ -13908,6 +13950,16 @@ is al in de lijst.</translation>
         <location line="+17"/>
         <source>Importing URL: </source>
         <translation>Importeren URL: </translation>
+    </message>
+    <message>
+        <location line="-401"/>
+        <source>Drawing Area</source>
+        <translation>Tekengebied</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Use the command line to enter commands and coordinates</source>
+        <translation>Gebruik de opdrachtregel om opdrachten en coördinaten in te voeren</translation>
     </message>
 </context>
 <context>
@@ -14383,7 +14435,7 @@ is al in de lijst.</translation>
 <context>
     <name>library</name>
     <message>
-        <location filename="../scripts/library.js" line="+1304"/>
+        <location filename="../scripts/library.js" line="+1302"/>
         <source>Objects</source>
         <translation>Objecten</translation>
     </message>

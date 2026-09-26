@@ -215,14 +215,7 @@ function PrintPreviewImpl(guiAction) {
 
     this.updateDisabled = false;
 
-    if (RSettings.getBoolValue("GraphicsView/SystemCursors", false)===true) {
-        this.cursor = new QCursor(Qt.OpenHandCursor);
-    }
-    else {
-        var bitmap = new QBitmap(PrintPreviewImpl.includeBasePath + "/PrintPreviewOffsetCursor.png", "PNG");
-        var mask = new QBitmap(PrintPreviewImpl.includeBasePath + "/PrintPreviewOffsetCursorMask.png", "PNG");
-        this.cursor = new QCursor(bitmap, mask, 15, 13);
-    }
+    this.cursor = EAction.createCursor(PrintPreviewImpl.includeBasePath + "/PrintPreviewOffsetCursor", 15, 13, Qt.OpenHandCursor);
     this.view = undefined;
     this.saveView = false;
     this.savedScale = undefined;
@@ -944,10 +937,14 @@ PrintPreviewImpl.printWith = function(printClass, pdfFile, pdfVersion) {
         viewImage.setScene(scene, false);
         var printOffScreen = new printClass(undefined, EAction.getDocument(), viewImage);
         var ret = printOffScreen.print(pdfFile, undefined, pdfVersion);
-        scene.unregisterView(viewImage);
-        destr(viewImage);
-        di.unregisterScene(scene);
+        // the image based view is owned by its creator
+        // (RGraphicsViewImage::isShared): deleting the scene unregisters
+        // it from the document interface and detaches the view, which is
+        // deleted after that (deleting the view first would make the
+        // document interface delete the scene, see
+        // RDocumentInterface::deleteScenesWithoutViews):
         destr(scene);
+        destr(viewImage);
         return ret;
     }
 

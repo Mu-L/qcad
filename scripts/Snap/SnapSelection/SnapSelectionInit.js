@@ -3,7 +3,7 @@ function init(basePath) {
     action.setRequiresDocument(true);
     action.setScriptFile(basePath + "/SnapSelection.js");
     action.setDefaultShortcut(new QKeySequence("s,k"));
-    action.setDefaultCommands(["snapselectioncenter", "sk"]);
+    action.setDefaultCommands(["snapselection", "sk"]);
     action.setGroup("snaps");
     action.setNoState(true);
     action.setGroupSortOrder(15560);

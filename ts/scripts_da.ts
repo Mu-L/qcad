@@ -290,7 +290,7 @@
         <translation>Præferencer for tegning</translation>
     </message>
     <message>
-        <location line="+328"/>
+        <location line="+373"/>
         <source>Apply preferences</source>
         <translation>Anvend præferencer</translation>
     </message>
@@ -307,7 +307,7 @@ the preference changes to take effect.</source>
 ændringerne i indstillingerne træder i kraft.</translation>
     </message>
     <message>
-        <location line="+115"/>
+        <location line="+163"/>
         <source>Defaults for</source>
         <translation>Standardværdier for</translation>
     </message>
@@ -427,7 +427,7 @@ the preference changes to take effect.</source>
 <context>
     <name>Apollonius</name>
     <message>
-        <location filename="../scripts/Apollonius.js" line="+2623"/>
+        <location filename="../scripts/Apollonius.js" line="+2618"/>
         <source>Invalid radius</source>
         <translation>Ugyldig radius</translation>
     </message>
@@ -1269,7 +1269,7 @@ Do you wish to recover it?</source>
 <context>
     <name>BitmapExportWorker</name>
     <message>
-        <location filename="../scripts/File/BitmapExport/BitmapExportWorker.js" line="+61"/>
+        <location filename="../scripts/File/BitmapExport/BitmapExportWorker.js" line="+63"/>
         <source>Invalid image size (width x height must be less than %1)</source>
         <translation>Billedstørrelse er ugyldig (bredde x højde skal være mindre end %1)</translation>
     </message>
@@ -1370,12 +1370,13 @@ Do you wish to recover it?</source>
 <context>
     <name>BlockList</name>
     <message>
-        <location filename="../scripts/Widgets/BlockList/BlockList.js" line="+693"/>
+        <location filename="../scripts/Widgets/BlockList/BlockList.js" line="+786"/>
         <source>Widgets</source>
         <translation>Widgets</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="-730"/>
+        <location line="+730"/>
         <location line="+83"/>
         <location line="+43"/>
         <source>Block List</source>
@@ -1390,6 +1391,11 @@ Do you wish to recover it?</source>
         <location line="+10"/>
         <source>Enable alternating row colors</source>
         <translation>Aktiver skiftende rækkefarver</translation>
+    </message>
+    <message>
+        <location filename="../scripts/Widgets/BlockList/BlockList.js" line="-415"/>
+        <source>Current block</source>
+        <translation>Aktuel blok</translation>
     </message>
 </context>
 <context>
@@ -2601,7 +2607,7 @@ Do you wish to recover it?</source>
         <translation>Flyt enheden til den ønskede placering</translation>
     </message>
     <message>
-        <location line="+409"/>
+        <location line="+416"/>
         <source>Move Reference Point</source>
         <translation>Flyt referencepunkt</translation>
     </message>
@@ -4274,17 +4280,17 @@ er allerede på listen.</translation>
     </message>
     <message>
         <location line="+1"/>
-        <location line="+2167"/>
+        <location line="+2209"/>
         <source>Cancel</source>
         <translation>Annuller</translation>
     </message>
     <message>
-        <location line="-2166"/>
+        <location line="-2208"/>
         <source>Done</source>
         <translation>Udført</translation>
     </message>
     <message>
-        <location line="+287"/>
+        <location line="+286"/>
         <location line="+143"/>
         <source>Active Tool:</source>
         <translation>Aktivt værktøj:</translation>
@@ -4295,7 +4301,7 @@ er allerede på listen.</translation>
         <translation>Ingen</translation>
     </message>
     <message>
-        <location line="+668"/>
+        <location line="+711"/>
         <source>Options</source>
         <translation>Indstillinger</translation>
     </message>
@@ -9303,7 +9309,32 @@ er allerede på listen.</translation>
 <context>
     <name>Modify</name>
     <message>
-        <location filename="../scripts/Modify/Modify.js" line="+99"/>
+        <location filename="../scripts/Modify/Modify.js" line="+97"/>
+        <source>&amp;Transform</source>
+        <translation>&amp;Transformere</translation>
+    </message>
+    <message>
+        <location line="+14"/>
+        <source>&amp;Offset</source>
+        <translation>&amp;Parallelforskydning</translation>
+    </message>
+    <message>
+        <location line="+15"/>
+        <source>Trim and Di&amp;vide</source>
+        <translation>&amp;Trim og opdel</translation>
+    </message>
+    <message>
+        <location line="+15"/>
+        <source>&amp;Corners</source>
+        <translation>&amp;Hjørner</translation>
+    </message>
+    <message>
+        <location line="+15"/>
+        <source>Entit&amp;ies</source>
+        <translation>&amp;Enheder</translation>
+    </message>
+    <message>
+        <location line="+17"/>
         <source>Modification Tools</source>
         <translation>Værktøjer til ændring</translation>
     </message>
@@ -9391,6 +9422,16 @@ er allerede på listen.</translation>
         <location line="+42"/>
         <source>Illustration of the mouse buttons</source>
         <translation>Illustration af museknapperne</translation>
+    </message>
+    <message>
+        <location filename="../scripts/Widgets/MouseDisplay/MouseDisplay.js" line="+38"/>
+        <source>Left mouse button</source>
+        <translation>Venstre museknap</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Right mouse button</source>
+        <translation>Højre museknap</translation>
     </message>
 </context>
 <context>
@@ -10200,13 +10241,13 @@ er allerede på listen.</translation>
     <name>PreferencesDialog</name>
     <message>
         <location filename="../scripts/Edit/AbstractPreferences.ui" line="+14"/>
-        <location line="+86"/>
+        <location line="+89"/>
         <location line="+20"/>
         <source>Preferences</source>
         <translation>Præferencer</translation>
     </message>
     <message>
-        <location line="-79"/>
+        <location line="-82"/>
         <source>Filter</source>
         <translation>Filter</translation>
     </message>
@@ -10221,7 +10262,7 @@ er allerede på listen.</translation>
         <translation>Træ til sammenklapning</translation>
     </message>
     <message>
-        <location line="+72"/>
+        <location line="+75"/>
         <source>Restore to Default Values</source>
         <translation>Gendan til standardværdierne</translation>
     </message>
@@ -10291,7 +10332,7 @@ er allerede på listen.</translation>
         <translation>Automatisk tilpasning af tegning til papir?</translation>
     </message>
     <message>
-        <location line="+213"/>
+        <location line="+206"/>
         <source>Drag to move paper</source>
         <translation>Træk for at flytte papiret</translation>
     </message>
@@ -10503,47 +10544,47 @@ er allerede på listen.</translation>
         <translation>:</translation>
     </message>
     <message>
-        <location line="+189"/>
+        <location line="+455"/>
         <source>No Selection</source>
         <translation>Intet valg</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+21"/>
         <source>Specific Properties</source>
         <translation>Specifikke egenskaber</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+22"/>
         <source>Dependent Entities</source>
         <translation>Afhængige enheder</translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="+19"/>
         <source>Custom</source>
         <translation>Tilpasset</translation>
     </message>
     <message>
-        <location line="+204"/>
+        <location line="+182"/>
         <source>Index</source>
         <translation>Indeks</translation>
     </message>
     <message>
-        <location line="+79"/>
+        <location line="+76"/>
         <source>Remove this property from selected objects</source>
         <translation>Fjern denne egenskab fra udvalgte objekter</translation>
     </message>
     <message>
-        <location line="+68"/>
+        <location line="+75"/>
         <source>All</source>
         <translation>Alle</translation>
     </message>
     <message>
-        <location line="+24"/>
+        <location line="+25"/>
         <source>Add custom property to selected objects</source>
         <translation>Tilføj brugerdefinerede egenskaber til udvalgte objekter</translation>
     </message>
     <message>
-        <location line="+45"/>
+        <location line="+66"/>
         <source>Show</source>
         <translation>Vis</translation>
     </message>
@@ -10573,7 +10614,7 @@ er allerede på listen.</translation>
         <translation>Nej</translation>
     </message>
     <message>
-        <location line="+430"/>
+        <location line="+429"/>
         <source>*VARIES*</source>
         <translation>*VARIERER*</translation>
     </message>
@@ -12532,11 +12573,12 @@ er allerede på listen.</translation>
     </message>
     <message>
         <location line="+0"/>
+        <location line="+18"/>
         <source>Status Bar</source>
         <translation>Statuslinje</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="-12"/>
         <source>&amp;Status Bar</source>
         <translation>&amp;Statuslinje</translation>
     </message>
@@ -13890,7 +13932,7 @@ er allerede på listen.</translation>
 <context>
     <name>ViewportWidget</name>
     <message>
-        <location filename="../scripts/Widgets/ViewportWidget/ViewportWidget.js" line="+471"/>
+        <location filename="../scripts/Widgets/ViewportWidget/ViewportWidget.js" line="+512"/>
         <source>Dropped data not supported</source>
         <translation>Tabte data ikke understøttet</translation>
     </message>
@@ -13908,6 +13950,16 @@ er allerede på listen.</translation>
         <location line="+17"/>
         <source>Importing URL: </source>
         <translation>Import af URL: </translation>
+    </message>
+    <message>
+        <location line="-401"/>
+        <source>Drawing Area</source>
+        <translation>Tegneområde</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Use the command line to enter commands and coordinates</source>
+        <translation>Brug kommandolinjen til at indtaste kommandoer og koordinater</translation>
     </message>
 </context>
 <context>
@@ -14383,7 +14435,7 @@ er allerede på listen.</translation>
 <context>
     <name>library</name>
     <message>
-        <location filename="../scripts/library.js" line="+1304"/>
+        <location filename="../scripts/library.js" line="+1302"/>
         <source>Objects</source>
         <translation>Genstande</translation>
     </message>

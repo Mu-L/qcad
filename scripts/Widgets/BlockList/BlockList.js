@@ -46,6 +46,15 @@ function RBlockListQt(parent, addListener, showHeader) {
 
     this.columnCount = 3;
 
+    // expose the block list to screen readers as a flat list of items
+    // instead of a table (RAccessibleFlatTree), same as the navigation tree
+    // of the preferences dialog. the text of an item is read from the name
+    // column, the state shown as icons in the other columns is added to the
+    // accessible text of the item (see updateItemAccessibleText):
+    this.setProperty("RAccessibleFlatTree", true);
+    this.setProperty("RAccessibleFlatTreeColumn", BlockList.colName);
+    this.accessibleName = qsTr("Block List");
+
     this.header().stretchLastSection = false;
     if (RSettings.isQt(5)) {
         this.header().minimumSectionSize = 22;
@@ -140,18 +149,47 @@ RBlockListQt.getContextMenuScriptFileXRefOnly = function(blockList) {
     return scriptFileXRefOnly;
 };
 
-RBlockListQt.prototype.contextMenuEvent = function(e) {
-    var item = this.itemAt(e.pos());
-    if (!isNull(item)) {
-        this.setCurrentItem(item);
+/**
+ * Creates the context menu of the block list without showing it.
+ *
+ * Kept separate from contextMenuEvent, so that the very same menu can be shown
+ * without QMenu::exec() and its own event loop (e.g. by the tutorial generator,
+ * which drives the UI from the main event loop).
+ *
+ * \param blockList Block list widget or undefined for the block list of the
+ *        main window.
+ * \param item Item (block) the context menu is created for or undefined for
+ *        the current item of the block list.
+ *
+ * \return New QMenu (owned by the caller) or undefined.
+ */
+RBlockListQt.getContextMenu = function(blockList, item) {
+    if (isNull(blockList)) {
+        blockList = RBlockListQt.getWidget();
+    }
+    if (isNull(blockList)) {
+        return undefined;
     }
 
-    var document = this.di.getDocument();
-    var blockName = this.getBlockName(item);
-    var block = document.queryBlockDirect(blockName);
+    if (isNull(item)) {
+        item = blockList.currentItem();
+    }
+
+    var document = undefined;
+    if (!isNull(blockList.di)) {
+        document = blockList.di.getDocument();
+    }
+    if (isNull(document)) {
+        document = EAction.getDocument();
+    }
+
     var isXRef = false;
-    if (!isNull(block)) {
-        isXRef = block.isXRef();
+    if (!isNull(document) && !isNull(item)) {
+        var blockName = item.data(BlockList.colName, Qt.UserRole);
+        var block = document.queryBlockDirect(blockName);
+        if (!isNull(block)) {
+            isXRef = block.isXRef();
+        }
     }
 
     var menu = new QMenu();
@@ -167,9 +205,21 @@ RBlockListQt.prototype.contextMenuEvent = function(e) {
     RGuiAction.getByScriptFile("scripts/Block/SelectBlockReferences/SelectBlockReferences.js").addToMenu(menu);
     RGuiAction.getByScriptFile("scripts/Block/DeselectBlockReferences/DeselectBlockReferences.js").addToMenu(menu);
 
-    RBlockListQt.complementContextMenu(menu, RBlockListQt.getWidget(), isXRef);
+    RBlockListQt.complementContextMenu(menu, blockList, isXRef);
 
-    menu.exec(QCursor.pos());
+    return menu;
+};
+
+RBlockListQt.prototype.contextMenuEvent = function(e) {
+    var item = this.itemAt(e.pos());
+    if (!isNull(item)) {
+        this.setCurrentItem(item);
+    }
+
+    var menu = RBlockListQt.getContextMenu(this, item);
+    if (!isNull(menu)) {
+        menu.exec(QCursor.pos());
+    }
 
     e.ignore();
 };
@@ -234,6 +284,8 @@ RBlockListQt.prototype.updateCurrentBlock = function(documentInterface) {
         //var block = doc.queryBlock(blockName);
         //this.updateItemIcons(this.currentBlockItem, block);
         this.currentBlockItem.setIcon(BlockList.colEdit, BlockList.iconEdit[0]);
+        this.updateItemAccessibleText(this.currentBlockItem,
+            doc.queryBlock(this.currentBlockItem.data(BlockList.colName, Qt.UserRole)), doc);
     }
 
     // find item of current block:
@@ -245,6 +297,8 @@ RBlockListQt.prototype.updateCurrentBlock = function(documentInterface) {
     // add pen icon to item:
     if (!isNull(this.currentBlockItem)) {
         this.currentBlockItem.setIcon(BlockList.colEdit, BlockList.iconEdit[1]);
+        this.updateItemAccessibleText(this.currentBlockItem,
+            doc.queryBlock(this.currentBlockItem.data(BlockList.colName, Qt.UserRole)), doc);
     }
 };
 
@@ -417,6 +471,45 @@ RBlockListQt.prototype.updateItemIcons = function(item, block) {
 
 
     //item.setIcon(BlockList.colEdit, BlockList.iconXRef[Number(block.isXRef())]);
+
+    this.updateItemAccessibleText(item, block);
+};
+
+/**
+ * Updates the text a screen reader reads for the given item: the block name
+ * followed by the states which are shown as icons in the other columns.
+ * Without this, only the block name would be read and the state of the block
+ * would not be accessible at all.
+ *
+ * \param block RBlock.
+ */
+RBlockListQt.prototype.updateItemAccessibleText = function(item, block, doc) {
+    if (isNull(doc)) {
+        doc = isNull(this.di) ? undefined : this.di.getDocument();
+    }
+    if (isNull(item) || isNull(block) || isNull(doc)) {
+        return;
+    }
+
+    var states = [];
+
+    if (block.getId()===doc.getCurrentBlockId()) {
+        states.push(qsTr("Current block"));
+    }
+    if (block.isFrozen()) {
+        // "Frozen" and "External Reference" are already translated as
+        // property names / block types:
+        states.push(RSettings.translate("REntity", "Frozen"));
+    }
+    if (block.isXRef() || block.isFromXRef()) {
+        states.push(RSettings.translate("REntity", "External Reference"));
+    }
+
+    var text = item.text(BlockList.colName);
+    if (states.length>0) {
+        text += ", " + states.join(", ");
+    }
+    item.setData(BlockList.colName, Qt.AccessibleTextRole, text);
 };
 
 /**

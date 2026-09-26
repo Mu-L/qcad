@@ -424,7 +424,6 @@ void RPropertyEditor::updateFromDocumentNow(RDocument* document, bool onlyChange
     // types to show properties for (based on current filter):
     QMap<RS::EntityType, int> combinedTypesLocal;
 
-    bool first = true;
     for (it = objectIds.begin(); it != objectIds.end(); ++it) {
         QSharedPointer<RObject> obj = document->queryObjectDirect(*it);
         if (obj.isNull()) {
@@ -434,15 +433,10 @@ void RPropertyEditor::updateFromDocumentNow(RDocument* document, bool onlyChange
         RS::EntityType type = obj->getType();
 
         if (checkType(type, entityTypeFilter)) {
-            if (first) {
-                customPropertyNames = RS::toSet<QString>(obj->getCustomPropertyKeys("QCAD"));
-                first = false;
-            }
-            else {
-                if (!customPropertyNames.isEmpty()) {
-                    customPropertyNames.intersect(RS::toSet<QString>(obj->getCustomPropertyKeys("QCAD")));
-                }
-            }
+            // union of custom properties of all objects:
+            // properties that are only present in some objects are shown as mixed
+            // (see computePropertyValue):
+            customPropertyNames.unite(RS::toSet<QString>(obj->getCustomPropertyKeys("QCAD")));
         }
 
         // single block ref with attributes:
@@ -645,6 +639,7 @@ bool RPropertyEditor::showCustomAppProperties(RPropertyAttributes::Option opt) {
 void RPropertyEditor::computePropertyValue(RProperty& ccProp) {
     bool mixed = false;
     bool invisible = false;
+    bool first = true;
 
     QSet<RObject::Id>::const_iterator it;
     for (it = ccProp.objectIds->constBegin(); it != ccProp.objectIds->constEnd(); ++it) {
@@ -666,10 +661,23 @@ void RPropertyEditor::computePropertyValue(RProperty& ccProp) {
             break;
         }
 
-        if (!ccProp.value.isValid()) {
-            // first value:
+        if (first) {
+            // first value (may be invalid if the first object does not have the property):
             ccProp.value = prop.first;
             ccProp.attributes = prop.second;
+            first = false;
+        }
+        else if (!ccProp.value.isValid() || !prop.first.isValid()) {
+            // property is only present in some objects (e.g. custom property): mixed
+            if (!ccProp.value.isValid() && prop.first.isValid()) {
+                // use first valid value and attributes found:
+                ccProp.value = prop.first;
+                ccProp.attributes = prop.second;
+            }
+            if (ccProp.value.isValid()) {
+                mixed = true;
+                break;
+            }
         }
         else {
             // next value:

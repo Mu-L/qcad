@@ -2,6 +2,19 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="ko_KR">
 <context>
+    <name>RAccessibleToolButton</name>
+    <message>
+        <location filename="../src/gui/RAccessibleToolButton.cpp" line="+128"/>
+        <source>More Tool Bar Items</source>
+        <translation>도구 모음의 추가 항목</translation>
+    </message>
+    <message>
+        <location line="-5"/>
+        <source>Clear Text</source>
+        <translation>텍스트 지우기</translation>
+    </message>
+</context>
+<context>
     <name>RCadToolBar</name>
     <message>
         <location filename="../src/gui/RCadToolBar.cpp" line="+139"/>
@@ -90,7 +103,7 @@
 <context>
     <name>RMathLineEdit</name>
     <message>
-        <location filename="../src/gui/RMathLineEdit.cpp" line="+193"/>
+        <location filename="../src/gui/RMathLineEdit.cpp" line="+201"/>
         <source>Invalid</source>
         <translation>유효하지 않음</translation>
     </message>

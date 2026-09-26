@@ -34,6 +34,11 @@ add_library(qcadgui SHARED
     REventFilter.cpp REventFilter.h
     RToolOptionEventFilter.cpp RToolOptionEventFilter.h
     RAccessibleToolTipFilter.cpp RAccessibleToolTipFilter.h
+    RAccessibleFlatTree.cpp RAccessibleFlatTree.h
+    RAccessibleToolButton.cpp RAccessibleToolButton.h
+    RAccessibleContainers.cpp RAccessibleContainers.h
+    RAccessibleNameFilter.cpp RAccessibleNameFilter.h
+    RAccessibleValueLabel.cpp RAccessibleValueLabel.h
     REventHandler.cpp REventHandler.h
     RFileSystemModel.cpp RFileSystemModel.h
     RFlowLayout.cpp RFlowLayout.h
@@ -100,3 +105,9 @@ target_link_libraries(qcadgui PUBLIC
     qcadcore
     qcadentity
 )
+
+if (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+    target_sources(qcadgui PRIVATE
+        RMacMenuAccessibility.h RMacMenuAccessibility.mm
+    )
+endif()

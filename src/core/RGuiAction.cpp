@@ -813,8 +813,10 @@ void RGuiAction::updateTransactionListener(RDocument* document, RTransaction* tr
     setEnabledOverride(enabled, -1);
 
     if (requiresUndoableTransaction && document!=NULL) {
-        if (text().contains("[") && text().contains("]")) {
-            QString t = text();
+        // work on the original text: text() has the shortcut appended
+        // on macOS (initTexts), which would accumulate in the icon text:
+        if (oriText.contains("[") && oriText.contains("]")) {
+            QString t = oriText;
             QString undoText = document->getTransactionStack().getUndoableTransactionText();
             if (undoText.isEmpty()) {
                 undoText = "-";
@@ -826,8 +828,10 @@ void RGuiAction::updateTransactionListener(RDocument* document, RTransaction* tr
     }
 
     if (requiresRedoableTransaction && document!=NULL) {
-        if (text().contains("[") && text().contains("]")) {
-            QString t = text();
+        // work on the original text: text() has the shortcut appended
+        // on macOS (initTexts), which would accumulate in the icon text:
+        if (oriText.contains("[") && oriText.contains("]")) {
+            QString t = oriText;
             QString redoText = document->getTransactionStack().getRedoableTransactionText();
             if (redoText.isEmpty()) {
                 redoText = "-";

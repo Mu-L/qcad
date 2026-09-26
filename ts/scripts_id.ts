@@ -290,7 +290,7 @@
         <translation>Preferensi Menggambar</translation>
     </message>
     <message>
-        <location line="+328"/>
+        <location line="+373"/>
         <source>Apply preferences</source>
         <translation>Menerapkan preferensi</translation>
     </message>
@@ -307,7 +307,7 @@ the preference changes to take effect.</source>
 agar perubahan preferensi dapat diterapkan.</translation>
     </message>
     <message>
-        <location line="+115"/>
+        <location line="+163"/>
         <source>Defaults for</source>
         <translation>Default untuk</translation>
     </message>
@@ -427,7 +427,7 @@ agar perubahan preferensi dapat diterapkan.</translation>
 <context>
     <name>Apollonius</name>
     <message>
-        <location filename="../scripts/Apollonius.js" line="+2623"/>
+        <location filename="../scripts/Apollonius.js" line="+2618"/>
         <source>Invalid radius</source>
         <translation>Radius tidak valid</translation>
     </message>
@@ -1267,7 +1267,7 @@ Apakah Anda ingin memulihkannya?</translation>
 <context>
     <name>BitmapExportWorker</name>
     <message>
-        <location filename="../scripts/File/BitmapExport/BitmapExportWorker.js" line="+61"/>
+        <location filename="../scripts/File/BitmapExport/BitmapExportWorker.js" line="+63"/>
         <source>Invalid image size (width x height must be less than %1)</source>
         <translation>Ukuran gambar tidak valid (lebar x tinggi harus kurang dari %1)</translation>
     </message>
@@ -1368,12 +1368,13 @@ Apakah Anda ingin memulihkannya?</translation>
 <context>
     <name>BlockList</name>
     <message>
-        <location filename="../scripts/Widgets/BlockList/BlockList.js" line="+693"/>
+        <location filename="../scripts/Widgets/BlockList/BlockList.js" line="+786"/>
         <source>Widgets</source>
         <translation>Widget</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="-730"/>
+        <location line="+730"/>
         <location line="+83"/>
         <location line="+43"/>
         <source>Block List</source>
@@ -1388,6 +1389,11 @@ Apakah Anda ingin memulihkannya?</translation>
         <location line="+10"/>
         <source>Enable alternating row colors</source>
         <translation>Mengaktifkan warna baris bergantian</translation>
+    </message>
+    <message>
+        <location filename="../scripts/Widgets/BlockList/BlockList.js" line="-415"/>
+        <source>Current block</source>
+        <translation>Blok saat ini</translation>
     </message>
 </context>
 <context>
@@ -2599,7 +2605,7 @@ Apakah Anda ingin memulihkannya?</translation>
         <translation>Memindahkan entitas ke lokasi yang diinginkan</translation>
     </message>
     <message>
-        <location line="+409"/>
+        <location line="+416"/>
         <source>Move Reference Point</source>
         <translation>Pindahkan Titik Referensi</translation>
     </message>
@@ -4270,17 +4276,17 @@ sudah ada dalam daftar.</translation>
     </message>
     <message>
         <location line="+1"/>
-        <location line="+2167"/>
+        <location line="+2209"/>
         <source>Cancel</source>
         <translation>Batal</translation>
     </message>
     <message>
-        <location line="-2166"/>
+        <location line="-2208"/>
         <source>Done</source>
         <translation>Selesai</translation>
     </message>
     <message>
-        <location line="+287"/>
+        <location line="+286"/>
         <location line="+143"/>
         <source>Active Tool:</source>
         <translation>Alat Aktif:</translation>
@@ -4291,7 +4297,7 @@ sudah ada dalam daftar.</translation>
         <translation>Tidak ada</translation>
     </message>
     <message>
-        <location line="+668"/>
+        <location line="+711"/>
         <source>Options</source>
         <translation>Pilihan</translation>
     </message>
@@ -9298,7 +9304,32 @@ sudah ada dalam daftar.</translation>
 <context>
     <name>Modify</name>
     <message>
-        <location filename="../scripts/Modify/Modify.js" line="+99"/>
+        <location filename="../scripts/Modify/Modify.js" line="+97"/>
+        <source>&amp;Transform</source>
+        <translation>Transformasi</translation>
+    </message>
+    <message>
+        <location line="+14"/>
+        <source>&amp;Offset</source>
+        <translation>Offset</translation>
+    </message>
+    <message>
+        <location line="+15"/>
+        <source>Trim and Di&amp;vide</source>
+        <translation>Pangkas dan Bagi</translation>
+    </message>
+    <message>
+        <location line="+15"/>
+        <source>&amp;Corners</source>
+        <translation>Sudut</translation>
+    </message>
+    <message>
+        <location line="+15"/>
+        <source>Entit&amp;ies</source>
+        <translation>Entitas</translation>
+    </message>
+    <message>
+        <location line="+17"/>
         <source>Modification Tools</source>
         <translation>Alat Modifikasi</translation>
     </message>
@@ -9386,6 +9417,16 @@ sudah ada dalam daftar.</translation>
         <location line="+42"/>
         <source>Illustration of the mouse buttons</source>
         <translation>Ilustrasi tombol tetikus</translation>
+    </message>
+    <message>
+        <location filename="../scripts/Widgets/MouseDisplay/MouseDisplay.js" line="+38"/>
+        <source>Left mouse button</source>
+        <translation>Tombol kiri mouse</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Right mouse button</source>
+        <translation>Tombol kanan mouse</translation>
     </message>
 </context>
 <context>
@@ -10193,13 +10234,13 @@ sudah ada dalam daftar.</translation>
     <name>PreferencesDialog</name>
     <message>
         <location filename="../scripts/Edit/AbstractPreferences.ui" line="+14"/>
-        <location line="+86"/>
+        <location line="+89"/>
         <location line="+20"/>
         <source>Preferences</source>
         <translation>Preferensi</translation>
     </message>
     <message>
-        <location line="-79"/>
+        <location line="-82"/>
         <source>Filter</source>
         <translation>Filter</translation>
     </message>
@@ -10214,7 +10255,7 @@ sudah ada dalam daftar.</translation>
         <translation>Ciutkan pohon</translation>
     </message>
     <message>
-        <location line="+72"/>
+        <location line="+75"/>
         <source>Restore to Default Values</source>
         <translation>Mengembalikan ke Nilai Default</translation>
     </message>
@@ -10284,7 +10325,7 @@ sudah ada dalam daftar.</translation>
         <translation>Menyesuaikan gambar secara otomatis ke kertas?</translation>
     </message>
     <message>
-        <location line="+213"/>
+        <location line="+206"/>
         <source>Drag to move paper</source>
         <translation>Seret untuk memindahkan kertas</translation>
     </message>
@@ -10496,47 +10537,47 @@ sudah ada dalam daftar.</translation>
         <translation>:</translation>
     </message>
     <message>
-        <location line="+189"/>
+        <location line="+455"/>
         <source>No Selection</source>
         <translation>Tidak Ada Pilihan</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+21"/>
         <source>Specific Properties</source>
         <translation>Properti Khusus</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+22"/>
         <source>Dependent Entities</source>
         <translation>Entitas Bergantung</translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="+19"/>
         <source>Custom</source>
         <translation>Kustom</translation>
     </message>
     <message>
-        <location line="+204"/>
+        <location line="+182"/>
         <source>Index</source>
         <translation>Indeks</translation>
     </message>
     <message>
-        <location line="+79"/>
+        <location line="+76"/>
         <source>Remove this property from selected objects</source>
         <translation>Hapus properti ini dari objek yang dipilih</translation>
     </message>
     <message>
-        <location line="+68"/>
+        <location line="+75"/>
         <source>All</source>
         <translation>Semua</translation>
     </message>
     <message>
-        <location line="+24"/>
+        <location line="+25"/>
         <source>Add custom property to selected objects</source>
         <translation>Menambahkan properti khusus ke objek yang dipilih</translation>
     </message>
     <message>
-        <location line="+45"/>
+        <location line="+66"/>
         <source>Show</source>
         <translation>Tampilkan</translation>
     </message>
@@ -10566,7 +10607,7 @@ sudah ada dalam daftar.</translation>
         <translation>Tidak</translation>
     </message>
     <message>
-        <location line="+430"/>
+        <location line="+429"/>
         <source>*VARIES*</source>
         <translation>*VARIASI*</translation>
     </message>
@@ -12522,11 +12563,12 @@ sudah ada dalam daftar.</translation>
     </message>
     <message>
         <location line="+0"/>
+        <location line="+18"/>
         <source>Status Bar</source>
         <translation>Bilah Status</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="-12"/>
         <source>&amp;Status Bar</source>
         <translation>Bilah Status</translation>
     </message>
@@ -13880,7 +13922,7 @@ sudah ada dalam daftar.</translation>
 <context>
     <name>ViewportWidget</name>
     <message>
-        <location filename="../scripts/Widgets/ViewportWidget/ViewportWidget.js" line="+471"/>
+        <location filename="../scripts/Widgets/ViewportWidget/ViewportWidget.js" line="+512"/>
         <source>Dropped data not supported</source>
         <translation>Data yang dijatuhkan tidak didukung</translation>
     </message>
@@ -13898,6 +13940,16 @@ sudah ada dalam daftar.</translation>
         <location line="+17"/>
         <source>Importing URL: </source>
         <translation>Mengimpor URL:</translation>
+    </message>
+    <message>
+        <location line="-401"/>
+        <source>Drawing Area</source>
+        <translation>Area gambar</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Use the command line to enter commands and coordinates</source>
+        <translation>Gunakan baris perintah untuk memasukkan perintah dan koordinat</translation>
     </message>
 </context>
 <context>
@@ -14373,7 +14425,7 @@ sudah ada dalam daftar.</translation>
 <context>
     <name>library</name>
     <message>
-        <location filename="../scripts/library.js" line="+1304"/>
+        <location filename="../scripts/library.js" line="+1302"/>
         <source>Objects</source>
         <translation>Objek</translation>
     </message>

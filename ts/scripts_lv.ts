@@ -290,7 +290,7 @@
         <translation>Zīmēšanas preferences</translation>
     </message>
     <message>
-        <location line="+328"/>
+        <location line="+373"/>
         <source>Apply preferences</source>
         <translation>Piemērot preferences</translation>
     </message>
@@ -307,7 +307,7 @@ the preference changes to take effect.</source>
 lai stātos spēkā preferenču izmaiņas.</translation>
     </message>
     <message>
-        <location line="+115"/>
+        <location line="+163"/>
         <source>Defaults for</source>
         <translation>Noklusējuma iestatījumi</translation>
     </message>
@@ -427,7 +427,7 @@ lai stātos spēkā preferenču izmaiņas.</translation>
 <context>
     <name>Apollonius</name>
     <message>
-        <location filename="../scripts/Apollonius.js" line="+2623"/>
+        <location filename="../scripts/Apollonius.js" line="+2618"/>
         <source>Invalid radius</source>
         <translation>Nederīgs rādiuss</translation>
     </message>
@@ -1271,7 +1271,7 @@ Vai vēlaties to atjaunot?</translation>
 <context>
     <name>BitmapExportWorker</name>
     <message>
-        <location filename="../scripts/File/BitmapExport/BitmapExportWorker.js" line="+61"/>
+        <location filename="../scripts/File/BitmapExport/BitmapExportWorker.js" line="+63"/>
         <source>Invalid image size (width x height must be less than %1)</source>
         <translation>Nepareizs attēla izmērs (platumam x augstumam jābūt mazākam par %1)</translation>
     </message>
@@ -1372,12 +1372,13 @@ Vai vēlaties to atjaunot?</translation>
 <context>
     <name>BlockList</name>
     <message>
-        <location filename="../scripts/Widgets/BlockList/BlockList.js" line="+693"/>
+        <location filename="../scripts/Widgets/BlockList/BlockList.js" line="+786"/>
         <source>Widgets</source>
         <translation>Logrīki</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="-730"/>
+        <location line="+730"/>
         <location line="+83"/>
         <location line="+43"/>
         <source>Block List</source>
@@ -1392,6 +1393,11 @@ Vai vēlaties to atjaunot?</translation>
         <location line="+10"/>
         <source>Enable alternating row colors</source>
         <translation>Iespējot pārmaiņus rindu krāsas</translation>
+    </message>
+    <message>
+        <location filename="../scripts/Widgets/BlockList/BlockList.js" line="-415"/>
+        <source>Current block</source>
+        <translation>Pašreizējais bloks</translation>
     </message>
 </context>
 <context>
@@ -2603,7 +2609,7 @@ Vai vēlaties to atjaunot?</translation>
         <translation>Pārvietot vienību uz vēlamo atrašanās vietu</translation>
     </message>
     <message>
-        <location line="+409"/>
+        <location line="+416"/>
         <source>Move Reference Point</source>
         <translation>Pārvietot atskaites punktu</translation>
     </message>
@@ -4278,17 +4284,17 @@ jau ir sarakstā.</translation>
     </message>
     <message>
         <location line="+1"/>
-        <location line="+2167"/>
+        <location line="+2209"/>
         <source>Cancel</source>
         <translation>Atcelt</translation>
     </message>
     <message>
-        <location line="-2166"/>
+        <location line="-2208"/>
         <source>Done</source>
         <translation>Paveikts</translation>
     </message>
     <message>
-        <location line="+287"/>
+        <location line="+286"/>
         <location line="+143"/>
         <source>Active Tool:</source>
         <translation>Aktīvais rīks:</translation>
@@ -4299,7 +4305,7 @@ jau ir sarakstā.</translation>
         <translation>Nav</translation>
     </message>
     <message>
-        <location line="+668"/>
+        <location line="+711"/>
         <source>Options</source>
         <translation>Iespējas</translation>
     </message>
@@ -9308,7 +9314,32 @@ jau ir sarakstā.</translation>
 <context>
     <name>Modify</name>
     <message>
-        <location filename="../scripts/Modify/Modify.js" line="+99"/>
+        <location filename="../scripts/Modify/Modify.js" line="+97"/>
+        <source>&amp;Transform</source>
+        <translation>Transformācija</translation>
+    </message>
+    <message>
+        <location line="+14"/>
+        <source>&amp;Offset</source>
+        <translation>Nobīde</translation>
+    </message>
+    <message>
+        <location line="+15"/>
+        <source>Trim and Di&amp;vide</source>
+        <translation>Apgriešana un dalīšana</translation>
+    </message>
+    <message>
+        <location line="+15"/>
+        <source>&amp;Corners</source>
+        <translation>Stūri</translation>
+    </message>
+    <message>
+        <location line="+15"/>
+        <source>Entit&amp;ies</source>
+        <translation>Objekti</translation>
+    </message>
+    <message>
+        <location line="+17"/>
         <source>Modification Tools</source>
         <translation>Modifikācijas rīki</translation>
     </message>
@@ -9396,6 +9427,16 @@ jau ir sarakstā.</translation>
         <location line="+42"/>
         <source>Illustration of the mouse buttons</source>
         <translation>Peles pogu ilustrācija</translation>
+    </message>
+    <message>
+        <location filename="../scripts/Widgets/MouseDisplay/MouseDisplay.js" line="+38"/>
+        <source>Left mouse button</source>
+        <translation>Peles kreisā poga</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Right mouse button</source>
+        <translation>Peles labā poga</translation>
     </message>
 </context>
 <context>
@@ -10207,13 +10248,13 @@ jau ir sarakstā.</translation>
     <name>PreferencesDialog</name>
     <message>
         <location filename="../scripts/Edit/AbstractPreferences.ui" line="+14"/>
-        <location line="+86"/>
+        <location line="+89"/>
         <location line="+20"/>
         <source>Preferences</source>
         <translation>Preferences</translation>
     </message>
     <message>
-        <location line="-79"/>
+        <location line="-82"/>
         <source>Filter</source>
         <translation>Filtrs</translation>
     </message>
@@ -10228,7 +10269,7 @@ jau ir sarakstā.</translation>
         <translation>Sakļaut koku</translation>
     </message>
     <message>
-        <location line="+72"/>
+        <location line="+75"/>
         <source>Restore to Default Values</source>
         <translation>Noklusējuma vērtību atjaunošana</translation>
     </message>
@@ -10298,7 +10339,7 @@ jau ir sarakstā.</translation>
         <translation>Automātiski pielāgot zīmējumu papīram?</translation>
     </message>
     <message>
-        <location line="+213"/>
+        <location line="+206"/>
         <source>Drag to move paper</source>
         <translation>Velciet, lai pārvietotu papīru</translation>
     </message>
@@ -10510,47 +10551,47 @@ jau ir sarakstā.</translation>
         <translation>:</translation>
     </message>
     <message>
-        <location line="+189"/>
+        <location line="+455"/>
         <source>No Selection</source>
         <translation>Nav atlases</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+21"/>
         <source>Specific Properties</source>
         <translation>Īpašās īpašības</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+22"/>
         <source>Dependent Entities</source>
         <translation>Atkarīgie subjekti</translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="+19"/>
         <source>Custom</source>
         <translation>Pielāgots</translation>
     </message>
     <message>
-        <location line="+204"/>
+        <location line="+182"/>
         <source>Index</source>
         <translation>Indekss</translation>
     </message>
     <message>
-        <location line="+79"/>
+        <location line="+76"/>
         <source>Remove this property from selected objects</source>
         <translation>Noņemt šo īpašību no atlasītajiem objektiem</translation>
     </message>
     <message>
-        <location line="+68"/>
+        <location line="+75"/>
         <source>All</source>
         <translation>Visi</translation>
     </message>
     <message>
-        <location line="+24"/>
+        <location line="+25"/>
         <source>Add custom property to selected objects</source>
         <translation>Pielāgotā īpašuma pievienošana atlasītajiem objektiem</translation>
     </message>
     <message>
-        <location line="+45"/>
+        <location line="+66"/>
         <source>Show</source>
         <translation>Rādīt</translation>
     </message>
@@ -10580,7 +10621,7 @@ jau ir sarakstā.</translation>
         <translation>Nē</translation>
     </message>
     <message>
-        <location line="+430"/>
+        <location line="+429"/>
         <source>*VARIES*</source>
         <translation>*VARIES*</translation>
     </message>
@@ -12542,11 +12583,12 @@ jau ir sarakstā.</translation>
     </message>
     <message>
         <location line="+0"/>
+        <location line="+18"/>
         <source>Status Bar</source>
         <translation>Statusa josla</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="-12"/>
         <source>&amp;Status Bar</source>
         <translation>Statusa josla</translation>
     </message>
@@ -13900,7 +13942,7 @@ jau ir sarakstā.</translation>
 <context>
     <name>ViewportWidget</name>
     <message>
-        <location filename="../scripts/Widgets/ViewportWidget/ViewportWidget.js" line="+471"/>
+        <location filename="../scripts/Widgets/ViewportWidget/ViewportWidget.js" line="+512"/>
         <source>Dropped data not supported</source>
         <translation>Nav atbalstīta datu atmešana</translation>
     </message>
@@ -13918,6 +13960,16 @@ jau ir sarakstā.</translation>
         <location line="+17"/>
         <source>Importing URL: </source>
         <translation>URL importēšana:</translation>
+    </message>
+    <message>
+        <location line="-401"/>
+        <source>Drawing Area</source>
+        <translation>Zīmēšanas apgabals</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Use the command line to enter commands and coordinates</source>
+        <translation>Komandas un koordinātas ievadiet komandrindā</translation>
     </message>
 </context>
 <context>
@@ -14393,7 +14445,7 @@ jau ir sarakstā.</translation>
 <context>
     <name>library</name>
     <message>
-        <location filename="../scripts/library.js" line="+1304"/>
+        <location filename="../scripts/library.js" line="+1302"/>
         <source>Objects</source>
         <translation>Objekti</translation>
     </message>
