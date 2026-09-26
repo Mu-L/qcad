@@ -9,6 +9,7 @@ SOURCES += \
     RColumnLayout.cpp \
     RCharacterWidget.cpp \
     RColorCombo.cpp \
+    RColorDialog.cpp \
     RComboBox.cpp \
     RCommandLine.cpp \
     RDockWidget.cpp \
@@ -50,6 +51,7 @@ HEADERS += \
     RCharacterWidget.h \
     RCloseCurrentEvent.h \
     RColorCombo.h \
+    RColorDialog.h \
     RComboBox.h \
     RCommandLine.h \
     RDockWidget.h \
